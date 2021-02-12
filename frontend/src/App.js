@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p id="demo" onClick={() => document.getElementById("demo").innerHTML = fetchAll().then(alert)}>Click me to change my HTML content (innerHTML).</p>
+        <p id="demo" onClick={async () => document.getElementById("demo").innerHTML = await fetchAll()}>Click me (innerHTML).</p>
         <a
           className="App-link"
           href="https://reactjs.org"
