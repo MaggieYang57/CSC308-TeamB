@@ -3,14 +3,13 @@ const express = require('express');
 const router = express.Router();
 const trailSchema = require('../models/trails-schema');
 const Trail = mongoose.model('Trail', trailSchema, 'hike_data');
+var ObjectID = require('mongodb').ObjectID;
 
 router.get('/testing', (req, res) => {
    res.send('List of all hikes!');
  })
 
-router.get('/:id', (req, res) => {
-   res.send('Individual hike!');
- })
+
 
 router.get('/:id/reviews', (req, res) => {
    res.send('Get review for each hike page!');
@@ -30,7 +29,7 @@ router.get('/:id/reviews', (req, res) => {
 
  router.get('/', async (req, res) => {
     try {
-       const hikes = await Trail.find();
+       const hikes = await Trail.find({});
        res.json(hikes);
     }
     catch(err){
@@ -38,6 +37,19 @@ router.get('/:id/reviews', (req, res) => {
     }
 });
  
+//testing GET individual hike
+router.get('/:id', async (req, res) => {
+   try {
+      const hikes = await Trail.find({"_id": req.params.id});
+      res.json(hikes);
+   }
+   catch(err){
+     res.json({message:err});
+   }
+});
+
+
+
 
  //testing Post request
 
