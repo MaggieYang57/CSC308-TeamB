@@ -12,10 +12,16 @@ const hikeRoute = require('./routes/hike')
 app.use('/hike', hikeRoute)
 
 
+app.use(cors())
+ 
+app.get('/products/:id', function (req, res, next) {
+  res.json({msg: 'CORS-enabled for all origins.'})
+})
+
 const uri = process.env.DB_LINK;
 if (!uri) {
    console.log("No DB_LINK environment variable found, please provide one.")
-   exit(1)
+   return 1;
 }
 mongoose.connect(uri, {
    useNewUrlParser: true,
