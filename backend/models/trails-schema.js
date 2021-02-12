@@ -13,4 +13,5 @@ const trailSchema = mongoose.Schema({
 
 })
 
-module.exports = trailSchema;
+//module.exports = mongoose.model('hike_data', trailSchema);
+module.exports = trailSchema

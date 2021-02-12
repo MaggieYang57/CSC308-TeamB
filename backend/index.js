@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 env.config();
+app.use(bodyParser.json())
+
+
+const hikeRoute = require('./routes/hike')
+app.use('/hike', hikeRoute)
+
 
 app.use(cors())
  
@@ -18,7 +25,8 @@ if (!uri) {
 }
 mongoose.connect(uri, {
    useNewUrlParser: true,
-   useUnifiedTopology: true
+   useUnifiedTopology: true,
+   useCreateIndex: true
 })
 .then(() => {
    console.log('Atlas Connected..')
