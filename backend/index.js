@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 env.config();
+app.use(bodyParser.json())
+
+
+const hikeRoute = require('./routes/hike')
+app.use('/hike', hikeRoute)
+
 
 const uri = process.env.DB_LINK;
 if (!uri) {
