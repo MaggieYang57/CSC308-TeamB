@@ -1,15 +1,14 @@
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-
+import Table from './Table';
 
 function App() {
-
-  const message = fetchAll()
-
+  const [message, setMessage] = useState([]);
   async function fetchAll(){
      try {
-        const response = await axios.get('http://localhost:3001/');
+        const response = await axios.get('http://localhost:3001/hike');
         return response.data;     
      }
      catch (error){
@@ -18,6 +17,13 @@ function App() {
         return false;         
      }
   }
+
+  useEffect(() => {
+      fetchAll().then( result => {
+         if (result)
+            setMessage(result);
+      });
+  }, [] );
 
   return (
     <div className="App">
@@ -33,6 +39,7 @@ function App() {
           Learn React
         </a>
       </header>
+    <Table hikeList={message} />
     </div>
   );
 }

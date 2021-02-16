@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const app = express();
+app.use(cors())
 const bodyParser = require('body-parser')
 env.config();
 app.use(bodyParser.json())
@@ -11,8 +12,6 @@ app.use(bodyParser.json())
 const hikeRoute = require('./routes/hike')
 app.use('/hike', hikeRoute)
 
-
-app.use(cors())
  
 app.get('/products/:id', function (req, res, next) {
   res.json({msg: 'CORS-enabled for all origins.'})
