@@ -62,6 +62,11 @@ img{
 /*************************************************/
 
 /**********************Reviews********************/
+.reviews{
+    display: flex;
+    justify-content: left;
+    margin-top: 70px;
+}
 .reviews h2{
     display: flex;
     justify-content: left;
