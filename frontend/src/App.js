@@ -27,19 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p id="demo" onClick={async () => document.getElementById("demo").innerHTML = await fetchAll()}>Click me (innerHTML).</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    <Table hikeList={message} />
+      <Table hikeList={message} />
     </div>
   );
 }

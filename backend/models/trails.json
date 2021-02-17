@@ -1,6 +1,7 @@
 [
   {
     "title": "Bishop Peak Trail from Patricia Drive",
+    "location": "San Luis Obispo",
     "description": "Bishop Peak Trail from Patricia Drive is a 3.4 mile heavily trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking, running, nature trips, and bird watching and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.4 mi",
@@ -24,6 +25,7 @@
   },
   {
     "title": "Bishop Peak Trail from Highland Drive Trail",
+    "location": "San Luis Obispo",
     "description": "Bishop Peak Trail from Highland Drive Trail is a 3.3 mile heavily trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.3 mi",
@@ -46,6 +48,7 @@
   },
   {
     "title": "Reservoir Canyon Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Reservoir Canyon Loop Trail is a 5.4 mile heavily trafficked loop trail located near San Luis Obispo, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, trail running, and nature trips and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "5.4 mi",
@@ -71,6 +74,7 @@
   },
   {
     "title": "Cerro San Luis Obispo Trail",
+    "location": "San Luis Obispo",
     "description": "Cerro San Luis Obispo Trail is a 3.9 mile out and back trail located near San Luis Obispo, California that offers the chance to see wildlife and is rated as moderate. The trail offers a number of activity options. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.9 mi",
@@ -94,6 +98,7 @@
   },
   {
     "title": "Mount Lowe Trail",
+    "location": "San Luis Obispo",
     "description": "Mount Lowe Trail is a 8 mile moderately trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "8.0 mi",
@@ -116,6 +121,7 @@
   },
   {
     "title": "Cerro San Luis Obispo Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Cerro San Luis Obispo Loop Trail is a 3.9 mile heavily trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.9 mi",
@@ -141,6 +147,7 @@
   },
   {
     "title": "Froom Canyon - Irish Hills Preserve",
+    "location": "San Luis Obispo",
     "description": "Froom Canyon - Irish Hills Preserve is a 4.1 mile heavily trafficked loop trail located near San Luis Obispo, California that features a waterfall and is rated as moderate. The trail is primarily used for hiking, running, and mountain biking. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "4.1 mi",
@@ -162,6 +169,7 @@
   },
   {
     "title": "Reservoir Canyon Trail",
+    "location": "San Luis Obispo",
     "description": "Reservoir Canyon Trail is a 4.9 mile moderately trafficked out and back trail located near San Luis Obispo, California that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking, walking, running, and nature trips. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "4.9 mi",
@@ -182,6 +190,7 @@
   },
   {
     "title": "Poly Canyon Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Poly Canyon Loop Trail is a 6.2 mile heavily trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and running and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "6.2 mi",
@@ -201,6 +210,7 @@
   },
   {
     "title": "Felsman Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Felsman Loop Trail is a 2.4 mile heavily trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "2.4 mi",
@@ -225,6 +235,7 @@
   },
   {
     "title": "Madonna Mountain Loop",
+    "location": "San Luis Obispo",
     "description": "Madonna Mountain Loop is a 4.3 mile moderately trafficked loop trail located near San Luis Obispo, California that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking, nature trips, and bird watching.",
     "difficulty": "moderate",
     "length": "4.3 mi",
@@ -243,6 +254,7 @@
   },
   {
     "title": "Irish Hills Open Space Loop",
+    "location": "San Luis Obispo",
     "description": "Irish Hills Open Space Loop is a 8.8 mile lightly trafficked loop trail located near San Luis Obispo, California that features a waterfall and is rated as moderate. The trail offers a number of activity options. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "8.8 mi",
@@ -267,6 +279,7 @@
   },
   {
     "title": "Johnson Ranch Loop Trail Short Loop",
+    "location": "San Luis Obispo",
     "description": "Johnson Ranch Loop Trail Short Loop is a 2.2 mile heavily trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is good for all skill levels. The trail is primarily used for hiking, walking, running, and nature trips. Dogs are also able to use this trail.",
     "difficulty": "easy",
     "length": "2.2 mi",
@@ -289,6 +302,7 @@
   },
   {
     "title": "Islay Hill Trail",
+    "location": "San Luis Obispo",
     "description": "Islay Hill Trail is a 1.5 mile moderately trafficked out and back trail located near San Luis Obispo, California. The trail is rated as moderate and primarily used for hiking and trail running. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "1.5 mi",
@@ -300,6 +314,7 @@
   },
   {
     "title": "West Cuesta Ridge Road to Cuesta Ridge Botanical Area",
+    "location": "San Luis Obispo",
     "description": "West Cuesta Ridge Road to Cuesta Ridge Botanical Area is a 17.4 mile moderately trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "17.4 mi",
@@ -322,6 +337,7 @@
   },
   {
     "title": "Mariposa and King Trail Loop",
+    "location": "San Luis Obispo",
     "description": "Mariposa and King Trail Loop is a 1.9 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and running and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "1.9 mi",
@@ -341,6 +357,7 @@
   },
   {
     "title": "Prefumo Canyon Vista Point Trail",
+    "location": "San Luis Obispo",
     "description": "Prefumo Canyon Vista Point Trail is a 3.5 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.5 mi",
@@ -362,6 +379,7 @@
   },
   {
     "title": "Serenity Swing ",
+    "location": "San Luis Obispo",
     "description": "Serenity Swing  is a 3.5 mile heavily trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and is accessible year-round.",
     "difficulty": "moderate",
     "length": "3.5 mi",
@@ -381,6 +399,7 @@
   },
   {
     "title": "M Trail Loop",
+    "location": "San Luis Obispo",
     "description": "M Trail Loop is a 2.5 mile loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and nature trips.",
     "difficulty": "moderate",
     "length": "2.5 mi",
@@ -392,6 +411,7 @@
   },
   {
     "title": "Lemon Grove Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Lemon Grove Loop Trail is a 2.2 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from April until September. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "2.2 mi",
@@ -413,6 +433,7 @@
   },
   {
     "title": "Laguna Lake Loop Trail",
+    "location": "San Luis Obispo",
     "description": "Laguna Lake Loop Trail is a 1.4 mile moderately trafficked loop trail located near San Luis Obispo, California that features a lake and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "1.4 mi",
@@ -435,6 +456,7 @@
   },
   {
     "title": "Froom Creek and Mariposa Trail Loop",
+    "location": "San Luis Obispo",
     "description": "Froom Creek and Mariposa Trail Loop is a 2.9 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "2.9 mi",
@@ -458,6 +480,7 @@
   },
   {
     "title": "Johnson Ranch to Filipponi Trail",
+    "location": "San Luis Obispo",
     "description": "Johnson Ranch to Filipponi Trail is a 2.3 mile moderately trafficked loop trail located near San Luis Obispo, California that offers the chance to see wildlife. The trail is good for all skill levels and is primarily used for hiking and running. Dogs are also able to use this trail.",
     "difficulty": "easy",
     "length": "2.3 mi",
@@ -477,6 +500,7 @@
   },
   {
     "title": "Crespi Trail",
+    "location": "San Luis Obispo",
     "description": "Crespi Trail is a 2.9 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is accessible year-round.",
     "difficulty": "easy",
     "length": "2.9 mi",
@@ -499,6 +523,7 @@
   },
   {
     "title": "Froom Creek, Poppy, Morro View, Quickshot, Mariposa and King Trail Loop",
+    "location": "San Luis Obispo",
     "description": "Froom Creek, Poppy, Morro View, Quickshot, Mariposa and King Trail Loop is a 5.3 mile lightly trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers. The trail is rated as moderate and offers a number of activity options. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "5.3 mi",
@@ -521,6 +546,7 @@
   },
   {
     "title": "South Hills Trail",
+    "location": "San Luis Obispo",
     "description": "South Hills Trail is a 2.2 mile loop trail located near San Luis Obispo, California and is good for all skill levels. The trail is primarily used for hiking and mountain biking and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "2.2 mi",
@@ -532,6 +558,7 @@
   },
   {
     "title": "M Trail via Lemon Grove Loop",
+    "location": "San Luis Obispo",
     "description": "M Trail via Lemon Grove Loop is a 1.8 mile moderately trafficked out and back trail located near San Luis Obispo, California that offers scenic views and is rated as moderate. The trail is primarily used for hiking, trail running, and nature trips and is accessible year-round.",
     "difficulty": "moderate",
     "length": "1.8 mi",
@@ -543,6 +570,7 @@
   },
   {
     "title": "Laguna Lake Loop Trail to Cerro San Luis Obisbo",
+    "location": "San Luis Obispo",
     "description": "Laguna Lake Loop Trail to Cerro San Luis Obisbo is a 4.9 mile moderately trafficked loop trail located near San Luis Obispo, California that offers scenic views and is rated as moderate. The trail is primarily used for hiking, walking, nature trips, and bird watching and is best used from April until September. Dogs are also able to use this trail.",
     "difficulty": "moderate",
     "length": "4.9 mi",
@@ -561,6 +589,7 @@
   },
   {
     "title": "Stenner Creek Trail to Elevator Trail",
+    "location": "San Luis Obispo",
     "description": "Stenner Creek Trail to Elevator Trail is a 2.9 mile loop trail located near San Luis Obispo, California that offers scenic views and is rated as moderate. The trail is primarily used for hiking, running, and nature trips.",
     "difficulty": "moderate",
     "length": "2.9 mi",
@@ -572,6 +601,7 @@
   },
   {
     "title": "Terrace Hill",
+    "location": "San Luis Obispo",
     "description": "Terrace Hill is a 0.9 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "0.9 mi",
@@ -594,6 +624,7 @@
   },
   {
     "title": "Johnson Ranch and Filipponi Trail",
+    "location": "San Luis Obispo",
     "description": "Johnson Ranch and Filipponi Trail is a 5.2 mile lightly trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers. The trail is good for all skill levels and is primarily used for hiking and running. Dogs are also able to use this trail.",
     "difficulty": "easy",
     "length": "5.2 mi",
@@ -613,6 +644,7 @@
   },
   {
     "title": "The P",
+    "location": "San Luis Obispo",
     "description": "The P is a 0.9 mile out and back trail located near San Luis Obispo, California that offers scenic views and is rated as moderate. The trail is primarily used for hiking and is accessible year-round.",
     "difficulty": "moderate",
     "length": "0.9 mi",
@@ -624,6 +656,7 @@
   },
   {
     "title": "Cerro Cabrillo Park Ridge Trail",
+    "location": "San Luis Obispo",
     "description": "Cerro Cabrillo Park Ridge Trail is a 2.7 mile moderately trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options and is best used from March until October.",
     "difficulty": "moderate",
     "length": "2.7 mi",
@@ -647,6 +680,7 @@
   },
   {
     "title": "Eagle Rock Nature Trail",
+    "location": "San Luis Obispo",
     "description": "Eagle Rock Nature Trail is a 1.7 mile lightly trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "1.7 mi",
@@ -671,6 +705,7 @@
   },
   {
     "title": "Froom Creek, Old Prospector and Pond Loop ",
+    "location": "San Luis Obispo",
     "description": "Froom Creek, Old Prospector and Pond Loop  is a 3.5 mile moderately trafficked loop trail located near San Luis Obispo, California that features a river and is rated as moderate. The trail offers a number of activity options.",
     "difficulty": "moderate",
     "length": "3.5 mi",
@@ -692,6 +727,7 @@
   },
   {
     "title": "Old Prospector, Pond and Chutes and Ladders ",
+    "location": "San Luis Obispo",
     "description": "Old Prospector, Pond and Chutes and Ladders  is a 3.6 mile lightly trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking, running, nature trips, and bird watching.",
     "difficulty": "moderate",
     "length": "3.6 mi",
@@ -712,6 +748,7 @@
   },
   {
     "title": "Double Morro Challenge (Bishop Peak and Cerro San Luis Obispo)",
+    "location": "San Luis Obispo",
     "description": "Double Morro Challenge (Bishop Peak and Cerro San Luis Obispo) is a 10.9 mile moderately trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as difficult. The trail is primarily used for hiking, rock climbing, and nature trips and is accessible year-round.",
     "difficulty": "hard",
     "length": "10.9 mi",
@@ -732,6 +769,7 @@
   },
   {
     "title": "Bob Jones Trail",
+    "location": "Avila",
     "description": "Bob Jones Trail is a 2.6 mile lightly trafficked out and back trail located near San Luis Obispo, California. The trail is good for all skill levels and is primarily used for walking, trail running, and nature trips. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "2.6 mi",
@@ -749,6 +787,7 @@
   },
   {
     "title": "Bishop Peak via West Foothill Boulevard [PRIVATE PROPERTY]",
+    "location": "San Luis Obispo",
     "description": "Bishop Peak via West Foothill Boulevard [PRIVATE PROPERTY] is a 2.4 mile heavily trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail offers a number of activity options. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "2.4 mi",
@@ -772,6 +811,7 @@
   },
   {
     "title": "Bowden Ranch Trail (High School Hill) [PRIVATE PROPERTY]",
+    "location": "San Luis Obispo",
     "description": "Bowden Ranch Trail (High School Hill) is a 3.4 mile moderately trafficked out and back trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as moderate. The trail is primarily used for hiking and running and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "3.4 mi",
@@ -794,6 +834,7 @@
   },
   {
     "title": "Cerro San Luis Obispo via Luneta to Rock Garden [PRIVATE PROPERTY]",
+    "location": "San Luis Obispo",
     "description": "Cerro San Luis Obispo via Luneta to Rock Garden [PRIVATE PROPERTY] is a 6.7 mile moderately trafficked loop trail located near San Luis Obispo, California that offers the chance to see wildlife and is rated as moderate. The trail is primarily used for hiking, running, and nature trips and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "moderate",
     "length": "6.7 mi",
@@ -813,6 +854,7 @@
   },
   {
     "title": "Architecture Graveyard Hike [PRIVATE PROPERTY]",
+    "location": "San Luis Obispo",
     "description": "Architecture Graveyard Hike [PRIVATE PROPERTY] is a 3 mile moderately trafficked out and back trail located near San Luis Obispo, California that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, nature trips, and bird watching and is best used from April until October.",
     "difficulty": "easy",
     "length": "3.0 mi",
@@ -832,6 +874,7 @@
   },
   {
     "title": "Dairy Creek and El Chorro Loop Trail [CLOSED]",
+    "location": "San Luis Obispo",
     "description": "Dairy Creek and El Chorro Loop Trail [CLOSED] is a 2.3 mile lightly trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.",
     "difficulty": "easy",
     "length": "2.3 mi",
@@ -859,6 +902,7 @@
   },
   {
     "title": "Cambria and Avila Beach Cycle Loop",
+    "location": "Avila",
     "description": "Cambria and Avila Beach Cycle Loop is a 96 mile lightly trafficked loop trail located near San Luis Obispo, California that features beautiful wild flowers and is rated as difficult. The trail is primarily used for road biking and is accessible year-round.",
     "difficulty": "hard",
     "length": "96.0 mi",
