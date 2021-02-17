@@ -5,10 +5,11 @@ function TableHeader() {
     <thead>
       <tr>
         <th>Title</th>
-        <th>Rating</th>
-        <th>Difficulty</th>
+        <th>Location</th>
         <th>Description</th>
-        <th>Reviews</th>
+        <th>Difficulty</th>
+        <th>Rating</th>
+        <th>Tags</th>
       </tr>
     </thead>
   );
@@ -19,10 +20,11 @@ function TableBody (props) {
     return (
       <tr key={index}>
         <td>{row.title}</td>
-        <td>{row.rating}</td>
-        <td>{row.difficulty}</td>
+        <td>{row.location}</td>
         <td>{row.description}</td>
-        <td>{row.reviews}</td>
+        <td>{row.difficulty}</td>
+        <td>{row.rating}</td>
+        <td>{JSON.stringify(row.tags)}</td>
       </tr>
     );
   })
@@ -35,10 +37,12 @@ function TableBody (props) {
 
 function Table(props) {
    return(
-      <table>
-        <TableHeader />
-        <TableBody hikeList={props.hikeList} />
-      </table>
+     <div className = "table">
+        <table>
+          <TableHeader />
+          <TableBody hikeList={props.hikeList} />
+        </table>
+      </div>
    );
 }
 

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
-import Table from './Table';
+import './css/App.css';
+
+import NavBar from './components/NavBar'
+import Table from './components/Table';
+import SinglePage from './components/SinglePage';
 
 function App() {
   const [message, setMessage] = useState([]);
@@ -26,9 +29,19 @@ function App() {
   }, [] );
 
   return (
-    <div className="App">
-      <Table hikeList={message} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path ="/">
+            <Table hikeList={message} />
+          </Route>
+          <Route exact path ="/singlepage">
+            <SinglePage />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
