@@ -80,12 +80,12 @@ router.post('/', (req, res) => {
       });
 });
 
-//POST review for an individual hike
-// Post request to add a review 
+
+// IN PROGRESS: PUT review for an individual hike
 router.put('/:id', (req, res) => {
    const review = new Trail(
       {
-         testing: req.body.reviews.hikeID,
+         hikeID: req.body.reviews.hikeID,
          userID: req.body.reviews.userID,
          reviewBody: req.body.reviews.reviewBody,
          userRating: req.body.reviews.userRating,
