@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Float = require('mongoose-float').loadType(mongoose, 2);
 
 const types = mongoose.Schema.Types;
 const trailSchema = mongoose.Schema({
@@ -10,7 +9,7 @@ const trailSchema = mongoose.Schema({
     //length: {type: String, required: false},
     //elevation_gain: {type: String, required: false},
     //route_type: {type: String, required: false},
-    rating: {type: Float, required: true},
+    rating: {type: Number, required: true},
     reviews: {type: [String], required: false},
     tags: {type: [String], required: true},
 
