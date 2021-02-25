@@ -82,6 +82,8 @@ router.post('/', (req, res) => {
 
 
 // IN PROGRESS: PUT review for an individual hike
+// TODO: repopulate the db with new schema
+// 60378f4722631c4ae63c47ff test hike with example 
 router.put('/:id', (req, res) => {
    const review = new Trail(
       {
