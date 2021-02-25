@@ -45,6 +45,17 @@ router.get('/:id', async (req, res) => {
    }
 });
 
+//DELETE individual hike
+router.delete('/:id', async (req, res) => {
+   try {
+      const removedHike = await Trail.remove({ _id: req.params.id });
+      res.json(removedHike);
+   }
+   catch (err) {
+      res.json({ message: err });
+   }
+});
+
 // Post request to add a review 
 router.post('/', (req, res) => {
    const hike = new Trail({
@@ -65,8 +76,50 @@ router.post('/', (req, res) => {
          res.json(data);
       })
       .catch(err => {
+         res.json({ message: err });
+      });
+});
+
+//POST review for an individual hike
+// Post request to add a review 
+router.put('/:id', (req, res) => {
+   const review = new Trail(
+      {
+         testing: req.body.reviews.hikeID,
+         userID: req.body.reviews.userID,
+         reviewBody: req.body.reviews.reviewBody,
+         userRating: req.body.reviews.userRating,
+         date: req.body.reviews.date,
+      }
+   );
+   review.save()
+      .then(data => {
+         res.json(data);
+      })
+      .catch(err => {
          res.json({ message: 'failed' });
       });
 });
+
+/*
+router.put('/:id', async (req, res) => {
+   try {
+      const review = await Trail.push(
+         {
+            hikeID: req.body.reviews.hikeID,
+            userID: req.body.reviews.userID,
+            reviewBody: req.body.reviews.reviewBody,
+            userRating: req.body.reviews.userRating,
+            date: req.body.reviews.date,
+         }
+      );
+      res.json(review);
+   }
+   catch (err) {
+      res.json({ message: err });
+   }
+});
+
+*/
 
 module.exports = router;

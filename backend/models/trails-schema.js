@@ -15,8 +15,8 @@ const trailSchema = mongoose.Schema({
       hikeID: { type: String, required: false },
       userID: { type: String, required: false },
       reviewBody: { type: String, required: false },
-      userRating: { type: Number, required: false },
-      date: { type: Date, required: false },
+      userRating: { type: String, required: false },
+      date: { type: Date, default: Date.now, required: false },
    }],
    tags: { type: [String], required: true },
 
