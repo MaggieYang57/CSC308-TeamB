@@ -9,8 +9,6 @@ router.get('/testing', (req, res) => {
    res.send('List of all hikes!');
 })
 
-
-
 router.get('/:id/reviews', (req, res) => {
    res.send('Get review for each hike page!');
 })
@@ -25,8 +23,7 @@ router.post('/:id/reviews', (req, res) => {
 })
 
 
-//testing GET all hikes
-
+//GET all hikes
 router.get('/', async (req, res) => {
    try {
       const hikes = await Trail.find({});
@@ -37,7 +34,7 @@ router.get('/', async (req, res) => {
    }
 });
 
-//testing GET individual hike
+//GET individual hike
 router.get('/:id', async (req, res) => {
    try {
       const hikes = await Trail.find({ "_id": req.params.id });
