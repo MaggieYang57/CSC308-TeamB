@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
 
 //REVIEWS
 
-//Post a review on the individual hike page by hikeid
+//POST method to add a review on the individual hike page by hikeid
 router.post('/:id/review', async (req, res) => {
    try {
       const newName = {
@@ -93,5 +93,24 @@ router.post('/:id/review', async (req, res) => {
    }
 });
 
+
+//DELETE individual review by id
+router.delete('/:id/review/:reviewID', async (req, res) => {
+   try {
+      const addedReview = await Trail.findOneAndUpdate(
+         {
+            _id: req.params.id
+         },
+         {
+            $pull: {
+               reviews: { _id: req.params.reviewID },
+            },
+         }
+      )
+      res.json({ 'Response': 'Review is deleted' });
+   } catch (err) {
+      res.json({ message: err });
+   }
+});
 
 module.exports = router;
