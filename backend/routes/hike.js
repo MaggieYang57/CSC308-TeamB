@@ -5,23 +5,8 @@ const trailSchema = require('../models/trails-schema');
 const Trail = mongoose.model('Trail', trailSchema, 'hike_data');
 var ObjectID = require('mongodb').ObjectID;
 
-router.get('/testing', (req, res) => {
-   res.send('List of all hikes!');
-})
 
-router.get('/:id/reviews', (req, res) => {
-   res.send('Get review for each hike page!');
-})
-
-router.get('/:id/reviews', (req, res) => {
-   res.send('Get review for each hike page!');
-})
-
-router.post('/:id/reviews', (req, res) => {
-   console.log(req.body);
-   res.send('Post a review on this hike page');
-})
-
+//HIKES
 
 //GET all hikes
 router.get('/', async (req, res) => {
@@ -56,7 +41,7 @@ router.delete('/:id', async (req, res) => {
    }
 });
 
-// Post request to add a review 
+// Post request to add a hike 
 router.post('/', (req, res) => {
    const hike = new Trail({
       title: req.body.title,
@@ -81,47 +66,32 @@ router.post('/', (req, res) => {
 });
 
 
-// IN PROGRESS: PUT review for an individual hike
-// TODO: repopulate the db with new schema
-// 60378f4722631c4ae63c47ff test hike with example 
-router.put('/:id', (req, res) => {
-   const review = new Trail(
-      {
-         hikeID: req.body.reviews.hikeID,
-         userID: req.body.reviews.userID,
-         reviewBody: req.body.reviews.reviewBody,
-         userRating: req.body.reviews.userRating,
-         date: req.body.reviews.date,
-      }
-   );
-   review.save()
-      .then(data => {
-         res.json(data);
-      })
-      .catch(err => {
-         res.json({ message: 'failed' });
-      });
-});
+//REVIEWS
 
-/*
-router.put('/:id', async (req, res) => {
+//Post a review on the individual hike page by hikeid
+router.post('/:id/review', async (req, res) => {
    try {
-      const review = await Trail.push(
+      const newName = {
+         hikeID: req.body.hikeID,
+         userID: req.body.userID,
+         reviewBody: req.body.reviewBody,
+         userRating: req.body.userRating,
+      };
+      const addedReview = await Trail.findByIdAndUpdate(
          {
-            hikeID: req.body.reviews.hikeID,
-            userID: req.body.reviews.userID,
-            reviewBody: req.body.reviews.reviewBody,
-            userRating: req.body.reviews.userRating,
-            date: req.body.reviews.date,
+            _id: req.params.id
+         },
+         {
+            $push: {
+               reviews: newName,
+            },
          }
-      );
-      res.json(review);
-   }
-   catch (err) {
+      )
+      res.json({ 'Response': 'Review is added' });
+   } catch (err) {
       res.json({ message: err });
    }
 });
 
-*/
 
 module.exports = router;

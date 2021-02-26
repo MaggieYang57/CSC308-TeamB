@@ -22,9 +22,5 @@ const trailSchema = mongoose.Schema({
 
 })
 
-// location
-// difficulty should be a float 
-
-
 //module.exports = mongoose.model('hike_data', trailSchema);
 module.exports = trailSchema
