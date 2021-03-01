@@ -29,7 +29,17 @@ router.get('/:id/reviews', (req, res) => {
 
  router.get('/', async (req, res) => {
     try {
-       const hikes = await Trail.find({});
+       const hikes = await Trail.find({}).sort({rating: -1});
+       res.json(hikes);
+    }
+    catch(err){
+      res.json({message:err});
+    }
+});
+
+ router.get('/dog-friendly', async (req, res) => {
+    try {
+       const hikes = await Trail.find({"dog_friendly" : true}).sort({rating: -1});
        res.json(hikes);
     }
     catch(err){

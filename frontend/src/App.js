@@ -6,9 +6,11 @@ import './css/App.css';
 import NavBar from './components/NavBar'
 import Table from './components/Table';
 import SinglePage from './components/SinglePage';
+import FilterBar from './components/FilterBar';
 
 function App() {
   const [message, setMessage] = useState([]);
+  const [filteredHikes, setHikes] = useState([]);
   async function fetchAll(){
      try {
         const response = await axios.get('http://localhost:3001/hike');
@@ -39,6 +41,7 @@ function App() {
             <SinglePage />
           </Route>
           <Route exact path="/hikeFinder">
+            <FilterBar />
             <Table hikeList={message} />
           </Route>
         </Switch>

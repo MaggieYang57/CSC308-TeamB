@@ -19,9 +19,11 @@ nav > div {
   align-items: center;
   justify-content: space-between;
 }
+
 h2 {
   margin-left: 7.5%;
 }
+
 h2, .logo, 
 .logo:visited,
 .logo.acitve,
@@ -46,7 +48,6 @@ a.nav-link:focus {
   color: white;
 }
 
-
 #nav-left {
   left: 0;
   width: 50%;
@@ -64,8 +65,9 @@ a.nav-link:focus {
   padding: 2px 15px; 
 }
 
-
-a.nav-link:hover {
+a.nav-link:hover,
+a.nav-link:focus
+{
   color: orange;
   transition: ease-in 0.1s;
   text-decoration: none;
