@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../css/SinglePage.css';
 
 class SinglePage extends React.Component {
