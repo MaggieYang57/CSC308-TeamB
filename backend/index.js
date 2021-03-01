@@ -12,9 +12,9 @@ app.use(bodyParser.json())
 const hikeRoute = require('./routes/hike')
 app.use('/hike', hikeRoute)
 
- 
+
 app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'CORS-enabled for all origins.'})
+   res.json({ msg: 'CORS-enabled for all origins.' })
 })
 
 const uri = process.env.DB_LINK;
@@ -25,15 +25,16 @@ if (!uri) {
 mongoose.connect(uri, {
    useNewUrlParser: true,
    useUnifiedTopology: true,
-   useCreateIndex: true
+   useCreateIndex: true,
+   useFindAndModify: false
 })
-.then(() => {
-   console.log('Atlas Connected..')
-})
-.catch(err => console.log(err));
+   .then(() => {
+      console.log('Atlas Connected..')
+   })
+   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
-  res.send('Hello world!');
+   res.send('Hello world!');
 })
 
 app.listen(3001);
