@@ -18,9 +18,9 @@ class SinglePage extends React.Component {
      icon = icon.replace("\"","");
      icon = icon.replace("\"","");
     
-     document.getElementById("weatherTempLabel").innerHTML = 'Current Weather: ' + data.main.temp + '&#176; F <br> Feels like: ' + data.main.feels_like + '&#176; F';
+     document.getElementById("weatherTempLabel").innerHTML = 'Current Temperature: ' + data.main.temp + '&#176; F <br> Feels like: ' + data.main.feels_like + '&#176; F' + '<br> Day Low: ' + data.main.temp_min + '&#176; F <br> Day High: ' + data.main.temp_max + '&#176; F' + '<br>Pressure: ' + data.main.pressure + ' hPa <br> Humidity: ' + data.main.humidity + '%';
      document.getElementById("weatherDescription").innerHTML = data.weather[0].main + ': ' + data.weather[0].description;
-     document.getElementById("windDescription").innerHTML = 'Wind: Speed: ' + data.wind.speed + ' Direction: ' + data.wind.deg + ' Gusts: ' + data.wind.gust;
+     document.getElementById("windDescription").innerHTML = 'Wind: Speed: ' + data.wind.speed + ' mph Direction: ' + data.wind.deg + '&#176;';
      document.getElementById("sunriseSunsetDescription").innerHTML = 'Sunrise: ' + moment.unix(data.sys.sunrise).format('LT') + ' Sunset: ' + moment.unix(data.sys.sunset).format('LT');
      document.getElementById("weatherIcon").src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
      return data;
