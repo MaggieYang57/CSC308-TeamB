@@ -75,4 +75,36 @@ router.get('/:id', async (req, res) => {
       });
  });
 
- module.exports = router;
+/*******************POST RATING FOR INDIV HIKE******************** */
+
+const postRating = async (id, rating) => {
+   await Trail.findByIdAndUpdate(
+         {
+            _id: id
+         },
+         {
+            $push: {
+               rating: rating,
+            },
+         }
+      )//Trail.find({ "_id": id }, function (err, hike) {
+      //hike.rating.push(Number(rating))
+      hike.save()
+     console.log(hike)
+   }
+ 
+
+router.post('/:id/rating', async (req, res) => {
+   try {
+      const _id = req.body.id
+      const rating = req.body.rating
+      console.log(_id, rating)
+      await postRating(_id, rating)
+      //res.json({ 'Response': 'Rating of '+rating+' received for Hike '+ id});
+   } catch (err) {
+      res.json({ message: err });
+   }
+});
+
+
+module.exports = router;
