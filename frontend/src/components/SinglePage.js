@@ -23,6 +23,7 @@ class SinglePage extends React.Component {
      document.getElementById("windDescription").innerHTML = 'Wind: Speed: ' + data.wind.speed + ' mph Direction: ' + data.wind.deg + '&#176;';
      document.getElementById("sunriseSunsetDescription").innerHTML = 'Sunrise: ' + moment.unix(data.sys.sunrise).format('LT') + ' Sunset: ' + moment.unix(data.sys.sunset).format('LT');
      document.getElementById("weatherIcon").src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
+     document.getElementById("weatherIcon").style.margin = '0 auto';;
      return data;
      }
      });
@@ -55,11 +56,11 @@ class SinglePage extends React.Component {
                 <br></br>
                 <div className = "boxed">
                 <h3>Current Weather Conditions</h3>
+                <img id="weatherIcon" height="100" />
                 <p id="weatherTempLabel"></p>
                 <p id="weatherDescription"></p>
                 <p id="windDescription"></p>
                 <p id="sunriseSunsetDescription"></p>
-                <img id="weatherIcon" src = "" height="100" />
                 </div>
                 <br></br>
                 <p>{this.state.tags}</p>
