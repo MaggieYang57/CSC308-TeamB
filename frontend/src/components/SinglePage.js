@@ -14,12 +14,27 @@ class SinglePage extends React.Component {
     this.state = {};
   }
 
+  getWeather() {
+    fetch('http://api.openweathermap.org/data/2.5/weather?q='+this.state.location+'&units=imperial&appid=9bb2aad28619e8c45992b312cb325c36')
+  .then(res => res.json())
+  .then(data => {
+    if(data)
+    {
+     document.getElementById("weatherTempLabel").innerHTML = data.main.temp + '&#176; F';
+     return data;
+     }
+     });
+  }
+
   componentDidMount() {
     fetch('http://localhost:3001/hike/')
       .then(res => res.json())
-      .then(data => this.setState({ ...data[0] }));
+      .then(data => {
+        this.setState({ ...data[0] });
+        this.getWeather();
+      });
   }
-
+  
   postRating = () => {
     const ratingSelect = document.getElementById('select-rating')
     const rating = +(ratingSelect.options[ratingSelect.selectedIndex].value)
@@ -51,6 +66,8 @@ class SinglePage extends React.Component {
                 </div>
                 <p className="desc">{this.state.description}</p>
                 <br></br>
+                <p>Current Weather:</p>
+                <p id="weatherTempLabel"></p>
                 <p>{this.state.tags}</p>
             </div>
             <div class="rating">
