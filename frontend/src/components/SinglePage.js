@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/SinglePage.css';
+import moment from 'moment';
 
 class SinglePage extends React.Component {
   constructor(props) {
@@ -13,7 +14,15 @@ class SinglePage extends React.Component {
   .then(data => {
     if(data)
     {
+     var icon = JSON.stringify(data.weather[0].icon);
+     icon = icon.replace("\"","");
+     icon = icon.replace("\"","");
+    
      document.getElementById("weatherTempLabel").innerHTML = data.main.temp + '&#176; F';
+     document.getElementById("weatherDescription").innerHTML = data.weather[0].main + ': ' + data.weather[0].description;
+     document.getElementById("windDescription").innerHTML = 'Wind: Speed: ' + data.wind.speed + ' Direction: ' + data.wind.deg + ' Gusts: ' + data.wind.gust;
+     document.getElementById("sunriseSunsetDescription").innerHTML = 'Sunrise: ' + moment.unix(data.sys.sunrise).format('LT') + ' Sunset: ' + moment.unix(data.sys.sunset).format('LT');
+     document.getElementById("weatherIcon").src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
      return data;
      }
      });
@@ -44,8 +53,14 @@ class SinglePage extends React.Component {
                 </div>
                 <p className="desc">{this.state.description}</p>
                 <br></br>
+                <div className = "boxed">
                 <p>Current Weather:</p>
                 <p id="weatherTempLabel"></p>
+                <p id="weatherDescription"></p>
+                <p id="windDescription"></p>
+                <p id="sunriseSunsetDescription"></p>
+                <img id="weatherIcon" src = "" height="100" />
+                </div>
                 <br></br>
                 <p>{this.state.tags}</p>
             </div>

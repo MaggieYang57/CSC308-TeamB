@@ -16,6 +16,14 @@
     color:#265b5f;
 }
 
+.boxed {
+    box-sizing: content-box;
+    width: 100%;
+    border: solid black 1px;
+    padding: 15px;
+    border-radius: 25px;
+}
+
 img{
     display: flex;
     justify-content: left;
