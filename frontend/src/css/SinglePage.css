@@ -5,13 +5,21 @@
 }
 .header h1{
     margin-left: 200px;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulisih', sans-serif;
     font-size: 30px;
     font-weight: 800;
     color:#265b5f;
 }
 .header h2{
     margin-left: 50px;
+    font-size: 25px;
+    color:#265b5f;
+}
+
+h3{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
     font-size: 25px;
     color:#265b5f;
 }

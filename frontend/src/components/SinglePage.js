@@ -18,7 +18,7 @@ class SinglePage extends React.Component {
      icon = icon.replace("\"","");
      icon = icon.replace("\"","");
     
-     document.getElementById("weatherTempLabel").innerHTML = data.main.temp + '&#176; F';
+     document.getElementById("weatherTempLabel").innerHTML = 'Current Weather: ' + data.main.temp + '&#176; F <br> Feels like: ' + data.main.feels_like + '&#176; F';
      document.getElementById("weatherDescription").innerHTML = data.weather[0].main + ': ' + data.weather[0].description;
      document.getElementById("windDescription").innerHTML = 'Wind: Speed: ' + data.wind.speed + ' Direction: ' + data.wind.deg + ' Gusts: ' + data.wind.gust;
      document.getElementById("sunriseSunsetDescription").innerHTML = 'Sunrise: ' + moment.unix(data.sys.sunrise).format('LT') + ' Sunset: ' + moment.unix(data.sys.sunset).format('LT');
@@ -54,7 +54,7 @@ class SinglePage extends React.Component {
                 <p className="desc">{this.state.description}</p>
                 <br></br>
                 <div className = "boxed">
-                <p>Current Weather:</p>
+                <h3>Current Weather Conditions</h3>
                 <p id="weatherTempLabel"></p>
                 <p id="weatherDescription"></p>
                 <p id="windDescription"></p>
