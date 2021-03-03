@@ -6,6 +6,7 @@ import './css/App.css';
 import NavBar from './components/NavBar'
 import Table from './components/Table';
 import SinglePage from './components/SinglePage';
+import HomePage from './components/HomePage';
 
 function App() {
   const [message, setMessage] = useState([]);
@@ -36,6 +37,9 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
+          <Route exact path ="/">
+            <HomePage />
+          </Route>
           <Route exact path="/hike">Sup mofos</Route>
           <Route exact path="/singlepage">
             <SinglePage />

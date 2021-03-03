@@ -30,7 +30,7 @@ class SinglePage extends React.Component {
     fetch('http://localhost:3001/hike/')
       .then(res => res.json())
       .then(data => {
-        this.setState({ ...data[0] });
+        this.setState({ ...data[1] });
         this.getWeather();
       });
   }
@@ -59,21 +59,21 @@ class SinglePage extends React.Component {
                 <h2>- {this.state.location}</h2>
             </div>
             <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="300" />
-            <div className = "info">
+            <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
                   <h2 id = "rating">★{this.state.rating}</h2>
                 </div>
-                <p className="desc">{this.state.description}</p>
+                <p id="desc">{this.state.description}</p>
                 <br></br>
                 <p>Current Weather:</p>
-                <p id="weatherTempLabel"></p>
+                <p id="weatherTempLabel" />
                 <br></br>
                 <p>{this.state.tags}</p>
             </div>
-            <div class="rating">
+            <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
-              <select id="select-rating">
+              <select id="select-rating" length='20px'>
                 <option value="1">1 ★</option>
                 <option value="2">2 ★</option>
                 <option value="3">3 ★</option>

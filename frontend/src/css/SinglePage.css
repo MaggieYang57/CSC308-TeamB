@@ -24,15 +24,32 @@ img{
 }
 
 /****************side information*******************/
-.info{
+.single-info{
     text-align: left;
     justify-content: left;
     margin-top: -300px;
     margin-left: 670px;
     margin-right: 200px;
-
 }
-/********rating********/
+.single-info p {
+    text-align: left;
+    justify-content: left;
+    font-family: 'Quicksand', sans-serif;
+    font-weight:800;
+    font-size: 20px;
+}
+#weatherTempLabel{
+    margin-top:-57px;
+    margin-left:190px;
+}
+#desc
+{
+    margin: 0;
+    font-weight:500;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+}
+
 .stats{
     display: flex;
     align-items: center;
@@ -51,26 +68,25 @@ img{
 #rating{
     color: #ff8b3d;
 }
-/************************/
-.desc
-{
-    margin: 0;
-    background-color: E7D8C9;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-}
-/*************************************************/
 
+.rate-me h3
+{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color:#265b5f;
+}
 /**********************Reviews********************/
 .reviews{
     display: flex;
     justify-content: left;
-    margin-top: 70px;
+    margin-top: 1vw;
 }
 .reviews h2{
     display: flex;
     justify-content: left;
     margin-left: 200px;
     font-size: 25px;
+    font-weight: 800;
     color:#265b5f;
 }
