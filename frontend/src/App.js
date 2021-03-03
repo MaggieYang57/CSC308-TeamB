@@ -21,11 +21,13 @@ function App() {
      }
   }
 
+
   useEffect(() => {
       fetchAll().then( result => {
          if (result)
             setMessage(result);
       });
+
   }, [] );
 
   return (

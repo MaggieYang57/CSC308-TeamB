@@ -68,6 +68,7 @@ class SinglePage extends React.Component {
                 <br></br>
                 <p>Current Weather:</p>
                 <p id="weatherTempLabel"></p>
+                <br></br>
                 <p>{this.state.tags}</p>
             </div>
             <div class="rating">

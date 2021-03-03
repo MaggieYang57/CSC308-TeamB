@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Float = require('mongoose-float').loadType(mongoose, 2);
 
 const types = mongoose.Schema.Types;
 const trailSchema = mongoose.Schema({
