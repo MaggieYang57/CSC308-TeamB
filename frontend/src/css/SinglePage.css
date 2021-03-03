@@ -46,18 +46,9 @@ img{
     margin-top: -300px;
     margin-left: 670px;
     margin-right: 200px;
-}
-.single-info p {
-    text-align: left;
-    justify-content: left;
     font-family: 'Quicksand', sans-serif;
-    font-weight:800;
-    font-size: 20px;
 }
-#weatherTempLabel{
-    margin-top:-57px;
-    margin-left:190px;
-}
+
 #desc
 {
     margin: 0;
