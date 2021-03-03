@@ -9,7 +9,7 @@ const trailSchema = mongoose.Schema({
    //length: {type: String, required: false},
    //elevation_gain: {type: String, required: false},
    //route_type: {type: String, required: false},
-   rating: { type: Number, required: true },
+   rating: { type: [Number], required: true },
    reviews: [{
       hikeID: { type: String, required: false },
       userID: { type: String, required: false },
