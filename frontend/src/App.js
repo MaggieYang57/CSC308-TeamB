@@ -32,14 +32,16 @@ function App() {
 
   return (
     <BrowserRouter>
+      <title>SLO Hikes</title>
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path ="/">
-            <Table hikeList={message} />
-          </Route>
-          <Route exact path ="/singlepage">
+          <Route exact path="/hike">Sup mofos</Route>
+          <Route exact path="/singlepage">
             <SinglePage />
+          </Route>
+          <Route exact path="/hikeFinder">
+            <Table hikeList={message} />
           </Route>
         </Switch>
       </div>
