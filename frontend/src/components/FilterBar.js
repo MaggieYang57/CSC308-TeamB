@@ -1,23 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
 import "../css/filterBar.css";
 import SearchBar from "./SearchBar";
+import FilterButton from "./FilterButton";
 
+function FilterBar() {
 
-class FilterBar extends Component {
-  render() {
-    return (
-      <div id="filterBar">
-        <SearchBar />
-        <div id="filter-buttons">
-          <button>Dog Friendly</button>
-          <button>Family Friendly</button>
-          <button>Horseback Riding</button>
-          <button>Bike Riding</button>
-        </div>
+  return (
+    <div id="filterBar">
+      <SearchBar />
+      <div id="filter-buttons">
+        <FilterButton name="Dog Friendly" filterType='dog-friendly' />
+        <FilterButton name="Family Friendly" filterType='family-friendly' />
+        <FilterButton name="Horseback Riding" filterType='horseback-riding' />
+        <FilterButton name="Bike Riding" filterType='bike-riding' />
       </div>
-    );
-  }
+    </div>
+  );
+  
 }
 
 export default FilterBar;
