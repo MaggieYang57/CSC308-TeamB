@@ -11,7 +11,6 @@ export function Navigation({}) {
 			  	  <img class=" nav-link " src="/images/SH.png" style={{width: 200, height: 53}}     />
 			  	  <a class="nav-link text-light" href="/Profile">Profile</a>
 				  <a class="nav-link text-light" href="/singlepage">Single</a>
-				  <a class="nav-link text-light" href="/allhikes">All Hikes</a>
 				  <a class="nav-link text-light" href="/hikeFinder">HikeFinder</a>
 				  
 			  	</form>

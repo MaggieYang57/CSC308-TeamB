@@ -8,7 +8,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation'
 import Table from './components/Table';
 import SinglePage from './SinglePage';
-import AllHikes from './AllHikes';
+import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
 
 function App() {
@@ -47,11 +47,8 @@ function App() {
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
-          <Route exact path="/allhikes">
-            <AllHikes />
-          </Route>
           <Route exact path="/hikeFinder">
-            <Table hikeList={message} />
+            <HikeFinder />
           </Route>
         </Switch>
       </div>

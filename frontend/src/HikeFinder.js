@@ -22,6 +22,16 @@ class AllHikes extends React.Component {
   render() {
     return (
       <Container >
+      <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Hike Finder</b>
+      <p class="text text-center " style={{fontSize: 30, color: "#59BCA6"}}>Find one that's just right for you!</p>
+
+      <hr  style={{
+          color: '#BDBDBDBD',
+          height: 3,
+          
+
+      }}/>
+
         <Col>
           {hikes.map(hike => (
             <Row className="mb-5" key={'${hike.id}'} style={{margin: 20}}>
