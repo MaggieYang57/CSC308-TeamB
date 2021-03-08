@@ -7,7 +7,7 @@ require('dotenv').config();
 
 let data;
 try {
-  data = fs.readFileSync('./trails2.json', 'utf8')
+  data = fs.readFileSync('./trails3.json', 'utf8')
 } catch (err) {
   console.error(err)
 }
