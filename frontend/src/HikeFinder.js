@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { HikeCardList } from './components/HikeCardList'
-import hikes from './testData';
+import hikes from './trails3';
 
 const averageRatings = (ratings) => {
   let sum = 0
