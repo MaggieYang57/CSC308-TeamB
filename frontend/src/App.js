@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
-import NavBar from './components/NavBar'
+import { Container, Row, Col } from 'react-bootstrap';
+import { Navigation } from './components/Navigation'
 import Table from './components/Table';
-import SinglePage from './components/SinglePage';
-import HomePage from './components/HomePage';
+import SinglePage from './SinglePage';
+import HikeFinder from './HikeFinder';
+import HomePage from './HomePage';
 
 function App() {
   const [message, setMessage] = useState([]);
@@ -34,8 +37,8 @@ function App() {
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
-      <div className="App">
-        <NavBar />
+      <div className="App " style={{width: 1440, margin: "auto"}}>
+        <Navigation />
         <Switch>
           <Route exact path ="/">
             <HomePage />
@@ -45,7 +48,7 @@ function App() {
             <SinglePage />
           </Route>
           <Route exact path="/hikeFinder">
-            <Table hikeList={message} />
+            <HikeFinder />
           </Route>
         </Switch>
       </div>
