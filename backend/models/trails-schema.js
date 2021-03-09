@@ -18,7 +18,6 @@ const trailSchema = mongoose.Schema({
       date: { type: Date, default: Date.now, required: false },
    }],
    tags: { type: [String], required: true },
-
 })
 
 //module.exports = mongoose.model('hike_data', trailSchema);
