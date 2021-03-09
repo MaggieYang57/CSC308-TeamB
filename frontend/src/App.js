@@ -37,7 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
-      <div className="App " style={{width: 1440, margin: "auto"}}>
+      <div className="App " style={{margin: "auto"}}>
         <Navigation />
         <Switch>
           <Route exact path ="/">
