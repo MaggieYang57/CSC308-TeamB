@@ -16,7 +16,7 @@ const trailSchema = mongoose.Schema({
     biking: {type: Boolean, required: true},
     bird_watching: {type: Boolean, required: true},
     family_friendly: {type: Boolean, required: true},
-
+    imagesrc: {type: String, required: true},
 })
 
 // location
