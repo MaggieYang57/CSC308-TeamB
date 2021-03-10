@@ -7,8 +7,8 @@ export function Navigation({}) {
 
 			<nav class="navbar navbar-dark " style={{backgroundColor: '#2c6674'}}>
 			  <a class="navbar-brand" href="/">
-			  	<form class="form-inline " style = {{marginLeft: '-10vw'}} >
-			  	  <img class=" nav-link " src="/images/SH.png" style={{width: 200, height: 53}}     />
+			  	<form class="form-inline " style = {{marginLeft: '-11vw'}} >
+			  	  <img class="nav-link" src="/images/SH.png" style={{width: 200, height: 53, borderRadius: 0}}/>
 			  	  <a class="nav-link text-light" href="/Profile">Profile</a>
 				  <a class="nav-link text-light" href="/singlepage">Single</a>
 				  <a class="nav-link text-light" href="/hikeFinder">HikeFinder</a>
