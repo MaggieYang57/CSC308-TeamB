@@ -22,7 +22,11 @@ class SinglePage extends React.Component {
     fetch('http://localhost:3001/hike/')
       .then(res => res.json())
       .then(data => {
+        if (data)
+        {
         this.setState({ ...data[1] });
+        document.getElementById('rating-num').innerText = averageRatings(this.state.rating)
+        }
       });
   }
   
@@ -34,12 +38,12 @@ class SinglePage extends React.Component {
       rating: rating
     }
   
-    fetch('http://localhost:3001/hike/60388d0f23c5fd01cb21ed6b', {
+    fetch('http://localhost:3001/hike/' + data.id +'/rating', {
       method: 'POST',
       body: JSON.stringify(data)})
     .then(() => {
       this.state.rating.push(rating)
-      document.getElementById('rating').innerText = averageRatings(this.state.rating)})
+      document.getElementById('rating-num').innerText = averageRatings(this.state.rating)})
   }
 
   render() {
@@ -53,7 +57,7 @@ class SinglePage extends React.Component {
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
-                  <h2 id = "rating">★{this.state.rating}</h2>
+                  <h2 id = "rating">★<h2 id = "rating-num"/></h2>
                 </div>
                 <p id="desc">{this.state.description}</p>
                 <br></br>

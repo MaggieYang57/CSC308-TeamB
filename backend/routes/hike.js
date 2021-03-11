@@ -128,7 +128,7 @@ const postRating = async (id, rating) => {
       )//Trail.find({ "_id": id }, function (err, hike) {
       //hike.rating.push(Number(rating))
       hike.save()
-     console.log(hike)
+     //console.log(hike)
    }
  
 
@@ -138,7 +138,7 @@ router.post('/:id/rating', async (req, res) => {
       const rating = req.body.rating
       console.log(_id, rating)
       await postRating(_id, rating)
-      //res.json({ 'Response': 'Rating of '+rating+' received for Hike '+ id});
+      res.json({ 'Response': 'Rating of '+rating+' received for Hike '+ id});
    } catch (err) {
       res.json({ message: err });
    }
