@@ -1,8 +1,12 @@
 import React from 'react';
 import './css/SinglePage.css';
 import moment from 'moment';
+import {withRouter} from "react-router-dom";
+
 
 import WeatherWidget from './components/WeatherWidget';
+
+
 
 const averageRatings = (ratings) => {
   let sum = 0
@@ -17,15 +21,30 @@ class SinglePage extends React.Component {
     this.state = {};
   }
 
+  
+componentDidMount() {
+    const { match: { params } } = this.props;
 
-  componentDidMount() {
     fetch('http://localhost:3001/hike/')
       .then(res => res.json())
       .then(data => {
-        this.setState({ ...data[1] });
+        console.log('data', data);
+        console.log('hike', this.props.match);
+        const hikeID = this.props.match.params.id;
+        console.log('dataLength', data.length);       
+        for (var i = 0; i < data.length; i++)
+        {  
+           if(data[i]._id == hikeID)
+           {   
+               console.log('found', data[i]);
+               this.setState( {...data[i]} );
+           }
+        }        
+
       });
-  }
-  
+}
+ 
+ 
   postRating = () => {
     const ratingSelect = document.getElementById('select-rating')
     const rating = +(ratingSelect.options[ratingSelect.selectedIndex].value)
@@ -80,4 +99,4 @@ class SinglePage extends React.Component {
     );
   }
 }
-export default SinglePage;
+export default withRouter(SinglePage);

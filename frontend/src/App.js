@@ -30,6 +30,7 @@ function App() {
       fetchAll().then( result => {
          if (result)
             setMessage(result);
+            console.log(result);
       });
 
   }, [] );
@@ -43,7 +44,10 @@ function App() {
           <Route exact path ="/">
             <HomePage />
           </Route>
-          <Route exact path="/hike">Sup mofos</Route>
+          <Route exact path="/hike">Test</Route>
+
+          <Route exact path="/hike/:id" component={SinglePage} />          
+          
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
