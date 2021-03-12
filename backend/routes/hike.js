@@ -5,7 +5,6 @@ const trailSchema = require('../models/trails-schema');
 const Trail = mongoose.model('Trail', trailSchema, 'hike_data');
 var ObjectID = require('mongodb').ObjectID;
 
-
 //HIKES
 
 //GET all hikes
@@ -115,30 +114,32 @@ router.delete('/:id/review/:reviewID', async (req, res) => {
 
 /*******************POST RATING FOR INDIV HIKE******************** */
 
-const postRating = async (id, rating) => {
-   await Trail.findByIdAndUpdate(
+const postRating = async (id, rate) => {
+   const hike = await Trail.findByIdAndUpdate(
          {
             _id: id
          },
          {
             $push: {
-               rating: rating,
+               rating: rate,
             },
          }
       )//Trail.find({ "_id": id }, function (err, hike) {
       //hike.rating.push(Number(rating))
       hike.save()
-     //console.log(hike)
+      console.log(hike)
    }
  
 
 router.post('/:id/rating', async (req, res) => {
    try {
-      const _id = req.body.id
+      res.status(200)  
+      const _id = req.params.id
       const rating = req.body.rating
       console.log(_id, rating)
       await postRating(_id, rating)
-      res.json({ 'Response': 'Rating of '+rating+' received for Hike '+ id});
+      res.json({ 'Response': 'Rating of '+rating+' received for Hike '+ _id});
+      return 
    } catch (err) {
       res.json({ message: err });
    }

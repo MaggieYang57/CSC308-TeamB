@@ -6,10 +6,11 @@ import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation'
-import Table from './components/Table';
 import SinglePage from './SinglePage';
 import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
+import Login from './LoginPage';
+import Signup from './SignupPage';
 
 function App() {
   const [message, setMessage] = useState([]);
@@ -25,7 +26,6 @@ function App() {
      }
   }
 
-
   useEffect(() => {
       fetchAll().then( result => {
          if (result)
@@ -34,7 +34,6 @@ function App() {
 
   }, [] );
 
-  
 
   return (
     <BrowserRouter>
@@ -51,6 +50,12 @@ function App() {
           </Route>
           <Route exact path="/hikeFinder">
             <HikeFinder />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </div>

@@ -32,17 +32,19 @@ class SinglePage extends React.Component {
   
   postRating = () => {
     const ratingSelect = document.getElementById('select-rating')
-    const rating = +(ratingSelect.options[ratingSelect.selectedIndex].value)
+    const rate = +(ratingSelect.options[ratingSelect.selectedIndex].value)
     const data = {
-      id: this.state._id,
-      rating: rating
+      rating: rate
     }
   
-    fetch('http://localhost:3001/hike/' + data.id +'/rating', {
+    fetch('http://localhost:3001/hike/' + this.state._id +'/rating', {
       method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)})
     .then(() => {
-      this.state.rating.push(rating)
+      this.state.rating.push(rate)
       document.getElementById('rating-num').innerText = averageRatings(this.state.rating)})
   }
 
@@ -53,7 +55,7 @@ class SinglePage extends React.Component {
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
             </div>
-            <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="300" />
+            <img src = {this.state.imagesrc} height="300" />
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>

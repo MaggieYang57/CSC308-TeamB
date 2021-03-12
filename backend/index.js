@@ -5,8 +5,11 @@ const express = require('express');
 const app = express();
 app.use(cors())
 const bodyParser = require('body-parser')
-env.config();
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+   extended: true
+ }))
+env.config();
 
 
 const hikeRoute = require('./routes/hike')
