@@ -3,9 +3,7 @@ import './css/SinglePage.css';
 import moment from 'moment';
 import {withRouter} from "react-router-dom";
 
-
 import WeatherWidget from './components/WeatherWidget';
-
 
 
 const averageRatings = (ratings) => {
@@ -70,7 +68,7 @@ componentDidMount() {
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
             </div>
-            <img src = {this.state.imagesrc} height="300" />
+            <img src = {this.state.imagesrc} height="300" width="400" />
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
