@@ -14,9 +14,8 @@ export function HikeCardList({ hike, setOrdered}) {
 			  <Col>
 				  <Card.Body>
 				    <Card.Title>
-				    	<p class="card-text text-left">{hike.title}</p>
                                         <Link to={"/hike/" + hike._id}>
-                                        <Button> {hike._id} </Button> 
+                                        <p class="card-text text-left">{hike.title}</p>
                                         </Link>
 				    </Card.Title>
 				    <Card.Text>
