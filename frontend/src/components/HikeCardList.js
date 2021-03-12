@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, Badge, Button, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 export function HikeCardList({ hike, setOrdered}) {
 	return (
@@ -13,6 +15,9 @@ export function HikeCardList({ hike, setOrdered}) {
 				  <Card.Body>
 				    <Card.Title>
 				    	<p class="card-text text-left">{hike.title}</p>
+                                        <Link to={"/hike/" + hike._id}>
+                                        <Button> {hike._id} </Button> 
+                                        </Link>
 				    </Card.Title>
 				    <Card.Text>
 				      <p class="card-text text-left">{hike.location}</p>

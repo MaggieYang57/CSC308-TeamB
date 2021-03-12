@@ -4,7 +4,6 @@ import moment from 'moment';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { HikeCardList } from './components/HikeCardList'
-import hikes from './trails3';
 
 const averageRatings = (ratings) => {
   let sum = 0
@@ -16,9 +15,20 @@ const averageRatings = (ratings) => {
 class AllHikes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { hikes: [] };
   }
+  
+  componentDidMount() {
 
+    fetch('http://localhost:3001/hike/')
+      .then(res => res.json())
+      .then(data => {
+        console.log('data', data);
+        console.log('dataLength', data.length);
+        this.state.hikes = data;
+      });
+  }
+  
   render() {
     return (
       <Container >
@@ -33,7 +43,7 @@ class AllHikes extends React.Component {
       }}/>
 
         <Col>
-          {hikes.map(hike => (
+          {this.state.hikes.map(hike => (
             <Row className="mb-5" key={'${hike.id}'} style={{margin: 20}}>
               <HikeCardList hike={hike} />
             </Row>
