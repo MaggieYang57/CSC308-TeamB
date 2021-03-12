@@ -8,6 +8,7 @@ const reviewSchema = mongoose.Schema({
    body: {type: String, required: true},
    date: { type: Date, default: Date.now, required: false },
    difficulty: {type: Number, required: false},
+   deleted: {type: Boolean, required: false},
    accessibility: {type: Number, required: false},
    dog_friendly: {type: Boolean, required: false},
    horseback_riding: {type: Boolean, required: false},
