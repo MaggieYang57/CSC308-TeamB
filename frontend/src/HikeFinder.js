@@ -44,7 +44,7 @@ class AllHikes extends React.Component {
 
         <Col>
           {this.state.hikes.map(hike => (
-            <Row className="mb-5" key={'${hike.id}'} style={{margin: 20}}>
+            <Row className="mb-5" key={this.state.hikes._id} style={{margin: 20}}>
               <HikeCardList hike={hike} />
             </Row>
           ))}
