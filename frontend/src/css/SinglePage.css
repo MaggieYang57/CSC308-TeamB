@@ -73,6 +73,11 @@ img{
     color: #10A5F5;
 }
 #rating{
+    display: flex;
+    color: #ff8b3d;
+}
+#rating-num{
+    display: flex;
     color: #ff8b3d;
 }
 

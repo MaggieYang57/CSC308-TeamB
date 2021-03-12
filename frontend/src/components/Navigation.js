@@ -15,9 +15,9 @@ export function Navigation({}) {
 				  
 			  	</form>
 			  </a>
-			  <form class="form-inline" style = {{marginRight: '2vw'}}>
-			    <button class="btn btn-outline-light my-2 my-sm-0 m-3 border border-white" type="submit">Sign Up</button>
-			    <button class="btn btn-outline-light my-2 my-sm-0 border border-white" type="submit">Register</button>
+			  <form class="form-inline" style = {{marginRight: '2vw'}} href="/">
+			    <a class="btn btn-outline-light my-2 my-sm-0 m-3 border border-white" href="/login">Login</a>
+			    <a class="btn btn-outline-light my-2 my-sm-0 border border-white" href="/signup">Sign Up</a>
 			  </form>
 			</nav>
 

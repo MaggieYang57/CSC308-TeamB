@@ -38,27 +38,29 @@ componentDidMount() {
            {   
                console.log('found', data[i]);
                this.setState( {...data[i]} );
+               document.getElementById('rating-num').innerText = averageRatings(this.state.rating)
            }
         }        
-
       });
 }
  
  
   postRating = () => {
     const ratingSelect = document.getElementById('select-rating')
-    const rating = +(ratingSelect.options[ratingSelect.selectedIndex].value)
+    const rate = +(ratingSelect.options[ratingSelect.selectedIndex].value)
     const data = {
-      id: this.state._id,
-      rating: rating
+      rating: rate
     }
   
-    fetch('http://localhost:3001/hike/60388d0f23c5fd01cb21ed6b', {
+    fetch('http://localhost:3001/hike/' + this.state._id +'/rating', {
       method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)})
     .then(() => {
-      this.state.rating.push(rating)
-      document.getElementById('rating').innerText = averageRatings(this.state.rating)})
+      this.state.rating.push(rate)
+      document.getElementById('rating-num').innerText = averageRatings(this.state.rating)})
   }
 
   render() {
@@ -68,11 +70,11 @@ componentDidMount() {
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
             </div>
-            <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="300" />
+            <img src = {this.state.imagesrc} height="300" />
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
-                  <h2 id = "rating">★{this.state.rating}</h2>
+                  <h2 id = "rating">★<h2 id = "rating-num"/></h2>
                 </div>
                 <p id="desc">{this.state.description}</p>
                 <br></br>
