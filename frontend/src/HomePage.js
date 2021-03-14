@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, Badge, Button, Row, Col } from 'react-bootstrap';
 import './css/HomePage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { HikeCardList } from './components/HikeCardList'
+
 
 function HomePage(props){
     return (
@@ -21,33 +23,67 @@ function HomePage(props){
             </div>
             <div className = "featured-hikes">
                 <div id="featured-title">
-                    <b class="text text-center " style={{fontSize: 35, color: "#2C6674", marginLeft: "7vw"}}>Most Popular Hikes</b>
+                    <b class="text text-left" style={{fontSize: 35, color: "#2C6674", marginLeft: "7vw"}}>Most Popular Hikes<hr/></b>
                 </div>
-                <div className = "row">
-                    <div id = "column1">
-                        <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="120" />
-                        <div className = "info">
-                            <h1>Hike Title</h1>
-                            <h2>Location</h2>
-                            <p>Short description here</p>
-                        </div>
-                    </div>
-                    <div id = "column2">
-                        <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="120" />
-                        <div className = "info">
-                            <h1>Hike Title</h1>
-                            <h2>Location</h2>
-                            <p>Short description here</p>
-                        </div>
-                    </div>
-                    <div id = "column3">
-                        <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="120" />
-                        <div className = "info">
-                            <h1>Hike Title</h1>
-                            <h2>Location</h2>
-                            <p>Short description here</p>
-                        </div>
-                    </div>
+                <div className = "card-deck" style={{marginLeft:'1.5vw', marginRight: '1.5vw' }}>
+                    <Col>
+                        <Row className="mb-5" style={{margin: 20}}>
+                            {props.hikeList.slice(0,1).map(hike => (
+                            <Col>
+                                <Card.Body>
+                                    <Card.Title>
+                                            <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                            <Link to={"/hike/" + hike._id}>
+                                            <p class=" h5 card-text text-left text-primary font-weight-bold" style={{marginTop: "2vw"}}>{hike.title}</p>
+                                            </Link>
+                                    </Card.Title>
+                                    <Card.Text>
+                                    <p class="card-text text-left" style={{fontWeight:'bold'}}>{hike.location}</p>
+                                    </Card.Text>
+
+                                    <Card.Text>
+                                    <p class="card-text text-left">{hike.description.substring(0,150) + "..."}</p>
+                                    </Card.Text>
+                                </Card.Body>
+                            </Col>))}
+                            {props.hikeList.slice(1,2).map(hike => (
+                            <Col>
+                                <Card.Body>
+                                    <Card.Title>
+                                            <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                            <Link to={"/hike/" + hike._id}>
+                                            <p class=" h5 card-text text-left text-primary font-weight-bold" style={{marginTop: "2vw"}}>{hike.title}</p>
+                                            </Link>
+                                    </Card.Title>
+                                    <Card.Text>
+                                    <p class="card-text text-left" style={{fontWeight:'bold'}}>{hike.location}</p>
+                                    </Card.Text>
+
+                                    <Card.Text>
+                                    <p class="card-text text-left">{hike.description.substring(0,150) + "..."}</p>
+                                    </Card.Text>
+                                </Card.Body>
+                            </Col>))}
+                            {props.hikeList.slice(2,3).map(hike => (
+                            <Col>
+                                <Card.Body>
+                                    <Card.Title>
+                                            <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                            <Link to={"/hike/" + hike._id}>
+                                            <p class=" h5 card-text text-left text-primary font-weight-bold" style={{marginTop: "2vw"}}>{hike.title}</p>
+                                            </Link>
+                                    </Card.Title>
+                                    <Card.Text>
+                                    <p class="card-text text-left" style={{fontWeight:'bold'}}>{hike.location}</p>
+                                    </Card.Text>
+
+                                    <Card.Text>
+                                    <p class="card-text text-left">{hike.description.substring(0,150) + "..."}</p>
+                                    </Card.Text>
+                                </Card.Body>
+                            </Col>))}
+                        </Row>
+                    </Col>
                 </div>
             </div>
         </div>

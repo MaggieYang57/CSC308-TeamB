@@ -100,7 +100,7 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path ="/">
-            <HomePage/>
+            <HomePage hikeList={appState.baseHikeData}/>
           </Route>
           <Route exact path="/hike">Test</Route>
 
