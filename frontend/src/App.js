@@ -12,8 +12,7 @@ import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
 import Login from './LoginPage';
 import Signup from './SignupPage';
-import FilterBar from './components/FilterBar';
-import Table from './components/Table';
+import FilterBar from './components/FilterBar'
 
 function App() {
   const [appState, setAppState] = useState({
@@ -112,8 +111,7 @@ function App() {
           </Route>
           <Route exact path="/hikeFinder">
             <FilterBar onChange={handleFilterChange}/>
-            <Table hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
-            <HikeFinder />
+            <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
           </Route>
           <Route exact path="/login">
             <Login />
