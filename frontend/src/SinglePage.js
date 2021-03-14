@@ -93,6 +93,7 @@ componentDidMount() {
 					  </div>
             <div className = "reviews">
                 <h2 class="reviews-title"><hr />Reviews<hr /></h2>
+                <button id="review-button">Write a hike review</button>
                 <p>{this.state.reviews}</p>
             </div>
         </div>

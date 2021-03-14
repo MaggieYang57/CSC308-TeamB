@@ -147,3 +147,25 @@ img{
    margin: 5px 10px;
    border-top: 1px solid #265b5f;
 }
+
+#review-button
+{
+    -webkit-appearance: none;
+    display: flex;
+    justify-content: left;
+    padding: 0.75rem 1.25rem;
+    margin-left: 15%;
+    vertical-align: middle;
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    text-transform: none;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #0366ee;
+    border-radius: 10px;
+    background: #0366ee;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+}
