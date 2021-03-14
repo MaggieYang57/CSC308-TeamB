@@ -106,9 +106,6 @@ function App() {
 
           <Route exact path="/hike/:id" component={SinglePage} />          
           
-          <Route exact path="/singlepage">
-            <SinglePage />
-          </Route>
           <Route exact path="/hikeFinder">
             <FilterBar onChange={handleFilterChange}/>
             <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
