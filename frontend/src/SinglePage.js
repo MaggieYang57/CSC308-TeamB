@@ -92,7 +92,8 @@ componentDidMount() {
               <button id="post-rating" onClick = {this.postRating}>Post Rating</button>
 					  </div>
             <div className = "reviews">
-                <h2>Reviews</h2>
+                <h2 class="reviews-title"><hr />Reviews<hr /></h2>
+                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
                 <p>{this.state.reviews}</p>
             </div>
         </div>
