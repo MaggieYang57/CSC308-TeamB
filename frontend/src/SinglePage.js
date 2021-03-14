@@ -4,7 +4,8 @@ import moment from 'moment';
 import {withRouter} from "react-router-dom";
 
 import WeatherWidget from './components/WeatherWidget';
-
+import ReviewTable from './components/ReviewTable';
+import reviewData from './tempReviews.json';
 
 const averageRatings = (ratings) => {
   let sum = 0
@@ -96,6 +97,7 @@ componentDidMount() {
                 <h2 class="reviews-title"><hr />Reviews<hr /></h2>
                 <p>{this.state.reviews}</p>
             </div>
+            <ReviewTable reviewList={reviewData}/>
         </div>
     );
   }
