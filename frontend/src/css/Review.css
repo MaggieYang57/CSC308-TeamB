@@ -135,20 +135,16 @@ input[type="radio"] {
 	margin: 5px;
 }
 
-#signup-button {
-	margin: 30px;
+#review-button {   
 	overflow: hidden;
-	padding: 12px 170px;
+	padding: 12px 17px;
+   /* TODO: Hardcoded value. Looks good on screen 1450px */
+   margin-left: 300px;
 	border: none;
 	font-weight: 600;
-	font-size: 20px;
-	letter-spacing: 2px;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-property: color, background-color;
-	transition-property: color, background-color;
+	font-size: 16px;
+	align-self:flex-end;
+	
 }
 #signup-button:hover {
 	background-color: #2098d1;

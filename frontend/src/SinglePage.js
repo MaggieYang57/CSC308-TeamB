@@ -67,12 +67,13 @@ componentDidMount() {
             <div className= "header">
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
+                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
             </div>
             <img src = {this.state.imagesrc} height="300" width="400" />
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
-                  <h2 id = "rating">★<h2 id = "rating-num"/></h2>
+                  <h2 id = "rating">Rating ★<h2 id = "rating-num"/></h2>
                 </div>
                 <p id="desc">{this.state.description}</p>
                 <br></br>
@@ -93,7 +94,6 @@ componentDidMount() {
 					  </div>
             <div className = "reviews">
                 <h2 class="reviews-title"><hr />Reviews<hr /></h2>
-                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
                 <p>{this.state.reviews}</p>
             </div>
         </div>
