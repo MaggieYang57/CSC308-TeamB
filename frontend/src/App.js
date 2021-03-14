@@ -6,12 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import { Navigation } from './components/Navigation'
+import { Navigation } from './components/Navigation';
 import SinglePage from './SinglePage';
 import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
 import Login from './LoginPage';
 import Signup from './SignupPage';
+import FilterBar from './components/FilterBar';
+import Table from './components/Table';
 
 function App() {
   const [appState, setAppState] = useState({
