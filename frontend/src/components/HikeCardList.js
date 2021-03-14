@@ -9,13 +9,13 @@ export function HikeCardList({ hike, setOrdered}) {
 			 >
 		  <Row className='no-gutters'>
 			  <Col md={5} lg={3}  >
-			  	<Card.Img variant="top" src="/images/default.jpg" fluid />
+			  	<Card.Img variant="top" src={hike.imagesrc} style={{height: '9rem'}}fluid />
 			  </Col>
 			  <Col>
 				  <Card.Body>
 				    <Card.Title>
                                         <Link to={"/hike/" + hike._id}>
-                                        <p class="card-text text-left">{hike.title}</p>
+                                        <p class=" h5 card-text text-left text-primary font-weight-bold">{hike.title}</p>
                                         </Link>
 				    </Card.Title>
 				    <Card.Text>

@@ -17,20 +17,18 @@ class AllHikes extends React.Component {
     super(props);
     this.state = { hikes: [] };
   }
-  
-  componentDidMount() {
 
-    fetch('http://localhost:3001/hike/')
+  render() {
+    
+   fetch('http://localhost:3001/hike/')
       .then(res => res.json())
       .then(data => {
         console.log('data', data);
         console.log('dataLength', data.length);
-        this.state.hikes = data;
-      });
-  }
-  
-  render() {
-    return (
+        this.setState({ hikes: data});
+   });
+
+   return (
       <Container >
       <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Hike Finder</b>
       <p class="text text-center " style={{fontSize: 30, color: "#59BCA6"}}>Find one that's just right for you!</p>
