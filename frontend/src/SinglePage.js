@@ -95,7 +95,6 @@ componentDidMount() {
 					  </div>
             <div className = "reviews">
                 <h2 class="reviews-title"><hr />Reviews<hr /></h2>
-                <p>{this.state.reviews}</p>
             </div>
             <ReviewTable reviewList={reviewData}/>
         </div>
