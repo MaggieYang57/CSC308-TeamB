@@ -3,6 +3,7 @@ import axios from "axios";
 import "../css/filterBar.css";
 import SearchBar from "./SearchBar";
 import FilterButton from "./FilterButton";
+import FilterDifficulty from "./FilterDifficulty";
 
 function FilterBar(props) {
 
@@ -15,18 +16,7 @@ function FilterBar(props) {
         <FilterButton name="Horseback Riding" filterType='horseback_riding' onChange={props.onChange}/>
         <FilterButton name="Bike Riding" filterType='biking' onChange={props.onChange}/>
       </div>
-      <div id="difficultyFilter">
-        <form>
-        <label for="difficulty">Filter Hikes by Difficulty:</label>
-          <select name="difficulty" onChange={props.onChange}>
-            <option value="All">All</option>
-            <option value="Easy">Easy</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Hard">Hard</option>
-            <option value="Expert">Expert</option>
-          </select>
-        </form>
-      </div>
+      <FilterDifficulty onChange={props.onChange}/>
     </div>
   );
   
