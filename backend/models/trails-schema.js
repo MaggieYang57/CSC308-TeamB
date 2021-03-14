@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const types = mongoose.Schema.Types;
 
 const reviewSchema = mongoose.Schema({
-   hike_id: {type: types.ObjectId, required: true},
-   user_id: {type: types.ObjectId, required: false},
+   hike_id: {type: String, required: true},
+   user_id: {type: String, required: false},
    body: {type: String, required: true},
    date: { type: Date, default: Date.now, required: false },
    difficulty: {type: Number, required: false},
-   deleted: {type: Boolean, required: false},
+   deleted: {type: Boolean, default: false, required: false},
    accessibility: {type: Number, required: false},
    dog_friendly: {type: Boolean, required: false},
    horseback_riding: {type: Boolean, required: false},
