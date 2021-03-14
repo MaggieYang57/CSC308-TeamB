@@ -92,7 +92,7 @@ componentDidMount() {
               <button id="post-rating" onClick = {this.postRating}>Post Rating</button>
 					  </div>
             <div className = "reviews">
-                <h2>Reviews</h2>
+                <h2 class="reviews-title"><hr />Reviews<hr /></h2>
                 <p>{this.state.reviews}</p>
             </div>
         </div>
