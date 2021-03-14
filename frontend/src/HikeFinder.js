@@ -12,21 +12,7 @@ const averageRatings = (ratings) => {
   return (sum / ratings.length).toFixed(1)
 }
 
-class AllHikes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hikes: [] };
-  }
-
-  render() {
-    
-   fetch('http://localhost:3001/hike/')
-      .then(res => res.json())
-      .then(data => {
-        console.log('data', data);
-        console.log('dataLength', data.length);
-        this.setState({ hikes: data});
-   });
+function HikeFinder(props) {
 
    return (
       <Container >
@@ -41,8 +27,8 @@ class AllHikes extends React.Component {
       }}/>
 
         <Col>
-          {this.state.hikes.map(hike => (
-            <Row className="mb-5" key={this.state.hikes._id} style={{margin: 20}}>
+          {props.hikeList.map(hike => (
+            <Row className="mb-5" key={hike._id} style={{margin: 20}}>
               <HikeCardList hike={hike} />
             </Row>
           ))}
@@ -50,5 +36,5 @@ class AllHikes extends React.Component {
       </Container>
     );
   }
-}
-export default AllHikes;
+
+export default HikeFinder;

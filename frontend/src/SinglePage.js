@@ -82,7 +82,7 @@ componentDidMount() {
             </div>
             <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
-              <select id="select-rating" length='20px'>
+              <select id="select-rating" length="20">
                 <option value="1">1 ★</option>
                 <option value="2">2 ★</option>
                 <option value="3">3 ★</option>
@@ -92,7 +92,8 @@ componentDidMount() {
               <button id="post-rating" onClick = {this.postRating}>Post Rating</button>
 					  </div>
             <div className = "reviews">
-                <h2>Reviews</h2>
+                <h2 class="reviews-title"><hr />Reviews<hr /></h2>
+                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
                 <p>{this.state.reviews}</p>
             </div>
         </div>

@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 export function HikeCardList({ hike, setOrdered}) {
 	return (
-		<Card style={{ width: '50rem', height: '13rem', margin: "auto", border: "none"}}
-			 >
+		<Card style={{ width: '50rem', height: '13rem', margin: "auto", border: "none"}}>
 		  <Row className='no-gutters'>
 			  <Col md={5} lg={3}  >
 			  	<Card.Img variant="top" src={hike.imagesrc} style={{height: '9rem'}}fluid />
@@ -14,12 +13,12 @@ export function HikeCardList({ hike, setOrdered}) {
 			  <Col>
 				  <Card.Body>
 				    <Card.Title>
-                                        <Link to={"/hike/" + hike._id}>
-                                        <p class=" h5 card-text text-left text-primary font-weight-bold">{hike.title}</p>
-                                        </Link>
+							<Link to={"/hike/" + hike._id}>
+							<p class=" h5 card-text text-left text-primary font-weight-bold">{hike.title}</p>
+							</Link>
 				    </Card.Title>
 				    <Card.Text>
-				      <p class="card-text text-left">{hike.location}</p>
+				      <p class="card-text text-left" style={{fontWeight:'bold'}}>{hike.location}</p>
 				    </Card.Text>
 
 				    <Card.Text>
