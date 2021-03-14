@@ -869,15 +869,16 @@ a.full-button {
  * Forms
  */
 [type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea {
-  display: block;
+  display: inline-block;
   border: 1px solid #dedede;
   border-radius: 4px;
   padding: 0.75rem;
   outline: none;
   background: transparent;
   margin-bottom: 0.5rem;
+  margin-right: 1.0rem;
   font-size: 1rem;
-  width: 100%;
+  width: 8%;
   max-width: 100%;
   line-height: 1;
 }

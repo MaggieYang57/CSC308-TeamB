@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import axios from "axios";
-import "./css/App.css";
 
-import NavBar from "./components/NavBar";
-import Table from "./components/Table";
-import SinglePage from "./components/SinglePage";
-import FilterBar from "./components/FilterBar";
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/App.css';
+
+import { Container, Row, Col } from 'react-bootstrap';
+import { Navigation } from './components/Navigation'
+import SinglePage from './SinglePage';
+import HikeFinder from './HikeFinder';
+import HomePage from './HomePage';
+import Login from './LoginPage';
+import Signup from './SignupPage';
 
 function App() {
   const [appState, setAppState] = useState({
@@ -90,18 +95,29 @@ function App() {
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
-      <div className="App">
-        <NavBar />
+      <div className="App" style={{margin: "auto"}}>
+        <Navigation />
         <Switch>
-          <Route exact path="/hike">
-            Sup mofos
+          <Route exact path ="/">
+            <HomePage />
           </Route>
+          <Route exact path="/hike">Test</Route>
+
+          <Route exact path="/hike/:id" component={SinglePage} />          
+          
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
           <Route exact path="/hikeFinder">
             <FilterBar onChange={handleFilterChange}/>
             <Table hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
+            <HikeFinder />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </div>

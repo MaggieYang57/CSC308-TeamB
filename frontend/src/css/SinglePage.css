@@ -5,7 +5,7 @@
 }
 .header h1{
     margin-left: 200px;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulisih', sans-serif;
     font-size: 30px;
     font-weight: 800;
     color:#265b5f;
@@ -16,6 +16,22 @@
     color:#265b5f;
 }
 
+h3{
+    justify-content: center;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+    font-size: 25px;
+    color:#265b5f;
+}
+
+.boxed {
+    box-sizing: content-box;
+    width: 100%;
+    border: solid black 1px;
+    padding: 15px;
+    border-radius: 25px;
+}
+
 img{
     display: flex;
     justify-content: left;
@@ -24,15 +40,23 @@ img{
 }
 
 /****************side information*******************/
-.info{
+.single-info{
     text-align: left;
     justify-content: left;
     margin-top: -300px;
     margin-left: 670px;
     margin-right: 200px;
-
+    font-family: 'Quicksand', sans-serif;
 }
-/********rating********/
+
+#desc
+{
+    margin: 0;
+    font-weight:500;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+}
+
 .stats{
     display: flex;
     align-items: center;
@@ -48,29 +72,33 @@ img{
     border-color: #10A5F5;
     color: #10A5F5;
 }
-.rating{
+#rating{
+    display: flex;
     color: #ff8b3d;
 }
-/************************/
-.desc
-{
-    margin: 0;
-    background-color: E7D8C9;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
+#rating-num{
+    display: flex;
+    color: #ff8b3d;
 }
-/*************************************************/
 
+.rate-me h3
+{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color:#265b5f;
+}
 /**********************Reviews********************/
 .reviews{
     display: flex;
     justify-content: left;
-    margin-top: 70px;
+    margin-top: 1vw;
 }
 .reviews h2{
     display: flex;
     justify-content: left;
     margin-left: 200px;
     font-size: 25px;
+    font-weight: 800;
     color:#265b5f;
 }
