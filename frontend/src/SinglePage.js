@@ -73,7 +73,7 @@ componentDidMount() {
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
-                  <h2 id = "rating">Rating ★<h2 id = "rating-num"/></h2>
+                  <h2 id = "rating">★<h2 id = "rating-num"/></h2>
                 </div>
                 <p id="desc">{this.state.description}</p>
                 <br></br>
@@ -84,11 +84,11 @@ componentDidMount() {
             <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
               <select id="select-rating" length="20">
-                <option value="1">1 ★</option>
-                <option value="2">2 ★</option>
-                <option value="3">3 ★</option>
-                <option value="4">4 ★</option>
                 <option value="5">5 ★</option>
+                <option value="4">4 ★</option>
+                <option value="3">3 ★</option>
+                <option value="2">2 ★</option>
+                <option value="1">1 ★</option>
               </select>
               <button id="post-rating" onClick = {this.postRating}>Post Rating</button>
 					  </div>
