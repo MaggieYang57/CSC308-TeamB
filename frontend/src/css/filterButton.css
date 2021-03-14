@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.filterButton {
+    margin:4px;
+    color: #265b5f;
+    background-color: white;
+    border-radius:10vw;
+    overflow: none;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+.filterButton  label {
+    float:left;
+    width:10.0em;
+    height: -5vh;
+}
+
+.filterButton  label span {
+    text-align:center;
+    display:block;
+}
+
+.filterButton  label input {
+    position:absolute;
+    top:-20vh;
+}
+
+.filterButton  input:not(:checked) + span {
+    border:1px solid #265b5f;
+    color:#265b5f;
+    border-radius:10vw;
+}
+
+.filterButton  input:checked + span {
+    background-color: #6CE281;
+    color:#fff;
+    border-radius:10vw;
+}

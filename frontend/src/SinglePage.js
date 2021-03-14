@@ -1,8 +1,10 @@
 import React from 'react';
 import './css/SinglePage.css';
 import moment from 'moment';
+import {withRouter} from "react-router-dom";
 
 import WeatherWidget from './components/WeatherWidget';
+
 
 const averageRatings = (ratings) => {
   let sum = 0
@@ -17,29 +19,46 @@ class SinglePage extends React.Component {
     this.state = {};
   }
 
+  
+componentDidMount() {
+    const { match: { params } } = this.props;
 
-  componentDidMount() {
     fetch('http://localhost:3001/hike/')
       .then(res => res.json())
       .then(data => {
-        this.setState({ ...data[1] });
+        console.log('data', data);
+        console.log('hike', this.props.match);
+        const hikeID = this.props.match.params.id;
+        console.log('dataLength', data.length);       
+        for (var i = 0; i < data.length; i++)
+        {  
+           if(data[i]._id == hikeID)
+           {   
+               console.log('found', data[i]);
+               this.setState( {...data[i]} );
+               document.getElementById('rating-num').innerText = averageRatings(this.state.rating)
+           }
+        }        
       });
-  }
-  
+}
+ 
+ 
   postRating = () => {
     const ratingSelect = document.getElementById('select-rating')
-    const rating = +(ratingSelect.options[ratingSelect.selectedIndex].value)
+    const rate = +(ratingSelect.options[ratingSelect.selectedIndex].value)
     const data = {
-      id: this.state._id,
-      rating: rating
+      rating: rate
     }
   
-    fetch('http://localhost:3001/hike/60388d0f23c5fd01cb21ed6b', {
+    fetch('http://localhost:3001/hike/' + this.state._id +'/rating', {
       method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)})
     .then(() => {
-      this.state.rating.push(rating)
-      document.getElementById('rating').innerText = averageRatings(this.state.rating)})
+      this.state.rating.push(rate)
+      document.getElementById('rating-num').innerText = averageRatings(this.state.rating)})
   }
 
   render() {
@@ -49,11 +68,11 @@ class SinglePage extends React.Component {
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
             </div>
-            <img src = "https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg" height="300" />
+            <img src = {this.state.imagesrc} height="300" width="400" />
             <div className = "single-info">
                 <div className = "stats">
                   <h2 className = "difficulty">Difficulty: {this.state.difficulty}</h2>
-                  <h2 id = "rating">★{this.state.rating}</h2>
+                  <h2 id = "rating">★<h2 id = "rating-num"/></h2>
                 </div>
                 <p id="desc">{this.state.description}</p>
                 <br></br>
@@ -63,7 +82,7 @@ class SinglePage extends React.Component {
             </div>
             <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
-              <select id="select-rating" length='20px'>
+              <select id="select-rating" length="20">
                 <option value="1">1 ★</option>
                 <option value="2">2 ★</option>
                 <option value="3">3 ★</option>
@@ -80,4 +99,4 @@ class SinglePage extends React.Component {
     );
   }
 }
-export default SinglePage;
+export default withRouter(SinglePage);
