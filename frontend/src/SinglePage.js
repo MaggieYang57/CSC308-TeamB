@@ -4,7 +4,8 @@ import moment from 'moment';
 import {withRouter} from "react-router-dom";
 
 import WeatherWidget from './components/WeatherWidget';
-
+import ReviewTable from './components/ReviewTable';
+import reviewData from './tempReviews.json';
 
 const averageRatings = (ratings) => {
   let sum = 0
@@ -67,6 +68,7 @@ componentDidMount() {
             <div className= "header">
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
+                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
             </div>
             <img src = {this.state.imagesrc} height="300" width="400" />
             <div className = "single-info">
@@ -83,19 +85,18 @@ componentDidMount() {
             <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
               <select id="select-rating" length="20">
-                <option value="1">1 ★</option>
-                <option value="2">2 ★</option>
-                <option value="3">3 ★</option>
-                <option value="4">4 ★</option>
                 <option value="5">5 ★</option>
+                <option value="4">4 ★</option>
+                <option value="3">3 ★</option>
+                <option value="2">2 ★</option>
+                <option value="1">1 ★</option>
               </select>
               <button id="post-rating" onClick = {this.postRating}>Post Rating</button>
 					  </div>
             <div className = "reviews">
                 <h2 class="reviews-title"><hr />Reviews<hr /></h2>
-                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
-                <p>{this.state.reviews}</p>
             </div>
+            <ReviewTable reviewList={reviewData}/>
         </div>
     );
   }

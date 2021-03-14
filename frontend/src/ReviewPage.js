@@ -1,204 +1,120 @@
 import React, { Component } from 'react';
-import './css/Signup.css';
-import env from "react-dotenv";
-import { Route, Redirect, Link, withRouter } from 'react-router-dom';
+import './css/Review.css';
+import './css/SinglePage.css';
+import { withRouter } from 'react-router-dom';
 
-class Review extends Component {
+
+const averageRatings = (ratings) => {
+   let sum = 0
+   for (const i in ratings)
+      sum += +(ratings[i])
+   return (sum / ratings.length).toFixed(1)
+}
+
+class Review extends React.Component {
 
    constructor(props) {
       super(props);
-      this.state = {
-         userType: "",
-         passwordValidated: true,
-         isAuthenticated: false,
-         personalData: { //shared across all users
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-         },
-         emptyUser: false
-      };
+      this.state = {};
    }
 
-   // updates personal data
-   handleChange = (event) => {
-      let personalData = this.state.personalData;
-      personalData[event.target.id] = event.target.value;
+   componentDidMount() {
+      const { match: { params } } = this.props;
 
-      this.setState({ personalData: personalData });
-   }
-
-   changeUserType = (event) => {
-      this.setState({ userType: event.target.value, emptyUser: false });
-   }
-
-   validatePassword = (event) => {
-      const confirmPassword = event.target.value;
-      const password = this.state.personalData["password"];
-      if (password !== confirmPassword) {
-         this.setState({ passwordValidated: false });
-      }
-      else {
-         this.setState({ passwordValidated: true });
-      }
-   }
-
-   signup = (e) => {
-      e.preventDefault()
-      if (this.state.passwordValidated === true) {
-         let userType = this.state.userType;
-         if (userType === "admin" || userType === "user") {
-            //this.firebase_signup(this.state.email, this.state.password);
-         }
-         else {
-            this.setState({ emptyUser: true });
-         }
-      }
-   }
-
-   /* firebase_signup = () => {
-       let {email, password} = this.state.personalData
-       // console.log(email + " " + password)
-       fire.auth().createUserWithEmailAndPassword(email, password)
-       .then((userCredential) => {
-           // Signed in 
-           var user = userCredential.user;
-           // Send verification email
-           this.firebase_sendVerification(user);
-           // Add user to MongoDB
-           this.signUp();
-
-       })
-       .catch((error) => {
-           var errorCode = error.code;
-           var errorMessage = error.message;
-           if (errorCode == 'auth/email-already-in-use') {
-               alert('That email is taken. Try another.');
-             } else {
-               alert(errorMessage);
-             }
-             console.log(error);
-       });
-   }
-
-   firebase_sendVerification = (user) => {
-
-       user.sendEmailVerification().then(function() {
-           // Email sent.
-       }).catch(function(error) {
-           // An error happened.
-           var errorMessage = error.message;
-           alert(errorMessage);
-           console.log(error);
-       });
-   } */
-
-   signUp = () => {
-      if (this.state.passwordValidated === true) {
-         if (this.state.userType === "admin") {
-            this.addAdmin(this.state.personalData);
-         }
-         else if (this.state.userType === "user") {
-            this.addUser(this.state.personalData);
-         }
-         else {
-            this.setState({ emptyUser: true })
-         }
-      }
-   }
-
-   addAdmin = (personalData) => {
-      const newAdmin = {
-         firstName: personalData["firstName"],
-         lastName: personalData["lastName"],
-         email: personalData["email"],
-         password: personalData["password"],
-         isAuthenticated: this.state.isAuthenticated,
-         user: "admin"
-      }
-
-      //this.mongo_signup(newAdmin)
-   }
-
-   addUser = (personalData) => {
-      const newUser = {
-         firstName: personalData["firstName"],
-         lastName: personalData["lastName"],
-         email: personalData["email"],
-         password: personalData["password"],
-         isAuthenticated: this.state.isAuthenticated,
-         user: "user"
-      }
-
-      //this.mongo_signup(newUser)
-   }
-
-   mongo_signup = (user) => {
-      let _this = this
-      fetch(env.backendURL + 'signup', {
-         method: 'POST',
-         headers: {
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(user)
-      })
-         .then((res) => {
-            if (res.status === 404) {
-               _this.setState({ error: true })
+      fetch('http://localhost:3001/hike/')
+         .then(res => res.json())
+         .then(data => {
+            const hikeID = this.props.match.params.id;
+            for (var i = 0; i < data.length; i++) {
+               if (data[i]._id == hikeID) {
+                  console.log('found', data[i]);
+                  this.setState({ ...data[i] });
+               }
             }
-            else {
-               _this.props.history.push("/email-verification");
-            }
-         })
+         });
    }
+
+   submitReview = () => {
+      const userName = document.getElementById('email').value
+      const reviewBody = document.getElementById('review-body').value
+      const review = {
+        user_id: userName,
+        reviewBody: reviewBody,
+        hike_id: this.state._id
+      }
+    
+      fetch('http://localhost:3001/hike/' + this.state._id +'/review', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(review)})
+      .then(() => {
+        this.state.reviews.push(review)
+        })
+    }
 
    render() {
       return (
          <div className="signup-form">
             <h1 id="title">Review for:</h1>
-            <form onSubmit={this.signup}>
-               <div id="cta-type">
-                  <div id="admin">
-                     <input type="radio" id="admin" name="cta" value="admin" onChange={this.changeUserType} checked={null} />
-                     <label for="admin">Admin</label>
-                  </div>
-                  <div id="user">
-                     <input type="radio" id="user" name="cta" value="user" onChange={this.changeUserType} checked={null} />
-                     <label for="user">User</label>
-                  </div>
+            <p id="hike-title">{this.state.title}</p>
+            <p> - {this.state.location}</p>
+            <form onSubmit={this.submitReview}>
+               <p id="input">Enter your name:</p>
+               <input type="text" className="account-info" id="email" size="50" style={{ width: '500px' }} required />
+
+               <div className="rating">
+                  <label htmlFor="difficulty-rating"><p id='input'>Difficulty: </p></label>
+                  <select id="difficulty-rating" length="20">
+                     <option value="5">5 ★</option>
+                     <option value="4">4 ★</option>
+                     <option value="3">3 ★</option>
+                     <option value="2">2 ★</option>
+                     <option value="1">1 ★</option>
+                  </select>
+                  <label htmlFor="accessibility-rating"><p id='input'>Accessibility: </p></label>
+                  <select id="accessibility-rating" length="20">
+                     <option value="5">5 ★</option>
+                     <option value="4">4 ★</option>
+                     <option value="3">3 ★</option>
+                     <option value="2">2 ★</option>
+                     <option value="1">1 ★</option>
+                  </select>
+
                </div>
 
-               <div className="input-name">
-                  <p id="first-name">First Name</p>
-                  <p id="last-name">Last Name</p>
+               <div>
+                  <p id="input">Activities permitted:</p>
+                  <label>
+                     <span>dog-friendly</span>
+                     <input type="checkbox" value="1" />
+
+                  </label>
+                  <label>
+                     <span>horse-friendly</span>
+                     <input type="checkbox" value="1" />
+
+                  </label>
+                  <label>
+                     <span>bike-friendly</span>
+                     <input type="checkbox" value="1" />
+
+                  </label>
+                  <label>
+                     <span>free-parking</span>
+                     <input type="checkbox" value="1" />
+
+                  </label>
                </div>
-               <div id="cta-type" style={{ marginBottom: "0px" }}>
-                  <input type="text" id="firstName" className="user-name" style={{ width: '245px' }} onChange={this.handleChange} size="25" required />
-                  <input type="text" id="lastName" className="user-name" style={{ width: '245px' }} onChange={this.handleChange} size="25" required />
-               </div>
-               <p id="input">Email</p>
-               <input type="email" className="account-info" id="email" size="50" style={{ width: '500px' }} onChange={this.handleChange} required />
-               <p id="input">Password</p>
-               <input type="password" className="account-info" id="password" style={{ width: '500px' }} onChange={this.handleChange}
-                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number, one uppercase, and one lowercase letter, and at least 6 or more characters long"
-                  size="50" required />
-               <br />
-               <label id="pass-label" for="password">(Must contain at least one number, one uppercase, and one lowercase <br />letter, and at least 6 or more characters long)</label>
-               <p id="input">Confirm Password</p>
-               <input type="password" className="account-info" id="password-confirm" size="50" style={{ width: '500px' }} onChange={this.validatePassword} required />
-               <br />
-               <section>
-                  {this.state.passwordValidated === false &&
-                     <div>
-                        <p id="error">Confirmation password does not match password!</p>
-                     </div>
-                  }
-               </section>
-               {this.state.emptyUser && <div className="signup-error">Select the type of user</div>}
-               {this.state.error && <div className="signup-error">Email taken</div>}
-               <input id="signup-button" type="submit" value="CREATE ACCOUNT" />
-               <p>Already have an account? <Link to="/login">Log in</Link></p>
+
+               <p id="input">Review:</p>
+               <textarea placeholder="Enter your review here..." name="review-body" id="review-body" className="review-body" wrap="hard" style={{ width: '500px', height: '200px' }} required>
+               </textarea>
+
+
+               <input id="signup-button" type="submit" value="SUBMIT A REVIEW" />
+               <a href="javascript:history.back()">Go Back to the Hike Page</a>
             </form>
          </div>
       );
