@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+.signup-form {
+	display: flex;
+	align-items: center;
+	width: 700px;
+	margin: 150px calc(50vw - 350px) 50px;
+	padding: 0px 10px 40px;
+	flex-direction: column;
+
+	background-color: white;
+	background-clip: padding-box;
+	filter: drop-shadow(5px 0px 10px grey);
+	overflow: hidden;
+}
+
+#title {
+	padding-top: 50px;
+	line-height: 50px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	font-size: 40px;
+}
+
+p {
+	font-family: "Quicksand", sans-serif;
+	font-style: normal;
+	font-size: 17px;
+	color: black;
+}
+
+#cta-type {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 20px;
+	align-self: center;
+}
+#cta-type label {
+	margin-left: 10px;
+	margin-right: 20px;
+	font-family: "Quicksand", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: 0.05em;
+	color: #7e7c7c;
+}
+
+.input-name {
+	display: flex;
+	margin-top: 20px;
+}
+#first-name {
+	margin-left: 35px;
+	padding-right: 80px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
+#last-name {
+	padding-left: 50px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
+#input {
+	display: flex;
+	margin-top: 20px;
+	margin-left: 35px;
+	padding-right: 80px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
+#hike-title {
+	display: flex;
+	margin-top: 20px;
+	margin-left: 35px;
+	padding-right: 80px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: black;
+}
+#pass-label {
+	font-family: "Quicksand", sans-serif;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	color: black;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+	font-family: "Quicksand", sans-serif;
+	height: 60px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+	border-width: 0px;
+	border: none;
+	background-color: white;
+}
+
+input[type="checkbox"] {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+input[type="radio"] {
+	justify-content: center;
+}
+
+.account-info {
+	width: 470px;
+	margin: 5px;
+}
+
+.user-name {
+	width: 230px;
+	display: inline;
+	margin: 5px;
+}
+
+#signup-button {
+	margin: 30px;
+	overflow: hidden;
+	padding: 12px 170px;
+	border: none;
+	font-weight: 600;
+	font-size: 20px;
+	letter-spacing: 2px;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: color, background-color;
+	transition-property: color, background-color;
+}
+#signup-button:hover {
+	background-color: #2098d1;
+	color: white;
+}
+
+.volunteer-type {
+	margin-top: 20px;
+}
+.volunteer-type p {
+	display: flex;
+	margin-left: 35px;
+}
+.volunteer-text {
+	display: flex;
+	margin-top: 20px;
+	margin-left: 100px;
+}
+#driver-text {
+	padding-left: 10px;
+	margin-right: 80px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: white;
+}
+#kitchen-text {
+	padding-left: 10px;
+	padding-right: 15px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
+
+.signup-error {
+	margin: 20px 0px -10px;
+	color: rgb(241, 80, 80);
+	font-size: 17px;
+}
+
+.drop-down-site {
+	margin-left: 0px;
+	padding-right: 0px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
+
+#select-site {
+	margin-left: 0px;
+	padding-right: 0px;
+	font-family: "Quicksand", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: #7e7c7c;
+}
