@@ -7,15 +7,40 @@ var ObjectID = require('mongodb').ObjectID;
 
 //HIKES
 
-//GET all hikes
-router.get('/', async (req, res) => {
-   try {
-      const hikes = await Trail.find({});
-      res.json(hikes);
-   }
-   catch (err) {
-      res.json({ message: err });
-   }
+router.get('/:id/reviews', (req, res) => {
+   res.send('Get review for each hike page!');
+ })
+
+router.get('/:id/reviews', (req, res) => {
+   res.send('Get review for each hike page!');
+ })
+
+ router.post('/:id/reviews', (req, res) => {
+   console.log(req.body);
+   res.send('Post a review on this hike page');
+ })
+
+
+ //testing GET all hikes
+
+ router.get('/', async (req, res) => {
+    try {
+       const hikes = await Trail.find({}).sort({rating: -1});
+       res.json(hikes);
+    }
+    catch(err){
+      res.json({message:err});
+    }
+});
+
+ router.get('/dog-friendly', async (req, res) => {
+    try {
+       const hikes = await Trail.find({"dog_friendly" : true}).sort({rating: -1});
+       res.json(hikes);
+    }
+    catch(err){
+      res.json({message:err});
+    }
 });
 
 //GET individual hike
