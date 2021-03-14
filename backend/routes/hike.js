@@ -92,6 +92,20 @@ router.post('/', (req, res) => {
 
 //REVIEWS
 
+
+//GET All the reviews of an individual hike
+router.get('/:id/review', async (req, res) => {
+   try {
+      const hikes = await Trail.find({ "_id": req.params.id });
+      res.json(hikes[0].reviews);
+   }
+   catch (err) {
+      res.json({ message: err });
+   }
+});
+
+
+
 //POST method to add a review on the individual hike page by hikeid
 router.post('/:id/review', async (req, res) => {
    try {
