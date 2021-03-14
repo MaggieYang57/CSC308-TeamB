@@ -167,7 +167,7 @@ class Login extends Component {
                 <div className="title">
                         {window.location.pathname.split('/')[2] === "admin" ? "Admin " : ""} 
                         {window.location.pathname.split('/')[2] === "user" ? "User " : ""}
-                    <h1>LOG IN</h1>
+                    <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Log In</b>
                 </div>
                 <div id="cta-type">
                     <div id="admin">

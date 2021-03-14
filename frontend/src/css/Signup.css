@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     width: 700px;
-    margin: 150px calc(50vw - 350px) 50px;
+    margin: 100px calc(50vw - 350px) 50px;
     padding: 0px 10px 40px;
     flex-direction: column;
 
@@ -16,10 +16,6 @@
 
 #title {
     padding-top: 50px;
-    line-height: 50px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 40px;
 }
 p{
     font-family: 'Quicksand', sans-serif;

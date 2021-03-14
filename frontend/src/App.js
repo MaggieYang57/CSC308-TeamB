@@ -13,7 +13,6 @@ import HomePage from './HomePage';
 import Login from './LoginPage';
 import Signup from './SignupPage';
 import FilterBar from './components/FilterBar'
-import ReviewPage from './ReviewPage';
 
 function App() {
   const [appState, setAppState] = useState({
@@ -101,12 +100,15 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path ="/">
-            <HomePage />
+            <HomePage hikeList={appState.baseHikeData}/>
           </Route>
           <Route exact path="/hike">Test</Route>
 
           <Route exact path="/hike/:id" component={SinglePage} />          
           
+          <Route exact path="/singlepage">
+            <SinglePage />
+          </Route>
           <Route exact path="/hikeFinder">
             <FilterBar onChange={handleFilterChange}/>
             <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
@@ -117,7 +119,6 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          <Route exact path="/review/:id" component={ReviewPage} />
         </Switch>
       </div>
     </BrowserRouter>
