@@ -13,6 +13,7 @@ import HomePage from './HomePage';
 import Login from './LoginPage';
 import Signup from './SignupPage';
 import FilterBar from './components/FilterBar'
+import ReviewPage from './ReviewPage';
 
 function App() {
   const [appState, setAppState] = useState({
@@ -116,6 +117,7 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
+          <Route exact path="/review/:id" component={ReviewPage} />
         </Switch>
       </div>
     </BrowserRouter>
