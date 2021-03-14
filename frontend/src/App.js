@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import { Navigation } from './components/Navigation'
+import { Navigation } from './components/Navigation';
 import SinglePage from './SinglePage';
 import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
