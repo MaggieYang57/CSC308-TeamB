@@ -39,7 +39,7 @@ class Review extends React.Component {
       const reviewBody = document.getElementById('review-body').value
       const review = {
         user_id: userName,
-        body: reviewBody,
+        reviewBody: reviewBody,
         hike_id: this.state._id
       }
     

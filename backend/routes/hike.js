@@ -95,11 +95,10 @@ router.post('/', (req, res) => {
 //POST method to add a review on the individual hike page by hikeid
 router.post('/:id/review', async (req, res) => {
    try {
-      const newName = {
-         hikeID: req.body.hikeID,
-         userID: req.body.userID,
+      const reviewSchema = {
+         user_id: req.body.user_id,
          reviewBody: req.body.reviewBody,
-         userRating: req.body.userRating,
+         hike_id: req.body.hike_id,
       };
       const addedReview = await Trail.findByIdAndUpdate(
          {
@@ -107,7 +106,7 @@ router.post('/:id/review', async (req, res) => {
          },
          {
             $push: {
-               reviews: newName,
+               reviews: reviewSchema,
             },
          }
       )
