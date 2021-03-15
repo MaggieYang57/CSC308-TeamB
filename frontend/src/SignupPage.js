@@ -11,7 +11,7 @@ class Signup extends Component {
             userType: "",
             passwordValidated: true,
             isAuthenticated: false,
-            personalData: { //shared across all users
+            personalData: {
                 firstName: "",
                 lastName: "",
                 email: "",
@@ -193,7 +193,7 @@ class Signup extends Component {
                 <section>
                     {this.state.passwordValidated === false &&
                         <div>
-                            <p id="error">Confirmation password does not match password!</p>
+                            <p id="confirm-error">Confirmation password does not match password!</p>
                         </div>
                     }
                 </section>
