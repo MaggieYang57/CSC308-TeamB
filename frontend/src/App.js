@@ -18,6 +18,7 @@ function App() {
   const [appState, setAppState] = useState({
     baseHikeData: [],
     filteredDataIndexes: new Set(),
+    difficultyIndices: new Set(),
     filters: new Set(),
   });
 
@@ -34,7 +35,7 @@ function App() {
 
   useEffect(() => {
     fetchAll().then((result) => {
-      if (result) setAppState({ filteredDataIndexes: new Set([...Array(result.length).keys()]), filters: appState.filters, baseHikeData: result })
+      if (result) setAppState({ filteredDataIndexes: new Set([...Array(result.length).keys()]), filters: appState.filters, baseHikeData: result, difficultyIndices: new Set([...Array(result.length).keys()]) })
     });
   }, []);
 
@@ -55,6 +56,7 @@ function App() {
     setAppState({
       filteredDataIndexes: indices,
       filters,
+      difficultyIndices: appState.difficultyIndices, 
       baseHikeData: appState.baseHikeData,
     });
   }
@@ -81,25 +83,26 @@ function App() {
     setAppState({
       filteredDataIndexes: indices,
       filters: filters,
+      difficultyIndices: appState.difficultyIndices, 
       baseHikeData: appState.baseHikeData,
     });
   }
 
   function handleDifficultyChange(diff) {
     const diffNum = parseInt(diff, 10);
-    const hikeData = appState.baseHikeData;
-    let indices = new Set();
+    const hikeData = appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i));
+    let indices = new Set([...appState.filteredDataIndexes]);
     let average = (arr) => arr.reduce((a, b) => a + b) / arr.length;
     if (diffNum !== 0) {
       for (var i = 0; i < hikeData.length; i++) {
           let diffAvg = average(hikeData[i]["difficulty"]);
-          console.log("val", [diff]);
-          console.log("Avg:", [diffAvg]);
-          console.log(diffAvg === diffNum);
-          if (diffAvg === diffNum) {
-            indices.add(i);
+          if ((diffAvg !== diffNum) && (indices.has(i))) {
+            indices.delete(i);
           }
+          else if ((diffAvg === diffNum) && (!(indices.has(i)))) {
+            indices.add(i)
         }
+      }
     }
 
     else {
@@ -107,7 +110,9 @@ function App() {
     }
 
     setAppState({
-      filteredDataIndexes: indices,
+      filteredDataIndexes: appState.filteredDataIndexes,
+      filters: appState.filters,
+      difficultyIndices: indices, 
       baseHikeData: appState.baseHikeData,
     });
 
@@ -139,7 +144,7 @@ function App() {
           </Route>
           <Route exact path="/hikeFinder">
             <FilterBar onChange={handleFilterChange} onDiff={handleDifficultyChange}/>
-            <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
+            <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i) && appState.difficultyIndices.has(i))} />
           </Route>
           <Route exact path="/login">
             <Login />
