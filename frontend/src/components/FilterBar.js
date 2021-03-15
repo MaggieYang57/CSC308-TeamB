@@ -16,7 +16,7 @@ function FilterBar(props) {
         <FilterButton name="Horseback Riding" filterType='horseback_riding' onChange={props.onChange}/>
         <FilterButton name="Bike Riding" filterType='biking' onChange={props.onChange}/>
       </div>
-      <FilterDifficulty onChange={props.onChange}/>
+      <FilterDifficulty onChange={props.onDiff}/>
     </div>
   );
   

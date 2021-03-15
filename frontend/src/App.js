@@ -85,6 +85,34 @@ function App() {
     });
   }
 
+  function handleDifficultyChange(diff) {
+    const diffNum = parseInt(diff, 10);
+    const hikeData = appState.baseHikeData;
+    let indices = new Set();
+    let average = (arr) => arr.reduce((a, b) => a + b) / arr.length;
+    if (diffNum !== 0) {
+      for (var i = 0; i < hikeData.length; i++) {
+          let diffAvg = average(hikeData[i]["difficulty"]);
+          console.log("val", [diff]);
+          console.log("Avg:", [diffAvg]);
+          console.log(diffAvg === diffNum);
+          if (diffAvg === diffNum) {
+            indices.add(i);
+          }
+        }
+    }
+
+    else {
+      indices = new Set([...Array(appState.baseHikeData.length).keys()]);
+    }
+
+    setAppState({
+      filteredDataIndexes: indices,
+      baseHikeData: appState.baseHikeData,
+    });
+
+  }
+
   function handleFilterChange(newFilter) {
     if (appState.filters.has(newFilter)) {
       removeFilter(newFilter);
@@ -110,7 +138,7 @@ function App() {
             <SinglePage />
           </Route>
           <Route exact path="/hikeFinder">
-            <FilterBar onChange={handleFilterChange}/>
+            <FilterBar onChange={handleFilterChange} onDiff={handleDifficultyChange}/>
             <HikeFinder hikeList={appState.baseHikeData.filter((_, i) => appState.filteredDataIndexes.has(i))} />
           </Route>
           <Route exact path="/login">
