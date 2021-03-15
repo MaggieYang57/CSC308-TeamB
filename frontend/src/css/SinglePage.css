@@ -4,7 +4,7 @@
     margin-top: 100px;
 }
 .header h1{
-    margin-left: 200px;
+    margin-left: 10vw;
     font-family: 'Mulisih', sans-serif;
     font-size: 30px;
     font-weight: 800;
@@ -36,7 +36,7 @@ h3{
 img{
     display: flex;
     justify-content: left;
-    margin-left: 200px;
+    margin-left: 10vw;
     border-radius: 50px;
 }
 
@@ -45,7 +45,7 @@ img{
     text-align: left;
     justify-content: left;
     margin-top: -300px;
-    margin-left: 670px;
+    margin-left: 630px;
     margin-right: 200px;
     font-family: 'Quicksand', sans-serif;
 }
@@ -133,7 +133,8 @@ img{
 /**********************Reviews********************/
 
 .reviews{
-    margin-top: 1vw;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
 }
 
 .reviews h2{
@@ -152,10 +153,11 @@ img{
 #review-button
 {
     -webkit-appearance: none;
-    display: flex;
-    justify-content: left;
+    display: flex-end;
+    justify-content: right;
     padding: 0.75rem 1.25rem;
-    margin-left: 15%;
+    width: 150px;
+    margin-left: 30%;
     vertical-align: middle;
     font-weight: 600;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -163,10 +165,16 @@ img{
     text-transform: none;
     text-align: center;
     text-decoration: none;
-    border: 1px solid #0366ee;
+    border: 1px solid #6CE2E3;
     border-radius: 10px;
-    background: #0366ee;
+    background: #6CE2E3;
     color: #ffffff;
     cursor: pointer;
     line-height: 1;
+}
+
+#review-button:hover {
+	background-color: #5ac0c2;
+	color: white;
+    text-decoration: none;
 }

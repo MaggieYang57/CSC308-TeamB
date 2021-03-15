@@ -68,7 +68,7 @@ componentDidMount() {
             <div className= "header">
                 <h1>{this.state.title}</h1>
                 <h2>- {this.state.location}</h2>
-                <a href={'/review/' + this.state._id}><button id="review-button">Write a hike review</button></a>
+                <a href={'/review/' + this.state._id}><button id="review-button">Write a Review</button></a>
             </div>
             <img src = {this.state.imagesrc} height="300" width="400" />
             <div className = "single-info">

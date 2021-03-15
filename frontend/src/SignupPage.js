@@ -156,7 +156,7 @@ class Signup extends Component {
     render() {
         return (
             <div className="signup-form">
-                <div id="title">
+                <div id="title-signup">
                     <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Sign Up</b>
                 </div>
                 <form onSubmit={this.signup}>

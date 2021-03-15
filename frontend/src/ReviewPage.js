@@ -56,17 +56,19 @@ class Review extends React.Component {
 
    render() {
       return (
-         <div className="signup-form">
-            <h1 id="title">Review for:</h1>
+         <div className="review-form">
+            <div className="title">
+            <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Review for:</b>
+            </div>
             <p id="hike-title">{this.state.title}</p>
             <p> - {this.state.location}</p>
             <form onSubmit={this.submitReview}>
-               <p id="input">Enter your name:</p>
-               <input type="text" className="account-info" id="email" size="50" style={{ width: '500px' }} required />
+               <p id="input-name" style={{marginLeft: '45px'}}>Enter your name:</p>
+               <input type="text" className="account-info" id="name" size="50" style={{ width: '500px' }} required />
 
-               <div className="rating">
-                  <label htmlFor="difficulty-rating"><p id='input'>Difficulty: </p></label>
-                  <select id="difficulty-rating" length="20">
+               <div className="rating" >
+                  <label htmlFor="difficulty-rating"><p id='input' style={{marginLeft: '-10px'}}>Difficulty: </p></label>
+                  <select id="difficulty-rating" >
                      <option value="5">5 ★</option>
                      <option value="4">4 ★</option>
                      <option value="3">3 ★</option>
@@ -85,11 +87,10 @@ class Review extends React.Component {
                </div>
 
                <div>
-                  <p id="input">Activities permitted:</p>
+                  <p id="input" style={{marginLeft: '45px'}}>Activities permitted:</p>
                   <label>
-                     <span>dog-friendly</span>
+                     <span style={{marginLeft: '45px'}}>dog-friendly</span>
                      <input type="checkbox" value="1" />
-
                   </label>
                   <label>
                      <span>horse-friendly</span>
@@ -108,12 +109,12 @@ class Review extends React.Component {
                   </label>
                </div>
 
-               <p id="input">Review:</p>
+               <p id="input" style={{marginLeft: '45px'}}>Review:</p>
                <textarea placeholder="Enter your review here..." name="review-body" id="review-body" className="review-body" wrap="hard" style={{ width: '500px', height: '200px' }} required>
                </textarea>
 
 
-               <input id="signup-button" type="submit" value="SUBMIT A REVIEW" />
+               <input id="signup-button" type="submit" value="SUBMIT A REVIEW" style={{marginLeft: '45px'}}/>
                <a href="javascript:history.back()">Go Back to the Hike Page</a>
             </form>
          </div>

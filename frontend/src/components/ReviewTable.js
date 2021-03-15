@@ -2,7 +2,7 @@ import React from 'react'
 
 function ReviewBody (props) {
    const divStyle = {
-      margin: "0px 50px 0px 150px",
+      margin: "10px 50px 0px 10%",
       width: '1300px'
     };
   const rows = props.reviewList.map((row, index) => {
@@ -28,7 +28,6 @@ function ReviewTable(props) {
    return(
      <div className = "table">
         <table>
-          
           <ReviewBody reviewList={props.reviewList} />
         </table>
       </div>

@@ -14,8 +14,10 @@
     overflow: hidden;
 }
 
-#title {
+#title-signup {
     padding-top: 50px;
+    letter-spacing: 2px;
+    font-size: 40px;
 }
 p{
     font-family: 'Quicksand', sans-serif;
