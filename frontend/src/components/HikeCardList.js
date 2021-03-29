@@ -7,7 +7,7 @@ export function HikeCardList({ hike, setOrdered}) {
 			 >
 		  <Row className='no-gutters'>
 			  <Col md={5} lg={3}  >
-			  	<Card.Img variant="top" src="/images/default.jpg" fluid />
+			  	<Card.Img variant="top" src="/images/default.png" fluid />
 			  </Col>
 			  <Col>
 				  <Card.Body>
