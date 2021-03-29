@@ -5,7 +5,7 @@ import moment from 'moment';
 import { Container, Row, Col } from 'react-bootstrap';
 import { HikeCardList } from './components/HikeCardList'
 import { SortBy } from './components/SortBy'
-import hikes from './trails3';
+
 
 
 const averageRatings = (ratings) => {
@@ -36,6 +36,7 @@ function HikeFinder(props) {
       </Container>
 
       <Container style = {{marginTop: '5vw'}}>
+
         <Col>
           {props.hikeList.map(hike => (
             <Row className="mb-5" key={hike._id} style={{margin: 20}}>
@@ -43,6 +44,8 @@ function HikeFinder(props) {
             </Row>
           ))}
         </Col>
+
+
       </Container>
       </div>
     );
