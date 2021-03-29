@@ -7,6 +7,7 @@ import { HikeCardList } from './components/HikeCardList'
 import { SortBy } from './components/SortBy'
 import hikes from './trails3';
 
+
 const averageRatings = (ratings) => {
   let sum = 0
   for (const i in ratings)
@@ -14,20 +15,14 @@ const averageRatings = (ratings) => {
   return (sum / ratings.length).toFixed(1)
 }
 
-class AllHikes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+function HikeFinder(props) {
 
-  render() {
     return (
       <div>
       <Container style = {{marginTop: '5vw'}}>
         <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Hike Finder</b>
         <p class="text text-center " style={{fontSize: 30, color: "#59BCA6"}}>Find one that's just right for you!</p>
       </Container>
-
       <Container style = {{marginTop: '2vw'}}>
         <Row>
           <Col >Sort By:</Col>
@@ -41,17 +36,17 @@ class AllHikes extends React.Component {
       </Container>
 
       <Container style = {{marginTop: '5vw'}}>
-
-          <Col>
-            {hikes.map(hike => (
-              <Row className="mb-5" key={'${hike.id}'} >
-                <HikeCardList hike={hike} />
-              </Row>
-            ))}
-          </Col>
+        <Col>
+          {props.hikeList.map(hike => (
+            <Row className="mb-5" key={hike._id} style={{margin: 20}}>
+              <HikeCardList hike={hike} />
+            </Row>
+          ))}
+        </Col>
       </Container>
       </div>
     );
-  }
+
 }
-export default AllHikes;
+
+export default HikeFinder;
