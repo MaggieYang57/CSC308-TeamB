@@ -82,7 +82,7 @@ componentDidMount() {
             </div>
             <div class="rate-me">
               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
-              <select id="select-rating" length='20px'>
+              <select id="select-rating" length="20">
                 <option value="1">1 ★</option>
                 <option value="2">2 ★</option>
                 <option value="3">3 ★</option>

@@ -83,12 +83,54 @@ img{
 
 .rate-me h3
 {
-    display: flex;
-    justify-content: center;
+    display: flex;;
+    justify-content: space-between;
+    margin-right: 1vw;
     font-size: 30px;
     color:#265b5f;
 }
+
+/************************Rating**************************/
+
+#post-rating
+{
+    -webkit-appearance: none;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    margin: 0 0 0.5rem 1vw;
+    vertical-align: middle;
+
+    font-weight: 600;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    text-transform: none;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #0366ee;
+    border-radius: 10px;
+    background: #0366ee;
+    color: #ffffff;
+    
+    cursor: pointer;
+    line-height: 1;
+}
+
+#post-rating:hover{
+    border: 1px solid #0250bc;
+    background: #0250bc;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  #post-rating:focus{
+    border: 1px solid #0250bc;
+    background: #0250bc;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
 /**********************Reviews********************/
+
 .reviews{
     display: flex;
     justify-content: left;
