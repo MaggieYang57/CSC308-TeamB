@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import moment from 'moment';
+import SearchBar from "./components/SearchBar";
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { HikeCardList } from './components/HikeCardList'
@@ -16,7 +17,6 @@ const averageRatings = (ratings) => {
 }
 
 function HikeFinder(props) {
-
     return (
       <div>
       <Container style = {{marginTop: '5vw'}}>
@@ -25,9 +25,12 @@ function HikeFinder(props) {
       </Container>
       <Container style = {{marginTop: '2vw'}}>
         <Row>
-          <Col >Sort By:</Col>
-          <Col><SortBy /></Col>
-          <Col>Filters:</Col>
+          <form class="form-inline " style = {{marginLeft: '0vw'}} >
+          <a style={{padding: '1vw'}} > <SearchBar/> </a>
+          <a style={{marginLeft: '1vw'}} > Sort By: </a>
+          <a style={{marginLeft: '.3vw', marginTop: ".5vw"}} > <SortBy /> </a>
+          <a style={{marginLeft: '2vw'}} > Filters: </a>
+          </form>
         </Row>
         <hr  style={{
             color: '#BDBDBDBD',
@@ -35,11 +38,11 @@ function HikeFinder(props) {
         }}/>
       </Container>
 
-      <Container style = {{marginTop: '5vw'}}>
+      <Container >
 
         <Col>
           {props.hikeList.map(hike => (
-            <Row className="mb-5" key={hike._id} style={{margin: 20}}>
+            <Row className="mb-5" key={hike._id} style={{marginTop: '3.2vw'}}>
               <HikeCardList hike={hike} />
             </Row>
           ))}

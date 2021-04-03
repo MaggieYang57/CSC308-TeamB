@@ -7,6 +7,7 @@ import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation';
+import { Footer } from './components/Footer';
 import SinglePage from './SinglePage';
 import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
@@ -122,6 +123,8 @@ function App() {
                   <Signup />
                </Route>
             </Switch>
+            <Container style = {{marginTop: '7vw'}}></Container>
+            <Footer />
          </div>
       </BrowserRouter>
    );
