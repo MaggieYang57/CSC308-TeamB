@@ -6,6 +6,8 @@ export function Navigation({ }) {
       <div>
 
          <nav className="navbar navbar-dark " style={{ backgroundColor: '#2c6674' }}>
+            {/* 
+            TODO: This throws console error in browser. We need to fix this later. */}
             <a className="navbar-brand" href="/">
                <form className="form-inline " style={{ marginLeft: '-11vw' }} >
                   <img className="nav-link" src="/images/SH.png" style={{ width: 200, height: 53, borderRadius: 0 }} />
