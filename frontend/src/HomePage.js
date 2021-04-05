@@ -32,7 +32,7 @@ function HomePage(props) {
                         <Col>
                            <Card.Body>
                               <Card.Title>
-                                 <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                 <Card.Img variant="top" src={hike.imagesrc} fluid="true" />
                                  <Link to={"/hike/" + hike._id}>
                                     <p className=" h5 card-text text-left text-primary font-weight-bold" style={{ marginTop: "2vw" }}>{hike.title}</p>
                                  </Link>
@@ -50,7 +50,7 @@ function HomePage(props) {
                         <Col>
                            <Card.Body>
                               <Card.Title>
-                                 <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                 <Card.Img variant="top" src={hike.imagesrc} fluid="true" />
                                  <Link to={"/hike/" + hike._id}>
                                     <p className=" h5 card-text text-left text-primary font-weight-bold" style={{ marginTop: "2vw" }}>{hike.title}</p>
                                  </Link>
@@ -68,7 +68,7 @@ function HomePage(props) {
                         <Col>
                            <Card.Body>
                               <Card.Title>
-                                 <Card.Img variant="top" src={hike.imagesrc} fluid />
+                                 <Card.Img variant="top" src={hike.imagesrc} fluid="true" />
                                  <Link to={"/hike/" + hike._id}>
                                     <p className=" h5 card-text text-left text-primary font-weight-bold" style={{ marginTop: "2vw" }}>{hike.title}</p>
                                  </Link>
