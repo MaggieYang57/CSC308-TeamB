@@ -55,6 +55,11 @@ class SinglePage extends React.Component {
    }
 
    render() {
+      var reviewExists = false;
+      if (this.state.reviews !== null) {
+         reviewExists = true;
+      }
+
       return (
          <div className="hike">
             <div className="header">
@@ -88,7 +93,8 @@ class SinglePage extends React.Component {
             <div className="reviews">
                <h2 class="reviews-title"><hr />Reviews<hr /></h2>
             </div>
-            <ReviewTable reviewList={reviewData} />
+            <ReviewTable reviewList={this.state.reviews} />
+
          </div>
       );
    }
