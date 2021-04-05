@@ -163,11 +163,11 @@ class Signup extends Component {
                <div id="cta-type">
                   <div id="admin">
                      <input type="radio" id="admin" name="cta" value="admin" onChange={this.changeUserType} checked={null} />
-                     <label for="admin">Admin</label>
+                     <label htmlFor="admin">Admin</label>
                   </div>
                   <div id="user">
                      <input type="radio" id="user" name="cta" value="user" onChange={this.changeUserType} checked={null} />
-                     <label for="user">User</label>
+                     <label htmlFor="user">User</label>
                   </div>
                </div>
 
