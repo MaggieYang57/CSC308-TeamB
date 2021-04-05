@@ -8,7 +8,7 @@ export function HikeCardList({ hike, setOrdered }) {
       <Card style={{ width: '50rem', height: '13rem', margin: "auto", border: "none" }}>
          <Row className='no-gutters'>
             <Col md={5} lg={3}  >
-               <Card.Img variant="top" src={hike.imagesrc} style={{ height: '10rem', width: '15rem', marginTop: '1rem' }} fluid />
+               <Card.Img variant="top" src={hike.imagesrc} style={{ height: '10rem', width: '15rem', marginTop: '1rem' }} fluid="true" />
             </Col>
             <Col>
                <Card.Body style={{ marginLeft: '4rem' }}>
