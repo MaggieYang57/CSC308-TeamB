@@ -16,27 +16,42 @@ function ReviewBody(props) {
          </div>
       );
    })
-   return (
 
+   return (
       <tbody>
          {rows}
       </tbody>
    );
 }
 
+function EmptyReviews(props) {
+
+   return (<h3>No reviews yet.</h3>);
+
+}
+
 function ReviewTable(props) {
    const hasReview = props.reviewList;
    let reviewTable;
+   let noReviews;
+
    if (hasReview) {
       reviewTable = <ReviewBody reviewList={props.reviewList} />;
+
+      //Display message if there are currently no reviews
+      if (Object.keys(props.reviewList).length === 0) {
+         noReviews = <EmptyReviews />;
+      }
    } else {
       reviewTable = null;
    }
+
    return (
       <div className="table">
          <table>
             {reviewTable}
          </table>
+         {noReviews}
       </div>
    );
 }
