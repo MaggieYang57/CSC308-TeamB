@@ -62,11 +62,13 @@ class SinglePage extends React.Component {
 
       return (
          <div className="hike">
+
             <div className="header">
                <h1>{this.state.title}</h1>
                <h2>- {this.state.location}</h2>
                <a href={'/review/' + this.state._id}><button id="review-button">Write a Review</button></a>
             </div>
+
             <img src={this.state.imagesrc} height="300" width="400" />
             <div className="single-info">
                <div className="stats">
@@ -80,7 +82,7 @@ class SinglePage extends React.Component {
                <p>{this.state.tags}</p>
             </div>
             <div className="rate-me">
-               <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
+               <label id="rating-label" htmlFor="select-rating"><h3>Rate Me!</h3></label>
                <select id="select-rating" length="20">
                   <option value="5">5 ★</option>
                   <option value="4">4 ★</option>
