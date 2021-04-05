@@ -57,7 +57,7 @@ class Review extends React.Component {
       return (
          <div className="signup-form">
             <div className="title">
-               <b class="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>Review for:</b>
+               <b className="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>Review for:</b>
             </div>
             <p id="hike-title">{this.state.title}</p>
             <p> - {this.state.location}</p>

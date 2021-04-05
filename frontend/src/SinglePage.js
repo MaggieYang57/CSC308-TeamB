@@ -79,7 +79,7 @@ class SinglePage extends React.Component {
                <br></br>
                <p>{this.state.tags}</p>
             </div>
-            <div class="rate-me">
+            <div className="rate-me">
                <label id="rating-label" for="select-rating"><h3>Rate Me!</h3></label>
                <select id="select-rating" length="20">
                   <option value="5">5 ★</option>
@@ -91,7 +91,7 @@ class SinglePage extends React.Component {
                <button id="post-rating" onClick={this.postRating}>Post Rating</button>
             </div>
             <div className="reviews">
-               <h2 class="reviews-title"><hr />Reviews<hr /></h2>
+               <h2 className="reviews-title"><hr />Reviews<hr /></h2>
             </div>
             <ReviewTable reviewList={this.state.reviews} />
 
