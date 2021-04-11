@@ -6,31 +6,8 @@ const userSchema = require('../models/users-schema');
 const User = mongoose.model('User', userSchema, 'Users');
 
 const bcrypt = require('bcrypt');
-
-router.post('/email-taken', async (req, res) =>{
-    const {email, user} = req.body
-    /*let userType = getUser(user);
-  
-    userType.findOne({'email': email}).then(function(result) {
-       if (result) {
-          console.log("email already in use")
-          res.status(404).send("email already in use")
-       } 
-       else {
-          res.status(200).send("valid email")
-       }
-    }); */
- });
  
-/* router.get('/delete', async (req, res) =>{
-    var myquery = { 'firstName': "Emily" };
-    SiteManager.deleteMany(myquery, function(err, obj) {
-       if (err) throw err;
-       console.log(obj);
-    });
- }); */
- 
- router.post('/', async (req, res) =>{
+router.post('/', async (req, res) =>{
      var passHash = bcrypt.hashSync(req.body.password, 9);
 
      const user = new User({
@@ -44,21 +21,27 @@ router.post('/email-taken', async (req, res) =>{
     });
 
    console.log(user);
-    user.save()
-      .then(data => {
-         res.json(data);
-      })
-      .catch(err => {
-         res.json({ message: err });
-      });
+   User.findOne({'user_email': req.body.user_email}).then(function(result) {
+      if (result)
+      {
+         console.log("email already in use")
+         res.status(404).send()
+      }
+      else
+      {
+         user.save()
+         .then(data => {
+            res.json(data);
+         })
+         .catch(err => {
+            res.json({ message: err });
+         });
+      }
+   }).catch(err => {
+      console.log(err)
+      res.send(500).send()})
 
-  });
- 
+});
 
- // Generates random string ID. Very low probability of duplicate IDs
- function getID() {
-    return '_' + Math.random().toString(36).substr(2, 9);
- }
-
-  module.exports = router;
+module.exports = router;
  

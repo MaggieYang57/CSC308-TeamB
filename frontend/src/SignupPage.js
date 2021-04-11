@@ -153,7 +153,7 @@ class Signup extends Component {
                     }
                 </section>
                 {this.state.emptyUser && <div className="signup-error">Select the type of user</div>}
-                {this.state.error && <div className="signup-error">Email taken</div>}
+                {this.state.error && <div className="signup-error">Email already taken</div>}
                 <input id = "signup-button" type="submit" value="CREATE ACCOUNT"/>
                 <p>Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
