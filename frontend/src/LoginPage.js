@@ -8,10 +8,9 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userID: "",
             isLoggedIn : false,
             RedirectLoggedUser: false,
-            userType: this.props.match.params.user ? this.props.match.params.user : "",
+            user_type: this.props.match.params.user ? this.props.match.params.user : "",
             emptyUser: false,
             email: "",
             password: "",
@@ -37,7 +36,7 @@ class Login extends Component {
     }
 
     changeUserType = (event) => {
-        this.setState({userType: event.target.value, emptyUser: false});
+        this.setState({user_type: event.target.value, emptyUser: false});
     }
     
     componentDidMount() {
@@ -46,11 +45,11 @@ class Login extends Component {
         if (path.length === 3) {
             if (path[2] === "admin") {
                 document.getElementById("admin").checked = true;
-                this.setState( { userType: path[2] } )
+                this.setState( { user_type: path[2] } )
             }
             else if (path[2] === "user") {
-                document.getElementById("dataEntry").checked = true;
-                this.setState( { userType: path[2] } )
+                document.getElementById("user").checked = true;
+                this.setState( { user_type: path[2] } )
             }
         }
     }
@@ -58,7 +57,7 @@ class Login extends Component {
     login = (e) => {
         e.preventDefault();
 
-        if (this.state.userType == "") {
+        if (this.state.user_type == "") {
             this.setState({emptyUser: true})
             return;
         }
@@ -66,39 +65,15 @@ class Login extends Component {
         const user = {
             email: this.state.email,
             password: this.state.password,
-            user: this.state.userType
+            user_type: this.state.user_type
         }
 
-        //this.firebase_signin(user);
+        this.mongo_login(user);
     }
-
-    /* firebase_signin = (user) => {
-        fire.auth().signInWithEmailAndPassword(user.email, user.password)
-        .then((userCredential) => {
-            var firebase_user = userCredential.user;
-            this.firebase_checkEmailVerif(firebase_user, user);
-        })
-        .catch((error) => {
-            var errorMessage = error.message;
-            alert(errorMessage);
-            console.log(error)
-        });
-        }
-
-    firebase_checkEmailVerif = (firebase_user, user) => {
-        var emailVerified = firebase_user.emailVerified;
-        
-        if (!emailVerified) {
-            this.props.history.push("/email-verification");
-        } 
-        else {
-            this.mongo_login(user)
-        }
-    } */
 
     mongo_login = (user) => {
         let _this = this
-        fetch(env.backendURL + 'login', {
+        fetch('http://localhost:3001/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -115,53 +90,23 @@ class Login extends Component {
         })
         .then(data => {
             _this.storeUser(data)
-            if (this.state.userType === "volunteer"){
-                this.volunteerInfoCheck(data)
-            }
-            else {
-                this.props.history.push("/");
-            }
+            this.props.history.push("/profile");
         })
         .catch(err => {
             console.log("Error")
             _this.setState({error: true})
         })
     }
-    
-    volunteerInfoCheck = (user) => {
-        let _this = this
-        fetch(env.backendURL + 'volunteers/volunteerComplete', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        .then((res) => {
-            if (res.status === 300) {
-                _this.props.history.push("/volunteer-additional-info");
-            }
-            else {
-                _this.props.history.push("/");
-            }
-        })
-    }
 
     storeUser = (user) => {
         const date = new Date();
-        if (this.state.userType == "volunteer") {
-           localStorage.setItem("volunteerID", this.state.volunteerID);
-        }
-        localStorage.setItem("userEmail", user.email);
-        localStorage.setItem("userType", this.state.userType);
-        localStorage.setItem("site", user.site);
-        localStorage.setItem("time", date);
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("user_type", this.state.user_type);
         localStorage.setItem("isLoggedIn", true);
     }
 
     render() {
-        const { RedirectLoggedUser } = this.state;
-
+            
         return (
             <form className="auth-form" onSubmit={this.login}>
                 <div className="title">

@@ -8,13 +8,12 @@ class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            userType: "",
+            user_type: "",
             passwordValidated: true,
-            isAuthenticated: false,
             personalData: {
-                firstName: "",
-                lastName: "",
-                email: "",
+                first_name: "",
+                last_name: "",
+                user_email: "",
                 password: "",
             },
             emptyUser: false
@@ -30,7 +29,7 @@ class Signup extends Component {
     }
 
     changeUserType = (event) => {
-        this.setState({userType: event.target.value, emptyUser: false});
+        this.setState({user_type: event.target.value, emptyUser: false});
     }
 
     validatePassword = (event) => {
@@ -47,9 +46,9 @@ class Signup extends Component {
     signup = (e) => {
         e.preventDefault()
         if (this.state.passwordValidated === true) {
-            let userType = this.state.userType;
+            let userType = this.state.user_type;
             if (userType === "admin" || userType === "user"){
-                //this.firebase_signup(this.state.email, this.state.password);
+                this.addAccount();
             }
             else {
                 this.setState({emptyUser: true});
@@ -57,86 +56,41 @@ class Signup extends Component {
         }
     }
 
-    /* firebase_signup = () => {
-        let {email, password} = this.state.personalData
-        // console.log(email + " " + password)
-        fire.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in 
-            var user = userCredential.user;
-            // Send verification email
-            this.firebase_sendVerification(user);
-            // Add user to MongoDB
-            this.signUp();
-
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            if (errorCode == 'auth/email-already-in-use') {
-                alert('That email is taken. Try another.');
-              } else {
-                alert(errorMessage);
-              }
-              console.log(error);
-        });
-    }
-
-    firebase_sendVerification = (user) => {
-
-        user.sendEmailVerification().then(function() {
-            // Email sent.
-        }).catch(function(error) {
-            // An error happened.
-            var errorMessage = error.message;
-            alert(errorMessage);
-            console.log(error);
-        });
-    } */
-
-    signUp = () => {
-        if (this.state.passwordValidated === true) {
-            if (this.state.userType === "admin") {
-                this.addAdmin(this.state.personalData);
-            }
-            else if (this.state.userType === "user") {
-                this.addUser(this.state.personalData);
-            }
-            else {
-                this.setState({emptyUser: true})
-            }
+    addAccount = () => {
+        if (this.state.user_type === "admin") {
+            this.addAdmin(this.state.personalData);
+        }
+        else if (this.state.user_type === "user") {
+            this.addUser(this.state.personalData);
         }
     }
 
     addAdmin = (personalData) => {
         const newAdmin = {
-            firstName: personalData["firstName"],
-            lastName: personalData["lastName"],
-            email: personalData["email"],
+            first_name: personalData["first_name"],
+            last_name: personalData["last_name"],
+            user_email: personalData["user_email"],
             password: personalData["password"],
-            isAuthenticated: this.state.isAuthenticated,
-            user: "admin"
+            user_type: "admin"
         }
 
-        //this.mongo_signup(newAdmin)
+        this.mongo_signup(newAdmin)
     }
 
     addUser = (personalData) => {
         const newUser = {
-            firstName: personalData["firstName"],
-            lastName: personalData["lastName"],
-            email: personalData["email"],
+            first_name: personalData["first_name"],
+            last_name: personalData["last_name"],
+            user_email: personalData["user_email"],
             password: personalData["password"],
-            isAuthenticated: this.state.isAuthenticated,
-            user: "user"
+            user_type: "user"
         }
-
-        //this.mongo_signup(newUser)
+        this.mongo_signup(newUser)
     }
     
     mongo_signup = (user) => {
         let _this = this
-        fetch(env.backendURL + 'signup', {
+        fetch('http://localhost:3001/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -144,11 +98,12 @@ class Signup extends Component {
             body: JSON.stringify(user)
         })
         .then((res) => {
+            console.log("User added");
             if (res.status === 404) {
                 _this.setState({error: true})
             }
-            else {
-                _this.props.history.push("/email-verification");
+            else{
+                _this.props.history.push("/signupSuccess")
             }
         })
     }
@@ -176,11 +131,11 @@ class Signup extends Component {
                     <p id="last-name">Last Name</p>
                 </div>
                 <div id="cta-type" style={{marginBottom: "0px"}}>
-                    <input type="text" id="firstName" className="user-name" style={{width: '245px'}} onChange={this.handleChange} size="25" required/>
-                    <input type="text" id="lastName"  className="user-name" style={{width: '245px'}} onChange={this.handleChange} size="25" required/>
+                    <input type="text" id="first_name" className="user-name" style={{width: '245px'}} onChange={this.handleChange} size="25" required/>
+                    <input type="text" id="last_name"  className="user-name" style={{width: '245px'}} onChange={this.handleChange} size="25" required/>
                 </div>
                 <p id = "input">Email</p>
-                <input type="email" className="account-info" id="email" size="50" style={{width: '500px'}} onChange={this.handleChange} required/>
+                <input type="email" className="account-info" id="user_email" size="50" style={{width: '500px'}} onChange={this.handleChange} required/>
                 <p id = "input">Password</p>
                 <input type="password" className="account-info" id="password" style={{width: '500px'}} onChange={this.handleChange} 
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number, one uppercase, and one lowercase letter, and at least 6 or more characters long"
