@@ -7,13 +7,18 @@ import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation';
-import SinglePage from './SinglePage';
-import HikeFinder from './HikeFinder';
 import HomePage from './HomePage';
+
+
+import FilterBar from './components/FilterBar'
+import HikeFinder from './HikeFinder';
+import SinglePage from './SinglePage';
+import ReviewPage from './ReviewPage';
+
 import Login from './LoginPage';
 import Signup from './SignupPage';
-import FilterBar from './components/FilterBar'
-import ReviewPage from './ReviewPage';
+import SignupSuccess from './components/SignupSuccess';
+import ProfilePage from './ProfilePage';
 
 function App() {
   const [appState, setAppState] = useState({
@@ -143,13 +148,14 @@ function App() {
                 <FilterBar onChange={handleFilterChange} onDiff={handleDifficultyChange}/>
                 <HikeFinder hikeList={[...appState.filteredDataIndexes].map(i => appState.baseHikeData[i])} />
               </Route>
-              <Route exact path="/review/:id" component={ReviewPage} />
-              <Route exact path="/login">
-                <Login />
-              </Route>
-              <Route exact path="/signup">
-                <Signup />
-              </Route>
+               <Route exact path="/singlepage">
+                  <SinglePage />
+               </Route>
+               <Route exact path="/review/:id" component={ReviewPage} />
+               <Route exact path="/login"><Login /></Route>
+               <Route exact path="/signup"><Signup /></Route>
+               <Route exact path="/signupSuccess"><SignupSuccess /></Route>
+               <Route exact path="/profile"><ProfilePage /></Route>
             </Switch>
           </div>
         </BrowserRouter>

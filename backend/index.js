@@ -11,9 +11,12 @@ app.use(bodyParser.urlencoded({
  }))
 env.config();
 
-
 const hikeRoute = require('./routes/hike')
+const signup = require('./routes/signup')
+const login = require('./routes/login')
 app.use('/hike', hikeRoute)
+app.use('/signup', signup)
+app.use('/login', login)
 
 
 app.get('/products/:id', function (req, res, next) {
