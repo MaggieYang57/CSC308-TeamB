@@ -144,8 +144,11 @@ input[type=radio] {
 
 .signup-error {
     margin: 20px 0px -10px;
-    color: rgb(241, 80, 80);
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 800;
     font-size: 17px;
+    color: rgb(241, 80, 80);
 }
 
 #confirm-error{
