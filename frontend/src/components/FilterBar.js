@@ -3,7 +3,8 @@ import axios from "axios";
 import "../css/filterBar.css";
 import FilterButton from "./FilterButton";
 import SortDrop from "./SortDrop";
-import SearchBar from './SearchBar'
+import SearchBar from "./SearchBar";
+
 function FilterBar(props) {
 
   return (
