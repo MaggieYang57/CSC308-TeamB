@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Badge, Button, NavBar, Form} from 'react-bootstrap';
 
-export function Footer({}) {
+export default function Footer({}) {
 	 return (
 		<div>
 
