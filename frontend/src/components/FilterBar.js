@@ -3,12 +3,14 @@ import axios from "axios";
 import "../css/filterBar.css";
 import SearchBar from "./SearchBar";
 import FilterButton from "./FilterButton";
+import SortDrop from "./SortDrop";
 
 function FilterBar(props) {
 
   return (
     <div id="filterBar">
       <SearchBar />
+      <SortDrop onChange={props.onDiff}/>
       <div id="filter-buttons">
         <FilterButton name="Dog Friendly" filterType='dog_friendly' onChange={props.onChange} />
         <FilterButton name="Family Friendly" filterType='family_friendly' onChange={props.onChange}/>

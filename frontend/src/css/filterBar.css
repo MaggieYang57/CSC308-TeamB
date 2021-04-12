@@ -23,9 +23,28 @@
   height: 50%;
   align-items: center;
   color: white;
-  padding: 0px 2.5%;
   padding-top: 2vw;
+  padding-right: 1vw;
   justify-content: space-between;
+}
+
+#sort-drop {
+  position:absolute;
+  justify-content: space-between;
+  left: 20vw;
+  padding-top:2.5vw;
+  /* width: 20%; */
+  color:#265b5f;
+}
+
+select {
+  color:#265b5f;
+  width: 15vw;
+  height: 43px;
+  padding: 0;
+  padding-left: 12px;
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 button {

@@ -8,6 +8,8 @@ const SearchBar = ({ keyword, setKeyword }) => {
     padding: "0.5rem",
     marginTop: "3vw"
   };
+
+
   return (
     <input
       style={BarStyling}

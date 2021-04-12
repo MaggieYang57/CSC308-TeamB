@@ -1,6 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
-import axios from "axios";
-import Table from "./Table";
+import React from "react";
 import "../css/filterButton.css";
 
 
