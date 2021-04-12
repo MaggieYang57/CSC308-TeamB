@@ -99,8 +99,9 @@ class Signup extends Component {
         })
         .then((res) => {
             console.log("User added");
+
             if (res.status === 404) {
-                _this.setState({error: true})
+               _this.setState({ error: true })
             }
             else{
                 _this.props.history.push("/signupSuccess")
@@ -157,9 +158,9 @@ class Signup extends Component {
                 <input id = "signup-button" type="submit" value="CREATE ACCOUNT"/>
                 <p>Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
-            </div>
-        );
-    }
+         </div>
+      );
+   }
 }
 
 export default withRouter(Signup);

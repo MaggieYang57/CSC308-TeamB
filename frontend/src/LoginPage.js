@@ -82,13 +82,13 @@ class Login extends Component {
         })
         .then((res) => {
             if (res.status === 404) {
-                _this.setState({error: true})
+               _this.setState({ error: true })
             }
             else {
-                return res.json()
+               return res.json()
             }
-        })
-        .then(data => {
+         })
+         .then(data => {
             _this.storeUser(data)
             this.props.history.push("/profile");
         })
@@ -137,13 +137,14 @@ class Login extends Component {
                     <input type="checkbox" id="password-visibility" onClick={() => this.passwordVisibility()}/>
                     Show Password
                 </label>
-                <br/>
-                {this.state.emptyUser && <div className="error">Select the type of user</div>}
-                {this.state.error && <div className="error">Invalid email or password</div>}
-                <button id="login-button" type="submit">LOG IN</button>
-                <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-            </form>
-          )}
-    }
+            <br />
+            {this.state.emptyUser && <div className="error">Select the type of user</div>}
+            {this.state.error && <div className="error">Invalid email or password</div>}
+            <button id="login-button" type="submit">LOG IN</button>
+            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+         </form>
+      )
+   }
+}
 
 export default withRouter(Login);
