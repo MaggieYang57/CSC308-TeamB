@@ -15,6 +15,7 @@
     float:left;
     width:10.0em;
     height: -5vh;
+    padding: 5px;
 }
 
 .filterButton  label span {

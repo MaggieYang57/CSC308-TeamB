@@ -11,7 +11,7 @@ class Signup extends Component {
             userType: "",
             passwordValidated: true,
             isAuthenticated: false,
-            personalData: { //shared across all users
+            personalData: {
                 firstName: "",
                 lastName: "",
                 email: "",
@@ -156,7 +156,9 @@ class Signup extends Component {
     render() {
         return (
             <div className="signup-form">
-                <h1 id="title">SIGN UP</h1>
+                <div id="title-signup">
+                    <b class="text text-center " style={{fontSize: 50, color: "#2C6674"}}>Sign Up</b>
+                </div>
                 <form onSubmit={this.signup}>
                 <div id="cta-type">
                     <div id="admin">
@@ -191,7 +193,7 @@ class Signup extends Component {
                 <section>
                     {this.state.passwordValidated === false &&
                         <div>
-                            <p id="error">Confirmation password does not match password!</p>
+                            <p id="confirm-error">Confirmation password does not match password!</p>
                         </div>
                     }
                 </section>

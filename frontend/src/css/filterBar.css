@@ -5,12 +5,14 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2vw;
   width: 100%;
   height: 7vh;
   align-items: center;
   color: white;
   padding: 0px 1%;
-  justify-content: space-between;
+  
 }
 
 #filter-buttons {
@@ -19,29 +21,30 @@
   display: flex;
   flex-direction: row;
   height: 50%;
-  margin-right: 17%;
   align-items: center;
   color: white;
-  padding: 0px 2.5%;
-  padding-top: 1vw;
+  padding-top: 2vw;
+  padding-right: 1vw;
   justify-content: space-between;
 }
 
-#difficultyFilter {
+#sort-drop {
   position:absolute;
   justify-content: space-between;
-  right: 0;
-  width: 20%;
+  left: 20vw;
+  padding-top:2.5vw;
+  /* width: 20%; */
   color:#265b5f;
 }
 
 select {
   color:#265b5f;
-  width: 5vw;
-}
-
-option {
-  padding: 10px;
+  width: 15vw;
+  height: 43px;
+  padding: 0;
+  padding-left: 12px;
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 button {

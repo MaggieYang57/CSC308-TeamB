@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     width: 700px;
-    margin: 150px calc(50vw - 350px) 50px;
+    margin: 100px calc(50vw - 350px) 50px;
     padding: 0px 10px 40px;
     flex-direction: column;
 
@@ -14,11 +14,9 @@
     overflow: hidden;
 }
 
-#title {
+#title-signup {
     padding-top: 50px;
-    line-height: 50px;
     letter-spacing: 2px;
-    font-weight: 700;
     font-size: 40px;
 }
 p{
@@ -144,41 +142,18 @@ input[type=radio] {
     color: white;
 }
 
-.volunteer-type{
-    margin-top: 20px;
-}
-.volunteer-type p{
-    display: flex;
-    margin-left: 35px;
-}
-.volunteer-text{
-    display: flex;
-    margin-top: 20px;
-    margin-left: 100px;
-}
-#driver-text{
-    padding-left: 10px;
-    margin-right: 80px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: #7E7C7C;
-}
-#kitchen-text{
-    padding-left: 10px;
-    padding-right: 15px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: #7E7C7C;
-}
-
 .signup-error {
     margin: 20px 0px -10px;
     color: rgb(241, 80, 80);
     font-size: 17px;
+}
+
+#confirm-error{
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgb(241, 80, 80);
 }
 
 .drop-down-site {

@@ -6,8 +6,10 @@ const SearchBar = ({ keyword, setKeyword }) => {
     background: "#F2F1F9",
     border: "none",
     padding: "0.5rem",
-    marginTop: "2vw"
+    marginTop: "3vw"
   };
+
+
   return (
     <input
       style={BarStyling}
