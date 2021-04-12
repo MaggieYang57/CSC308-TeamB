@@ -157,9 +157,11 @@ function App() {
                <Route exact path="/signupSuccess"><SignupSuccess /></Route>
                <Route exact path="/profile"><ProfilePage /></Route>
             </Switch>
-          </div>
-        </BrowserRouter>
-  );
+            <Container style = {{marginTop: '7vw'}}></Container>
+            <Footer />
+         </div>
+      </BrowserRouter>
+   );
 }
 
 export default App;

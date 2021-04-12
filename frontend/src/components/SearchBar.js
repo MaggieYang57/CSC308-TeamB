@@ -6,7 +6,7 @@ const SearchBar = ({ keyword, setKeyword }) => {
     background: "#F2F1F9",
     border: "none",
     padding: "0.5rem",
-    marginTop: "3vw"
+    marginTop: ".5vw"
   };
 
 
