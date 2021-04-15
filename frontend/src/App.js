@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import { Navigation } from './components/Navigation';
+import Navigation from './components/navbars/Navigation';
 import { Footer } from './components/Footer';
 import HomePage from './HomePage';
 
@@ -19,6 +19,7 @@ import ReviewPage from './ReviewPage';
 import Login from './LoginPage';
 import Signup from './SignupPage';
 import SignupSuccess from './components/SignupSuccess';
+import LogoutSuccess from './components/LogoutSuccess';
 import ProfilePage from './ProfilePage';
 
 function App() {
@@ -157,6 +158,7 @@ function App() {
                <Route exact path="/signup"><Signup /></Route>
                <Route exact path="/signupSuccess"><SignupSuccess /></Route>
                <Route exact path="/profile"><ProfilePage /></Route>
+               <Route exact path="/logout"><LogoutSuccess /></Route>
             </Switch>
             <Container style = {{marginTop: '7vw'}}></Container>
             <Footer />
