@@ -6,7 +6,7 @@ A user-friendly web app for people to find accurate information and reviews abou
 Link to Figma UI Prototype: https://www.figma.com/file/RQRZ6Vfh6jEHSwrqPtI0xs/Lofi?node-id=0%3A1
 
 ### Code Styles
-We are using ESLint and Prettier.
+We are using ESLint and Prettier. Developers should ESLint these to check syntax, find quality problems and bugs, and enforce a uniform code style. Intergrating Prettier simultaneously formats the code to help enforce a consistent style as well.
 
 Any code contributors should following the guide https://codeburst.io/eslint-everything-you-need-to-know-about-enforcing-a-style-guide-with-eslint-d4520c732dcb.
 
