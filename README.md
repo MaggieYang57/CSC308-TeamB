@@ -13,4 +13,4 @@ Any code contributors should following the guide https://codeburst.io/eslint-eve
 Our team chose to use the **Standard** style guide for this project.
 We initialized .eslintrc.js files for both frontend and backend with the exact same settings.
 
-To automatically apply Prettier rules for all files in src, run npx prettier --write src/* .js . To run it for components, run  npx prettier --write src/**/* .js
+To automatically apply Prettier rules for all files in src, run npx prettier --write src/* .js . To run it for components, run  npx prettier --write src/**/*.js
