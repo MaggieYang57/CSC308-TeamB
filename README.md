@@ -6,6 +6,11 @@ A user-friendly web app for people to find accurate information and reviews abou
 Link to Figma UI Prototype: https://www.figma.com/file/RQRZ6Vfh6jEHSwrqPtI0xs/Lofi?node-id=0%3A1
 
 ### Code Styles
-We are using using ESLint and Prettier.
+We are using ESLint and Prettier.
 
-The code contributors in should following the guide https://codeburst.io/eslint-everything-you-need-to-know-about-enforcing-a-style-guide-with-eslint-d4520c732dcb. 
+Any code contributors should following the guide https://codeburst.io/eslint-everything-you-need-to-know-about-enforcing-a-style-guide-with-eslint-d4520c732dcb.
+
+Our team chose to use the **Standard** style guide for this project.
+We initialized .eslintrc.js files for both frontend and backend with the exact same settings.
+
+To automatically apply Prettier rules for all files in src, run npx prettier --write src/* .js . To run it for components, run  npx prettier --write src/**/* .js
