@@ -7,10 +7,9 @@ import './css/App.css';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation';
-import { Footer } from './components/Footer';
+import Footer from './components/Footer';
 import HomePage from './HomePage';
 
-import Footer from './components/Footer'
 import FilterBar from './components/FilterBar'
 import HikeFinder from './HikeFinder';
 import SinglePage from './SinglePage';

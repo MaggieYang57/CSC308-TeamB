@@ -5,7 +5,7 @@ function ReviewBody(props) {
    const rows = props.reviewList.map((row, index) => {
       return (
          <tr key={index}>
-            <td style={{ width: '150px' }}>Review by: <br></br>{row.user_id}</td>
+            <td style={{ width: '15px' }}>Review by: <br></br>{row.user_id}</td>
             <td style={{ width: '150px' }}>Date: <br></br>{row.date}</td>
             <td>{row.reviewBody}</td>
          </tr>
@@ -28,7 +28,7 @@ function EmptyReviews(props) {
 
 function ReviewTable(props) {
    const divStyle = {
-      margin: " 5px 100px 5px",
+      margin: " 5px 300px 5px",
       width: '1300px'
    };
 

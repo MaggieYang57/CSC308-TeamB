@@ -3,7 +3,7 @@
 .review-form {
 	display: flex;
 	align-items: center;
-	width: 700px;
+	width: 1300px;
 	margin: 100px calc(50vw - 350px) 50px;
 	padding: 0px 10px 40px;
 	flex-direction: column;
