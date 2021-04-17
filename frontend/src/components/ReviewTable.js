@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 function ReviewBody(props) {
@@ -37,7 +38,7 @@ function ReviewTable(props) {
   if (hasReview) {
     reviewTable = <ReviewBody reviewList={props.reviewList} />;
 
-    //Display message if there are currently no reviews
+    // Display message if there are currently no reviews
     if (Object.keys(props.reviewList).length === 0) {
       noReviews = <EmptyReviews />;
     }

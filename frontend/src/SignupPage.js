@@ -22,7 +22,7 @@ class Signup extends Component {
 
   // updates personal data
   handleChange = (event) => {
-    let personalData = this.state.personalData;
+    const personalData = this.state.personalData;
     personalData[event.target.id] = event.target.value;
 
     this.setState({ personalData: personalData });
@@ -34,7 +34,7 @@ class Signup extends Component {
 
   validatePassword = (event) => {
     const confirmPassword = event.target.value;
-    const password = this.state.personalData["password"];
+    const password = this.state.personalData.password;
     if (password !== confirmPassword) {
       this.setState({ passwordValidated: false });
     } else {
@@ -45,7 +45,7 @@ class Signup extends Component {
   signup = (e) => {
     e.preventDefault();
     if (this.state.passwordValidated === true) {
-      let userType = this.state.user_type;
+      const userType = this.state.user_type;
       if (userType === "admin" || userType === "user") {
         this.addAccount();
       } else {
@@ -64,10 +64,10 @@ class Signup extends Component {
 
   addAdmin = (personalData) => {
     const newAdmin = {
-      first_name: personalData["first_name"],
-      last_name: personalData["last_name"],
-      user_email: personalData["user_email"],
-      password: personalData["password"],
+      first_name: personalData.first_name,
+      last_name: personalData.last_name,
+      user_email: personalData.user_email,
+      password: personalData.password,
       user_type: "admin",
     };
 
@@ -76,17 +76,17 @@ class Signup extends Component {
 
   addUser = (personalData) => {
     const newUser = {
-      first_name: personalData["first_name"],
-      last_name: personalData["last_name"],
-      user_email: personalData["user_email"],
-      password: personalData["password"],
+      first_name: personalData.first_name,
+      last_name: personalData.last_name,
+      user_email: personalData.user_email,
+      password: personalData.password,
       user_type: "user",
     };
-    this.mongo_signup(newUser);
+    this.mongoSignup(newUser);
   };
 
-  mongo_signup = (user) => {
-    let _this = this;
+  mongoSignup = (user) => {
+    const _this = this;
     fetch("http://localhost:3001/signup", {
       method: "POST",
       headers: {
@@ -109,7 +109,7 @@ class Signup extends Component {
       <div className="signup-form">
         <div id="title-signup">
           <b
-            class="text text-center "
+            className="text text-center "
             style={{ fontSize: 50, color: "#2C6674" }}
           >
             Sign Up
@@ -126,7 +126,7 @@ class Signup extends Component {
                 onChange={this.changeUserType}
                 checked={null}
               />
-              <label for="admin">Admin</label>
+              <label htmlFor="admin">Admin</label>
             </div>
             <div id="user">
               <input
@@ -137,7 +137,7 @@ class Signup extends Component {
                 onChange={this.changeUserType}
                 checked={null}
               />
-              <label for="user">User</label>
+              <label htmlFor="user">User</label>
             </div>
           </div>
 
@@ -188,7 +188,7 @@ class Signup extends Component {
             required
           />
           <br />
-          <label id="pass-label" for="password">
+          <label id="pass-label" htmlFor="password">
             (Must contain at least one number, one uppercase, and one lowercase{" "}
             <br />
             letter, and at least 6 or more characters long)

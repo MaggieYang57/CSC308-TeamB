@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Card, Badge, Button, Row, Col } from "react-bootstrap";
@@ -6,10 +7,11 @@ import { Link } from "react-router-dom";
 import { Ratings } from "./Ratings";
 
 function round(value, precision) {
-  var multiplier = Math.pow(10, precision || 0);
+  const multiplier = Math.pow(10, precision || 0);
   return Math.round(value * multiplier) / multiplier;
 }
 
+// eslint-disable-next-line react/prop-types
 export function HikeCardList({ hike, setOrdered }) {
   return (
     <Card
@@ -24,6 +26,7 @@ export function HikeCardList({ hike, setOrdered }) {
         <Col md={5} lg={3}>
           <Card.Img
             variant="top"
+            // eslint-disable-next-line react/prop-types
             src={hike.imagesrc}
             style={{ height: "10rem", width: "15rem", marginTop: "1rem" }}
             fluid
@@ -34,13 +37,13 @@ export function HikeCardList({ hike, setOrdered }) {
             <Ratings rating={round(hike.rating, 1)} />
             <Card.Title style={{ marginTop: "1vw" }}>
               <Link to={"/hike/" + hike._id}>
-                <p class=" h5 card-text text-left text-primary font-weight-bold">
+                <p className=" h5 card-text text-left text-primary font-weight-bold">
                   {hike.title}{" "}
                 </p>
               </Link>
             </Card.Title>
             <Card.Text>
-              <p class="card-text text-left" style={{ fontWeight: "bold" }}>
+              <p className="card-text text-left" style={{ fontWeight: "bold" }}>
                 {hike.location}
               </p>
             </Card.Text>
@@ -49,7 +52,7 @@ export function HikeCardList({ hike, setOrdered }) {
       </Row>
       <Row>
         <Card.Text style={{ marginLeft: "1rem", marginTop: ".7rem" }}>
-          <p class="card-text text-left">
+          <p className="card-text text-left">
             {hike.description.substring(0, 170) + "..."}
           </p>
         </Card.Text>

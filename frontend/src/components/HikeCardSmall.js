@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { Card, Badge, Button, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export function HikeCardList({ hike, setOrdered }) {
@@ -25,13 +26,13 @@ export function HikeCardList({ hike, setOrdered }) {
           <Card.Body style={{ marginLeft: "4rem" }}>
             <Card.Title>
               <Link to={"/hike/" + hike._id}>
-                <p class=" h5 card-text text-left text-primary font-weight-bold">
+                <p className=" h5 card-text text-left text-primary font-weight-bold">
                   {hike.title}
                 </p>
               </Link>
             </Card.Title>
             <Card.Text>
-              <p class="card-text text-left" style={{ fontWeight: "bold" }}>
+              <p className="card-text text-left" style={{ fontWeight: "bold" }}>
                 {hike.location}
               </p>
             </Card.Text>

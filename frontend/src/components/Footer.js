@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-unused-vars */
 import React from "react";

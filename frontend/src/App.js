@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
@@ -34,7 +33,7 @@ function App() {
       const response = await axios.get("http://localhost:3001/hike");
       return response.data;
     } catch (error) {
-      //We're not handling errors. Just logging into the console.
+      // We're not handling errors. Just logging into the console.
       console.log(error);
       return false;
     }
@@ -59,7 +58,7 @@ function App() {
     if (filters.size === 1) {
       indices = new Set();
     }
-    for (var i = 0; i < hikeData.length; i++) {
+    for (let i = 0; i < hikeData.length; i++) {
       if (hikeData[i][filter] === true) {
         indices.add(i);
       }
@@ -78,7 +77,7 @@ function App() {
     filters.delete(filter);
     let indices = new Set();
     if (filters.size > 0) {
-      for (var i = 0; i < hikeData.length; i++) {
+      for (let i = 0; i < hikeData.length; i++) {
         for (const filterOpt of filters) {
           if (hikeData[i][filterOpt] === true) {
             indices.add(i);
@@ -99,7 +98,7 @@ function App() {
   const average = (arr) => arr.reduce((a, b) => a + b, 0) / arr.length;
 
   function sortByDifficulty(a, b) {
-    return average(b["difficulty"]) - average(a["difficulty"]);
+    return average(b.difficulty) - average(a.difficulty);
   }
 
   function handleDifficultyChange(diff) {
@@ -115,7 +114,7 @@ function App() {
       } else if (diffNum === 2) {
         sortedHikes = hikeData.sort(sortByDifficulty).reverse();
       }
-      for (var i = 0; i < sortedHikes.length; i++) {
+      for (let i = 0; i < sortedHikes.length; i++) {
         indices.add(appState.baseHikeData.indexOf(sortedHikes[i]));
       }
     } else if (diffNum === 0) {

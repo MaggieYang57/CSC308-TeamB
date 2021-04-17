@@ -1,3 +1,5 @@
+/* eslint-disable node/handle-callback-err */
+/* eslint-disable react/prop-types */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react";
@@ -34,7 +36,7 @@ class Login extends Component {
   };
 
   passwordVisibility = () => {
-    var password = document.getElementById("password");
+    const password = document.getElementById("password");
     password.type =
       password.type === "password"
         ? (password.type = "text")
@@ -73,11 +75,11 @@ class Login extends Component {
       user_type: this.state.user_type,
     };
 
-    this.mongo_login(user);
+    this.mongoLogin(user);
   };
 
-  mongo_login = (user) => {
-    let _this = this;
+  mongoLogin = (user) => {
+    const _this = this;
     fetch("http://localhost:3001/login", {
       method: "POST",
       headers: {
@@ -116,7 +118,7 @@ class Login extends Component {
           {window.location.pathname.split("/")[2] === "admin" ? "Admin " : ""}
           {window.location.pathname.split("/")[2] === "user" ? "User " : ""}
           <b
-            class="text text-center "
+            className="text text-center "
             style={{ fontSize: 50, color: "#2C6674" }}
           >
             Log In
@@ -132,7 +134,7 @@ class Login extends Component {
               onChange={this.changeUserType}
               checked={null}
             />
-            <label for="admin">Admin</label>
+            <label htmlFor="admin">Admin</label>
           </div>
           <div id="user">
             <input
@@ -143,7 +145,7 @@ class Login extends Component {
               onChange={this.changeUserType}
               checked={null}
             />
-            <label for="user">User</label>
+            <label htmlFor="user">User</label>
           </div>
         </div>
         <p className="input-email">Email</p>
@@ -167,7 +169,7 @@ class Login extends Component {
           onChange={this.handleChange}
         />
         <br />
-        <label class="password-security">
+        <label className="password-security">
           <input
             type="checkbox"
             id="password-visibility"
@@ -186,7 +188,7 @@ class Login extends Component {
           LOG IN
         </button>
         <p>
-          Don't have an account? <Link to="/signup">Sign up</Link>
+          Don&apos;t have an account? <Link to="/signup">Sign up</Link>
         </p>
       </form>
     );

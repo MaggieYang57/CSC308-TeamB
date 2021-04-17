@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/heading-has-content */
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./css/SinglePage.css";
@@ -60,7 +59,7 @@ class SinglePage extends React.Component {
   };
 
   render() {
-    var reviewExists = false;
+    let reviewExists = false;
     if (this.state.reviews !== null) {
       reviewExists = true;
     }

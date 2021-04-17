@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Card, Badge, Button, NavBar, Form } from "react-bootstrap";

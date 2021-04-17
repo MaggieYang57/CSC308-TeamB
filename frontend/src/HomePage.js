@@ -1,4 +1,5 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";

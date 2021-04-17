@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,11 +19,11 @@ function HikeFinder(props) {
   return (
     <div>
       <Container style={{ marginTop: "5vw" }}>
-        <b class="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>
+        <b className="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>
           Hike Finder
         </b>
-        <p class="text text-center " style={{ fontSize: 30, color: "#59BCA6" }}>
-          Find one that's just right for you!
+        <p className="text text-center " style={{ fontSize: 30, color: "#59BCA6" }}>
+          Find one that&apos;s just right for you!
         </p>
       </Container>
       <Container style={{ marginTop: "2vw" }}>

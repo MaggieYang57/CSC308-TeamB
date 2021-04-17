@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/prop-types */
 /* eslint-disable eqeqeq */
 import React from "react";
 import { Image } from "react-bootstrap";
@@ -32,7 +32,7 @@ function getStar(rating, star) {
 export function Ratings({ rating }) {
   return (
     <div>
-      <form class="form-inline " style={{ marginLeft: "0vw" }}>
+      <form className="form-inline " style={{ marginLeft: "0vw" }}>
         <a>
           {" "}
           <Image

@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import moment from "moment";
@@ -17,7 +17,7 @@ function WeatherWidget(props) {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          var icon = JSON.stringify(data.weather[0].icon);
+          let icon = JSON.stringify(data.weather[0].icon);
           icon = icon.replace('"', "");
           icon = icon.replace('"', "");
 
