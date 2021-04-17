@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "../css/filterBar.css";
 
 function SortDrop(props) {
-  const [difficulty, setDifficulty] = useState(0)
+  const [difficulty, setDifficulty] = useState(0);
 
   function handleFilterChange(e) {
     console.log(e.target.value);

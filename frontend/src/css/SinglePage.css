@@ -1,180 +1,176 @@
-.header{
-    display: flex;
-    justify-content: left;
-    margin-top: 100px;
+.header {
+  display: flex;
+  justify-content: left;
+  margin-top: 100px;
 }
-.header h1{
-    margin-left: 10vw;
-    font-family: 'Mulisih', sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    color:#265b5f;
+.header h1 {
+  margin-left: 10vw;
+  font-family: "Mulisih", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #265b5f;
 }
-.header h2{
-    margin-left: 40px;
-    margin-top: 0.5vw;
-    font-size: 25px;
-    color:#265b5f;
+.header h2 {
+  margin-left: 40px;
+  margin-top: 0.5vw;
+  font-size: 25px;
+  color: #265b5f;
 }
 
-h3{
-    justify-content: center;
-    text-align: center;
-    font-family: 'Mulish', sans-serif;
-    font-size: 25px;
-    color:#265b5f;
+h3 {
+  justify-content: center;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 25px;
+  color: #265b5f;
 }
 
 .boxed {
-    box-sizing: content-box;
-    width: 100%;
-    border: solid black 1px;
-    padding: 15px;
-    border-radius: 25px;
+  box-sizing: content-box;
+  width: 100%;
+  border: solid black 1px;
+  padding: 15px;
+  border-radius: 25px;
 }
 
-img{
-    display: flex;
-    justify-content: left;
-    margin-left: 10vw;
-    border-radius: 50px;
+img {
+  display: flex;
+  justify-content: left;
+  margin-left: 10vw;
+  border-radius: 50px;
 }
 
 /****************side information*******************/
-.single-info{
-    text-align: left;
-    justify-content: left;
-    margin-top: -300px;
-    margin-left: 630px;
-    margin-right: 200px;
-    font-family: 'Quicksand', sans-serif;
+.single-info {
+  text-align: left;
+  justify-content: left;
+  margin-top: -300px;
+  margin-left: 630px;
+  margin-right: 200px;
+  font-family: "Quicksand", sans-serif;
 }
 
-#desc
-{
-    margin: 0;
-    font-weight:500;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
+#desc {
+  margin: 0;
+  font-weight: 500;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
 }
 
-.stats{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.difficulty{
-    font-size: 25px;
-    box-sizing: border-box;
-    padding: 2px 10px;
-    border: solid;
-    border-width: 3px;
-    border-radius: 10px;
-    border-color: #10A5F5;
-    color: #10A5F5;
+.difficulty {
+  font-size: 25px;
+  box-sizing: border-box;
+  padding: 2px 10px;
+  border: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  border-color: #10a5f5;
+  color: #10a5f5;
 }
-#rating{
-    display: flex;
-    color: #ff8b3d;
+#rating {
+  display: flex;
+  color: #ff8b3d;
 }
-#rating-num{
-    display: flex;
-    color: #ff8b3d;
+#rating-num {
+  display: flex;
+  color: #ff8b3d;
 }
 
-.rate-me h3
-{
-    display: flex;;
-    justify-content: space-between;
-    margin-right: 1vw;
-    font-size: 30px;
-    color:#265b5f;
+.rate-me h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1vw;
+  font-size: 30px;
+  color: #265b5f;
 }
 
 /************************Rating**************************/
 
-#post-rating
-{
-    -webkit-appearance: none;
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    margin: 0 0 0.5rem 1vw;
-    vertical-align: middle;
+#post-rating {
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0 0.5rem 1vw;
+  vertical-align: middle;
 
-    font-weight: 600;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    text-transform: none;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #0366ee;
-    border-radius: 10px;
-    background: #0366ee;
-    color: #ffffff;
-    
-    cursor: pointer;
-    line-height: 1;
+  font-weight: 600;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #0366ee;
+  border-radius: 10px;
+  background: #0366ee;
+  color: #ffffff;
+
+  cursor: pointer;
+  line-height: 1;
 }
 
-#post-rating:hover{
-    border: 1px solid #0250bc;
-    background: #0250bc;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  #post-rating:focus{
-    border: 1px solid #0250bc;
-    background: #0250bc;
-    color: #ffffff;
-    text-decoration: none;
-  }
+#post-rating:hover {
+  border: 1px solid #0250bc;
+  background: #0250bc;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#post-rating:focus {
+  border: 1px solid #0250bc;
+  background: #0250bc;
+  color: #ffffff;
+  text-decoration: none;
+}
 
 /**********************Reviews********************/
 
-.reviews{
-    margin-top: 2vw;
-    margin-bottom: 1vw;
+.reviews {
+  margin-top: 2vw;
+  margin-bottom: 1vw;
 }
 
-.reviews h2{
-    font-size: 25px;
-    font-weight: 800;
-    color:#265b5f;
+.reviews h2 {
+  font-size: 25px;
+  font-weight: 800;
+  color: #265b5f;
 }
 
 .reviews-title hr {
-   display: inline-block;
-   width: 30%;
-   margin: 5px 10px;
-   border-top: 1px solid #265b5f;
+  display: inline-block;
+  width: 30%;
+  margin: 5px 10px;
+  border-top: 1px solid #265b5f;
 }
 
-#review-button
-{
-    -webkit-appearance: none;
-    display: flex-end;
-    justify-content: right;
-    padding: 0.75rem 1.25rem;
-    width: 150px;
-    margin-left: 30%;
-    vertical-align: middle;
-    font-weight: 600;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    text-transform: none;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid #6CE2E3;
-    border-radius: 10px;
-    background: #6CE2E3;
-    color: #ffffff;
-    cursor: pointer;
-    line-height: 1;
+#review-button {
+  -webkit-appearance: none;
+  display: flex-end;
+  justify-content: right;
+  padding: 0.75rem 1.25rem;
+  width: 150px;
+  margin-left: 30%;
+  vertical-align: middle;
+  font-weight: 600;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #6ce2e3;
+  border-radius: 10px;
+  background: #6ce2e3;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 1;
 }
 
 #review-button:hover {
-	background-color: #5ac0c2;
-	color: white;
-    text-decoration: none;
+  background-color: #5ac0c2;
+  color: white;
+  text-decoration: none;
 }
