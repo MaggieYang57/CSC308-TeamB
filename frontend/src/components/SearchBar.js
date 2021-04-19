@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 const SearchBar = ({ keyword, setKeyword }) => {
@@ -6,9 +7,8 @@ const SearchBar = ({ keyword, setKeyword }) => {
     background: "#F2F1F9",
     border: "none",
     padding: "0.5rem",
-    marginTop: ".5vw"
+    marginTop: ".5vw",
   };
-
 
   return (
     <input

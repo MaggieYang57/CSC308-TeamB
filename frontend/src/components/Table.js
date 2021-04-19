@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+import React from "react";
 
 function TableHeader() {
   return (
@@ -15,7 +16,7 @@ function TableHeader() {
   );
 }
 
-function TableBody (props) {
+function TableBody(props) {
   const rows = props.hikeList.map((row, index) => {
     return (
       <tr key={index}>
@@ -27,23 +28,19 @@ function TableBody (props) {
         <td>{JSON.stringify(row.tags)}</td>
       </tr>
     );
-  })
-  return (
-    <tbody>
-      {rows}
-    </tbody>
-  );
+  });
+  return <tbody>{rows}</tbody>;
 }
 
 function Table(props) {
-   return(
-     <div className = "table">
-        <table>
-          <TableHeader />
-          <TableBody hikeList={props.hikeList} />
-        </table>
-      </div>
-   );
+  return (
+    <div className="table">
+      <table>
+        <TableHeader />
+        <TableBody hikeList={props.hikeList} />
+      </table>
+    </div>
+  );
 }
 
 export default Table;
