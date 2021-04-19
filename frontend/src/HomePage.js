@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Badge, Button, Row, Col } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import "./css/HomePage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { HikeCardList } from "./components/HikeCardList";
 
 function HomePage(props) {
   return (
