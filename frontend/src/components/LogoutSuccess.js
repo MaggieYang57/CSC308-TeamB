@@ -8,7 +8,7 @@ function LogoutSuccess(props) {
     <div className="signup-form">
       <div id="title-signup">
         <b className="text text-center " style={{ fontSize: 40, color: "#2C6674" }}>
-          Logout Filler
+          Successfully logged out!
         </b>
       </div>
       <p style={{ marginTop: 20 }}>

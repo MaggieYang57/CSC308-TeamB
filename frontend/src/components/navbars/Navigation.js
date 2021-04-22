@@ -16,7 +16,7 @@ class Navigation extends React.Component {
     } else if (this.state.user_type === "user") {
       navbar = <UserNavBar />;
     } else {
-      navbar = (
+      navbar = 
         <div>
           <nav
             className="navbar navbar-dark "
@@ -56,10 +56,9 @@ class Navigation extends React.Component {
             </form>
           </nav>
         </div>
-      );
     }
 
-    return <div>{navbar}</div>;
+    return <div>{navbar}</div>
   }
 }
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/App.css";
@@ -162,9 +162,6 @@ function App() {
               )}
             />
           </Route>
-          <Route exact path="/singlepage">
-            <SinglePage />
-          </Route>
           <Route exact path="/review/:id" component={ReviewPage} />
           <Route exact path="/login">
             <Login />
@@ -175,9 +172,13 @@ function App() {
           <Route exact path="/signupSuccess">
             <SignupSuccess />
           </Route>
+          
           <Route exact path="/profile">
-            <ProfilePage />
+            <Redirect to = "/profile/:id"/>
           </Route>
+
+          <Route exact path="/profile/:id" component={ProfilePage} />
+
           <Route exact path="/logout">
             <LogoutSuccess />
           </Route>

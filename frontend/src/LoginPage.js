@@ -13,9 +13,7 @@ class Login extends Component {
     this.state = {
       isLoggedIn: false,
       RedirectLoggedUser: false,
-      user_type: this.props.match.params.user
-        ? this.props.match.params.user
-        : "",
+      user_type: "",
       emptyUser: false,
       email: "",
       password: "",
@@ -94,9 +92,9 @@ class Login extends Component {
           return res.json();
         }
       })
-      .then((data) => {
+      .then(data => {
         _this.storeUser(data);
-        this.props.history.push("/profile");
+        this.props.history.push("/profile/"+ data._id);
       })
       .catch((err) => {
         console.log("Error");
@@ -107,8 +105,9 @@ class Login extends Component {
   storeUser = (user) => {
     const date = new Date();
     localStorage.setItem("email", user.email);
-    localStorage.setItem("user_type", this.state.user_type);
+    localStorage.setItem("user_type", user.user_type);
     localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("_id", user._id);
   };
 
   render() {
