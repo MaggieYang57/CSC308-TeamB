@@ -1,10 +1,7 @@
 /* eslint-disable node/handle-callback-err */
-/* eslint-disable react/prop-types */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
-import { Route, Redirect, Link, withRouter } from "react-router-dom";
-import env from "react-dotenv";
+import PropTypes from 'prop-types'; 
+import { Link, withRouter } from "react-router-dom";
 import "./css/LoginPage.css";
 
 class Login extends Component {
@@ -62,7 +59,7 @@ class Login extends Component {
   login = (e) => {
     e.preventDefault();
 
-    if (this.state.user_type == "") {
+    if (this.state.user_type === "") {
       this.setState({ emptyUser: true });
       return;
     }
@@ -103,11 +100,11 @@ class Login extends Component {
   };
 
   storeUser = (user) => {
-    const date = new Date();
     localStorage.setItem("email", user.email);
     localStorage.setItem("user_type", user.user_type);
     localStorage.setItem("isLoggedIn", true);
     localStorage.setItem("_id", user._id);
+    this.props.onUserChange(JSON.stringify(user.user_type));
   };
 
   render() {
@@ -194,4 +191,9 @@ class Login extends Component {
   }
 }
 
+Login.propTypes = {
+  history: PropTypes.object,  
+  userType: PropTypes.object,  
+  onUserChange: PropTypes.func,
+};
 export default withRouter(Login);

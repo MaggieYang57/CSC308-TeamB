@@ -1,17 +1,9 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-script-url */
-/* eslint-disable no-unused-vars */
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from 'prop-types'; 
 import "./css/Review.css";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
-import SinglePage from "./SinglePage";
-
-const averageRatings = (ratings) => {
-  let sum = 0;
-  for (const i in ratings) sum += +ratings[i];
-  return (sum / ratings.length).toFixed(1);
-};
 
 class Review extends React.Component {
   constructor(props) {
@@ -20,10 +12,6 @@ class Review extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      match: { params },
-    } = this.props;
-
     fetch("http://localhost:3001/hike/" + this.props.match.params.id)
       .then((res) => res.json())
       .then((data) => {
@@ -155,4 +143,7 @@ class Review extends React.Component {
   }
 }
 
+Review.propTypes = {
+  match: PropTypes.object
+};
 export default withRouter(Review);

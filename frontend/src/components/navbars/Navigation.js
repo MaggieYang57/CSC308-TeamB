@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import AdminNavBar from "./AdminNavBar";
 import UserNavBar from "./UserNavBar";
@@ -6,14 +5,14 @@ import UserNavBar from "./UserNavBar";
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { user_type: localStorage.getItem("user_type") };
+    this.state = { userType: localStorage.getItem("user_type") };
   }
 
   render() {
     let navbar;
-    if (this.state.user_type === "admin") {
+    if (this.state.userType === "admin") {
       navbar = <AdminNavBar />;
-    } else if (this.state.user_type === "user") {
+    } else if (this.state.userType === "user") {
       navbar = <UserNavBar />;
     } else {
       navbar = 

@@ -1,13 +1,10 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from "react";
+import PropTypes from 'prop-types'; 
 import "./css/SinglePage.css";
-import moment from "moment";
 import { withRouter } from "react-router-dom";
 
 import WeatherWidget from "./components/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";
-import reviewData from "./tempReviews.json";
 
 const averageRatings = (ratings) => {
   let sum = 0;
@@ -22,10 +19,6 @@ class SinglePage extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      match: { params },
-    } = this.props;
-
     fetch("http://localhost:3001/hike/" + this.props.match.params.id)
       .then((res) => res.json())
       .then((data) => {
@@ -59,11 +52,6 @@ class SinglePage extends React.Component {
   };
 
   render() {
-    let reviewExists = false;
-    if (this.state.reviews !== null) {
-      reviewExists = true;
-    }
-
     return (
       <div className="hike">
         <div className="header">
@@ -115,4 +103,8 @@ class SinglePage extends React.Component {
     );
   }
 }
+
+SinglePage.propTypes = {
+  match: PropTypes.object,  
+};
 export default withRouter(SinglePage);

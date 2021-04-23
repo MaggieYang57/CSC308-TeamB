@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from "react";
-import { Card, Badge, Button, Row, Col } from "react-bootstrap";
+import PropTypes from 'prop-types'; 
+import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { Ratings } from "./Ratings";
@@ -11,8 +10,7 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
-// eslint-disable-next-line react/prop-types
-export function HikeCardList({ hike, setOrdered }) {
+export function HikeCardList({hike}) {
   return (
     <Card
       style={{
@@ -60,3 +58,7 @@ export function HikeCardList({ hike, setOrdered }) {
     </Card>
   );
 }
+
+HikeCardList.propTypes = {
+  hike: PropTypes.object,  
+};
