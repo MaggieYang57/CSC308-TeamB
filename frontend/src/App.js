@@ -49,7 +49,15 @@ function App() {
           userType: appState.userType
         });
     });
+    setAppState( {
+      filteredDataIndexes: appState.filteredDataIndexes,
+      filters: appState.filters,
+      baseHikeData: appState.baseHikeData,
+      userType: localStorage.getItem("user_type")
+    } );
+    console.log(appState);
   }, []);
+
 
   function addFilter(filter) {
     const hikeData = appState.baseHikeData;
@@ -153,12 +161,12 @@ function App() {
     appState.userType = type;
     console.log(appState);
   }
-
+  
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
       <div className="App" style={{ margin: "auto" }}>
-        <Navigation />
+        <Navigation userType = {appState.userType}/>
         <Switch>
           <Route exact path="/">
             <HomePage hikeList={appState.baseHikeData} />
