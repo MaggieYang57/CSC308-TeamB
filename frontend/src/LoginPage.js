@@ -104,7 +104,7 @@ class Login extends Component {
     localStorage.setItem("user_type", user.user_type);
     localStorage.setItem("isLoggedIn", true);
     localStorage.setItem("_id", user._id);
-    this.props.onUserChange(JSON.stringify(user.user_type));
+    this.props.onUserChange(user.user_type);
   };
 
   render() {

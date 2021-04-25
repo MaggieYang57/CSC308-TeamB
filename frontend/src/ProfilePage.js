@@ -1,5 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/ProfilePage.css";
+
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -21,9 +23,15 @@ class ProfilePage extends React.Component {
   {
     return (
       <div>
-        <h1>Hello, {this.state.first_name} {this.state.last_name}</h1>
-        <h2>Saved hikes: <br />
-          {this.state.saved_trails}</h2>
+        <h1 className = "header">Hello, {this.state.first_name} {this.state.last_name}</h1>
+        <div className = "saved-trails">
+        <h2 className="saved-title">
+          <hr />
+          Saved Trails
+          <hr />
+        </h2>
+          <h3>{this.state.saved_trails}</h3>
+        </div>
       </div>
     );
   }

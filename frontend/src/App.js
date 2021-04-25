@@ -150,6 +150,7 @@ function App() {
       baseHikeData: appState.baseHikeData,
       userType: type
     } );
+    appState.userType = type;
     console.log(appState);
   }
 
