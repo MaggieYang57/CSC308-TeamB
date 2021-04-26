@@ -1,7 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./css/SinglePage.css";
+// import moment from "moment";
 import { withRouter } from "react-router-dom";
+import { PropTypes } from 'prop-types';
 
 import WeatherWidget from "./components/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";

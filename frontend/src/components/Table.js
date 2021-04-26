@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import { PropTypes } from 'prop-types';
 
 function TableHeader() {
   return (
@@ -43,4 +43,7 @@ function Table(props) {
   );
 }
 
+Table.propTypes = {
+  hikeList: PropTypes.node,
+}
 export default Table;
