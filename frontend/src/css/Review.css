@@ -1,21 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 .review-form {
-<<<<<<< HEAD
-	display: flex;
-	align-items: center;
-	width: 1300px;
-	margin: 100px calc(50vw - 350px) 50px;
-	padding: 0px 10px 40px;
-	flex-direction: column;
-=======
   display: flex;
   align-items: center;
   width: 700px;
   margin: 100px calc(50vw - 350px) 50px;
   padding: 0px 10px 40px;
   flex-direction: column;
->>>>>>> 359b16c67649531d7e93c7c0f729432984f25e45
 
   background-color: white;
   background-clip: padding-box;
