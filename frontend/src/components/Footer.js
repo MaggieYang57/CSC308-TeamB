@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 
-function Footer() {
+export function Footer({}) {
   return (
     <div>
       <nav
@@ -37,4 +37,3 @@ function Footer() {
   )
 }
 
-export default Footer

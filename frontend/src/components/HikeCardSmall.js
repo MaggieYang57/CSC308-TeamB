@@ -48,7 +48,3 @@ export function HikeCardList({ hike, setOrdered }) {
     </Card>
   );
 }
-
-HikeCardList.propTypes = {
-  hike: PropTypes.node,
-}
