@@ -1,11 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import { PropTypes } from 'prop-types';
 
 function ReviewBody(props) {
   const rows = props.reviewList.map((row, index) => {
     return (
       <tr key={index}>
-        <td style={{ width: "15px" }}>
+        <td style={{ width: "150px" }}>
           Review by: <br></br>
           {row.user_id}
         </td>
@@ -27,7 +27,7 @@ function EmptyReviews(props) {
 
 function ReviewTable(props) {
   const divStyle = {
-    margin: " 5px 300px 5px",
+    margin: " 5px 100px 5px",
     width: "1300px",
   };
 
@@ -52,14 +52,6 @@ function ReviewTable(props) {
       {noReviews}
     </div>
   );
-}
-
-ReviewBody.propTypes = {
-  reviewList: PropTypes.node,
-}
-
-ReviewTable.propTypes = {
-  reviewList: PropTypes.node,
 }
 
 export default ReviewTable;

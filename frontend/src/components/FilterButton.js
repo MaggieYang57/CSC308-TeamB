@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import "../css/filterButton.css";
-import { PropTypes } from 'prop-types';
 
 function FilterButton(props) {
   function handleFilterChange() {
@@ -15,12 +15,6 @@ function FilterButton(props) {
       </label>
     </div>
   );
-}
-FilterButton.propTypes = {
-  onChange: PropTypes.node,
-  onDiff: PropTypes.node,
-  name: PropTypes.node,
-  filterType: PropTypes.node,
 }
 
 export default FilterButton;

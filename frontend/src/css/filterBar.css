@@ -12,7 +12,6 @@
   align-items: center;
   color: white;
   padding: 0px 1%;
-  
 }
 
 #filter-buttons {
@@ -29,16 +28,16 @@
 }
 
 #sort-drop {
-  position:absolute;
+  position: absolute;
   justify-content: space-between;
   left: 20vw;
-  padding-top:2.5vw;
+  padding-top: 2.5vw;
   /* width: 20%; */
-  color:#265b5f;
+  color: #265b5f;
 }
 
 select {
-  color:#265b5f;
+  color: #265b5f;
   width: 15vw;
   height: 43px;
   padding: 0;
@@ -56,8 +55,9 @@ button {
   margin: 5px;
 }
 
-button:hover, button:focus {
-  background-color: #6CE281;
+button:hover,
+button:focus {
+  background-color: #6ce281;
   outline: none;
-  border: none
+  border: none;
 }

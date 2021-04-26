@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './css/App.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/App.css";
 
-import { Container } from 'react-bootstrap'
-import { Navigation } from './components/Navigation'
-import Footer from './components/Footer'
-import HomePage from './HomePage'
+import { Container } from "react-bootstrap";
+import Navigation from "./components/navbars/Navigation";
+import { Footer } from "./components/Footer";
+import HomePage from "./HomePage";
 
-import HikeFinder from './HikeFinder'
-import SinglePage from './SinglePage'
-import ReviewPage from './ReviewPage'
+import HikeFinder from "./HikeFinder";
+import SinglePage from "./SinglePage";
+import ReviewPage from "./ReviewPage";
 
-import Login from './LoginPage'
-import Signup from './SignupPage'
-import SignupSuccess from './components/SignupSuccess'
-import ProfilePage from './ProfilePage'
+import Login from "./LoginPage";
+import Signup from "./SignupPage";
+import SignupSuccess from "./components/SignupSuccess";
+import LogoutSuccess from "./components/LogoutSuccess";
+import ProfilePage from "./ProfilePage";
 
-function App () {
+function App() {
   const [appState, setAppState] = useState({
     baseHikeData: [],
-    filteredDataIndexes: new Set(),
-    filters: new Set()
-  })
+    userType: "",
+    isLoggedIn: false,
+  });
 
   async function fetchAll () {
     try {
@@ -36,23 +37,43 @@ function App () {
     }
   }
 
-  useEffect(() => {
+    useEffect(() => {
     fetchAll().then((result) => {
-      if (result) {
+      if (result)
         setAppState({
           filteredDataIndexes: new Set([...Array(result.length).keys()]),
           filters: appState.filters,
-          baseHikeData: result
-        })
-      }
-    })
-  }, [])
+          baseHikeData: result,
+          userType: appState.userType,
+        });
+    });
+
+    setAppState({
+      baseHikeData: appState.baseHikeData,
+      userType: localStorage.getItem("user_type"),
+    });
+    console.log(appState);
+  }, []);
+
+  function handleUserChange(user) {
+    console.log(user);
+    const type = user;
+    setAppState({
+      filteredDataIndexes: appState.filteredDataIndexes,
+      filters: appState.filters,
+      baseHikeData: appState.baseHikeData,
+      userType: type,
+      isLoggedIn: true,
+    });
+    appState.userType = type;
+    console.log(appState);
+  }
 
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
-      <div className="App" style={{ margin: 'auto' }}>
-        <Navigation />
+      <div className="App" style={{ margin: "auto" }}>
+        <Navigation userType={appState.userType} />
         <Switch>
           <Route exact path="/">
             <HomePage hikeList={appState.baseHikeData} />
@@ -73,7 +94,7 @@ function App () {
           </Route>
           <Route exact path="/review/:id" component={ReviewPage} />
           <Route exact path="/login">
-            <Login />
+            <Login onUserChange={handleUserChange} />
           </Route>
           <Route exact path="/signup">
             <Signup />
@@ -81,15 +102,22 @@ function App () {
           <Route exact path="/signupSuccess">
             <SignupSuccess />
           </Route>
+
           <Route exact path="/profile">
-            <ProfilePage />
+            <Redirect to="/profile/:id" />
+          </Route>
+
+          <Route exact path="/profile/:id" component={ProfilePage} />
+
+          <Route exact path="/logout">
+            <LogoutSuccess />
           </Route>
         </Switch>
-        <Container style={{ marginTop: '7vw' }}></Container>
+        <Container style={{ marginTop: "7vw" }}></Container>
         <Footer />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App

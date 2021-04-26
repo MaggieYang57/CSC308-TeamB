@@ -214,4 +214,7 @@ HikeFinder.propTypes = {
   hikeList: PropTypes.node,
 }
 
+HikeFinder.propTypes = {
+  hikeList: PropTypes.object,
+};
 export default HikeFinder;

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-export function SortBy() {
+export function SortBy({ hike }) {
   const ListStyling = {
     width: "20rem",
     background: "#F2F1F9",

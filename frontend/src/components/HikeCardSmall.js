@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { PropTypes } from 'prop-types';
 
-export function HikeCardList({ hike }) {
+export function HikeCardList({ hike, setOrdered }) {
   return (
     <Card
       style={{

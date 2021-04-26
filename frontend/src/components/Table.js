@@ -43,10 +43,6 @@ function Table(props) {
   );
 }
 
-TableBody.propTypes = {
-  hikeList: PropTypes.node,
-}
-
 Table.propTypes = {
   hikeList: PropTypes.node,
 }

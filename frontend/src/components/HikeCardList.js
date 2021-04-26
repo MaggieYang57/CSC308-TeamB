@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { PropTypes } from 'prop-types';
 
 import { Ratings } from "./Ratings";
 
@@ -24,6 +24,7 @@ export function HikeCardList({ hike }) {
         <Col md={5} lg={3}>
           <Card.Img
             variant="top"
+            // eslint-disable-next-line react/prop-types
             src={hike.imagesrc}
             style={{ height: "10rem", width: "15rem", marginTop: "1rem" }}
             fluid
@@ -59,5 +60,5 @@ export function HikeCardList({ hike }) {
 }
 
 HikeCardList.propTypes = {
-  hike: PropTypes.node,
-}
+  hike: PropTypes.object,
+};

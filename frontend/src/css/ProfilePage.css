@@ -1,0 +1,65 @@
+.header {
+  margin-bottom: 10vw;
+}
+
+h1 {
+  margin-left: 10vw;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 40px;
+  color: #265b5f;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 800;
+  color: #265b5f;
+}
+
+h3 {
+  justify-content: center;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-size: 25px;
+  color: #265b5f;
+}
+
+.saved-trails {
+  margin-top: 2vw;
+  margin-bottom: 10vw;
+}
+
+.saved-title hr {
+  display: inline-block;
+  width: 30%;
+  margin: 5px 10px;
+  border-top: 1px solid #265b5f;
+}
+
+#review-button {
+  -webkit-appearance: none;
+  display: flex-end;
+  justify-content: right;
+  padding: 0.75rem 1.25rem;
+  width: 150px;
+  margin-left: 30%;
+  vertical-align: middle;
+  font-weight: 600;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #6ce2e3;
+  border-radius: 10px;
+  background: #6ce2e3;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#review-button:hover {
+  background-color: #5ac0c2;
+  color: white;
+  text-decoration: none;
+}

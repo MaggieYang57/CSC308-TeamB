@@ -1,7 +1,8 @@
+/* eslint-disable node/handle-callback-err */
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import "./css/LoginPage.css";
-import { PropTypes } from 'prop-types';
 
 class Login extends Component {
   constructor(props) {
@@ -9,9 +10,7 @@ class Login extends Component {
     this.state = {
       isLoggedIn: false,
       RedirectLoggedUser: false,
-      user_type: this.props.match.params.user
-        ? this.props.match.params.user
-        : "",
+      user_type: "",
       emptyUser: false,
       email: "",
       password: "",
@@ -92,21 +91,20 @@ class Login extends Component {
       })
       .then((data) => {
         _this.storeUser(data);
-        this.props.history.push("/profile");
+        this.props.history.push("/profile/" + data._id);
       })
       .catch((err) => {
-        if (err) {
         console.log("Error");
         _this.setState({ error: true });
-        }
       });
   };
 
   storeUser = (user) => {
-    // const date = new Date();
     localStorage.setItem("email", user.email);
-    localStorage.setItem("user_type", this.state.user_type);
+    localStorage.setItem("user_type", user.user_type);
     localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("_id", user._id);
+    this.props.onUserChange(user.user_type);
   };
 
   render() {
@@ -186,14 +184,16 @@ class Login extends Component {
           LOG IN
         </button>
         <p>
-          Do not have an account? <Link to="/signup">Sign up</Link>
+          Don&apos;t have an account? <Link to="/signup">Sign up</Link>
         </p>
       </form>
     );
   }
 }
+
 Login.propTypes = {
-  match: PropTypes.node,
-  history: PropTypes.node,
-}
+  history: PropTypes.object,
+  userType: PropTypes.object,
+  onUserChange: PropTypes.func,
+};
 export default withRouter(Login);

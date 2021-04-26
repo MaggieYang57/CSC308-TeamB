@@ -6,7 +6,6 @@ import { PropTypes } from 'prop-types';
 
 import WeatherWidget from "./components/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";
-// import reviewData from "./tempReviews.json";
 
 const averageRatings = (ratings) => {
   let sum = 0;
@@ -21,11 +20,6 @@ class SinglePage extends React.Component {
   }
 
   componentDidMount() {
-    const {
-      // eslint-disable-next-line no-unused-vars
-      match: { params },
-    } = this.props;
-
     fetch("http://localhost:3001/hike/" + this.props.match.params.id)
       .then((res) => res.json())
       .then((data) => {
@@ -59,11 +53,6 @@ class SinglePage extends React.Component {
   };
 
   render() {
-    // var reviewExists = false;
-    // if (this.state.reviews !== null) {
-    //   reviewExists = true;
-    // }
-
     return (
       <div className="hike">
         <div className="header">
@@ -115,7 +104,8 @@ class SinglePage extends React.Component {
     );
   }
 }
+
 SinglePage.propTypes = {
-  match: PropTypes.node,
-}
+  match: PropTypes.object,
+};
 export default withRouter(SinglePage);

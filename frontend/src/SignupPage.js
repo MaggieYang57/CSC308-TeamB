@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./css/Signup.css";
-// import env from "react-dotenv";
 import { Link, withRouter } from "react-router-dom";
 
 class Signup extends Component {
