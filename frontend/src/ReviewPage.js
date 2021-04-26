@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import "./css/Review.css";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
@@ -144,6 +144,6 @@ class Review extends React.Component {
 }
 
 Review.propTypes = {
-  match: PropTypes.object
+  match: PropTypes.object,
 };
 export default withRouter(Review);

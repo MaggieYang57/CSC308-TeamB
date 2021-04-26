@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -9,10 +9,16 @@ function HikeFinder(props) {
   return (
     <div>
       <Container style={{ marginTop: "5vw" }}>
-        <b className="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>
+        <b
+          className="text text-center "
+          style={{ fontSize: 50, color: "#2C6674" }}
+        >
           Hike Finder
         </b>
-        <p className="text text-center " style={{ fontSize: 30, color: "#59BCA6" }}>
+        <p
+          className="text text-center "
+          style={{ fontSize: 30, color: "#59BCA6" }}
+        >
           Find one that&apos;s just right for you!
         </p>
       </Container>
@@ -39,6 +45,6 @@ function HikeFinder(props) {
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.object,  
+  hikeList: PropTypes.object,
 };
 export default HikeFinder;
