@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
-export function HikeCardList({hike}) {
+export function HikeCardList({ hike }) {
   return (
     <Card
       style={{
@@ -60,5 +60,5 @@ export function HikeCardList({hike}) {
 }
 
 HikeCardList.propTypes = {
-  hike: PropTypes.object,  
+  hike: PropTypes.object,
 };

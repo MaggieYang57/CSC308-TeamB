@@ -7,7 +7,10 @@ function LogoutSuccess(props) {
   return (
     <div className="signup-form">
       <div id="title-signup">
-        <b className="text text-center " style={{ fontSize: 40, color: "#2C6674" }}>
+        <b
+          className="text text-center "
+          style={{ fontSize: 40, color: "#2C6674" }}
+        >
           Successfully logged out!
         </b>
       </div>

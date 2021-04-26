@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Card, Row, Col } from "react-bootstrap";
 import "./css/HomePage.css";
@@ -166,6 +166,6 @@ function HomePage(props) {
 }
 
 HomePage.propTypes = {
-  hikeList: PropTypes.object,  
+  hikeList: PropTypes.object,
 };
 export default HomePage;

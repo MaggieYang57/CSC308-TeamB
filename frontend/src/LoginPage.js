@@ -1,6 +1,6 @@
 /* eslint-disable node/handle-callback-err */
 import React, { Component } from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import "./css/LoginPage.css";
 
@@ -89,9 +89,9 @@ class Login extends Component {
           return res.json();
         }
       })
-      .then(data => {
+      .then((data) => {
         _this.storeUser(data);
-        this.props.history.push("/profile/"+ data._id);
+        this.props.history.push("/profile/" + data._id);
       })
       .catch((err) => {
         console.log("Error");
@@ -192,8 +192,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.object,  
-  userType: PropTypes.object,  
+  history: PropTypes.object,
+  userType: PropTypes.object,
   onUserChange: PropTypes.func,
 };
 export default withRouter(Login);

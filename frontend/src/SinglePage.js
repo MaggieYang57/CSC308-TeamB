@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
 
@@ -105,6 +105,6 @@ class SinglePage extends React.Component {
 }
 
 SinglePage.propTypes = {
-  match: PropTypes.object,  
+  match: PropTypes.object,
 };
 export default withRouter(SinglePage);

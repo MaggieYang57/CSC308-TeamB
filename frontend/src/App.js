@@ -4,7 +4,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/App.css";
 
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Navigation from "./components/navbars/Navigation";
 import { Footer } from "./components/Footer";
 import HomePage from "./HomePage";
@@ -26,6 +26,7 @@ function App() {
     filteredDataIndexes: new Set(),
     filters: new Set(),
     userType: "",
+    isLoggedIn: false,
   });
 
   async function fetchAll() {
@@ -46,18 +47,17 @@ function App() {
           filteredDataIndexes: new Set([...Array(result.length).keys()]),
           filters: appState.filters,
           baseHikeData: result,
-          userType: appState.userType
+          userType: appState.userType,
         });
     });
-    setAppState( {
+    setAppState({
       filteredDataIndexes: appState.filteredDataIndexes,
       filters: appState.filters,
       baseHikeData: appState.baseHikeData,
-      userType: localStorage.getItem("user_type")
-    } );
+      userType: localStorage.getItem("user_type"),
+    });
     console.log(appState);
   }, []);
-
 
   function addFilter(filter) {
     const hikeData = appState.baseHikeData;
@@ -77,7 +77,7 @@ function App() {
       filteredDataIndexes: indices,
       filters,
       baseHikeData: appState.baseHikeData,
-      userType: appState.userType
+      userType: appState.userType,
     });
   }
 
@@ -102,7 +102,7 @@ function App() {
       filteredDataIndexes: indices,
       filters: filters,
       baseHikeData: appState.baseHikeData,
-      userType: appState.userType
+      userType: appState.userType,
     });
   }
 
@@ -136,7 +136,7 @@ function App() {
       filteredDataIndexes: indices,
       filters: appState.filters,
       baseHikeData: appState.baseHikeData,
-      userType: appState.userType
+      userType: appState.userType,
     });
   }
 
@@ -148,25 +148,25 @@ function App() {
     }
   }
 
-  function handleUserChange(user)
-  {
+  function handleUserChange(user) {
     console.log(user);
     const type = user;
-    setAppState( {
+    setAppState({
       filteredDataIndexes: appState.filteredDataIndexes,
       filters: appState.filters,
       baseHikeData: appState.baseHikeData,
-      userType: type
-    } );
+      userType: type,
+      isLoggedIn: true,
+    });
     appState.userType = type;
     console.log(appState);
   }
-  
+
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
       <div className="App" style={{ margin: "auto" }}>
-        <Navigation userType = {appState.userType}/>
+        <Navigation userType={appState.userType} />
         <Switch>
           <Route exact path="/">
             <HomePage hikeList={appState.baseHikeData} />
@@ -190,7 +190,7 @@ function App() {
           </Route>
           <Route exact path="/review/:id" component={ReviewPage} />
           <Route exact path="/login">
-            <Login onUserChange = {handleUserChange}/>
+            <Login onUserChange={handleUserChange} />
           </Route>
           <Route exact path="/signup">
             <Signup />
@@ -198,9 +198,9 @@ function App() {
           <Route exact path="/signupSuccess">
             <SignupSuccess />
           </Route>
-          
+
           <Route exact path="/profile">
-            <Redirect to = "/profile/:id"/>
+            <Redirect to="/profile/:id" />
           </Route>
 
           <Route exact path="/profile/:id" component={ProfilePage} />
