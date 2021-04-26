@@ -1,19 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from "react";
+import PropTypes from 'prop-types'; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import moment from "moment";
-import SearchBar from "./components/SearchBar";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { HikeCardList } from "./components/HikeCardList";
-import { SortBy } from "./components/SortBy";
-
-const averageRatings = (ratings) => {
-  let sum = 0;
-  for (const i in ratings) sum += +ratings[i];
-  return (sum / ratings.length).toFixed(1);
-};
 
 function HikeFinder(props) {
   return (
@@ -48,4 +38,7 @@ function HikeFinder(props) {
   );
 }
 
+HikeFinder.propTypes = {
+  hikeList: PropTypes.object,  
+};
 export default HikeFinder;

@@ -33,6 +33,16 @@ router.post('/', async (req, res) => {
   })
 })
 
+// GET individual User
+router.get('/:id', async (req, res) => {
+  try {
+    const user = await User.find({ _id: req.params.id })
+    res.json(user)
+  } catch (err) {
+    res.json({ message: err })
+  }
+})
+
 // reset password
 
 module.exports = router

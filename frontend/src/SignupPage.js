@@ -1,8 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
 import "./css/Signup.css";
-import env from "react-dotenv";
-import { Route, Redirect, Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Signup extends Component {
   constructor(props) {
