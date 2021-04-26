@@ -53,7 +53,7 @@ router.post('/:id', async (req, res) => {
 })
 
 // Soft DELETE individual review by id
-router.post('/:reviewID', async (req, res) => {
+router.post('/:id/delete', async (req, res) => {
   try {
     await Review.findOneAndUpdate(
       {

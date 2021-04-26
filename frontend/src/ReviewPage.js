@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import "./css/Review.css";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
@@ -23,13 +23,26 @@ class Review extends React.Component {
   submitReview = () => {
     const userName = document.getElementById("email").value;
     const reviewBody = document.getElementById("review-body").value;
+    const accessibility = document.getElementById("accessibility-rating").options[document.getElementById("accessibility-rating").selectedIndex].value;
+    const difficulty = document.getElementById("difficulty-rating").options[document.getElementById("difficulty-rating").selectedIndex].value;
+    const freeParking = document.querySelector("#free-parking").checked
+    const dogFriendly = document.querySelector("#dog-friendly").checked
+    const horseRiding = document.querySelector("#horse-friendly").checked
+    const mountainBiking = document.querySelector("#bike-friendly").checked
+
     const review = {
-      user_id: userName,
-      reviewBody: reviewBody,
+      user_email: userName,
+      body: reviewBody,
       hike_id: this.state._id,
+      difficulty: difficulty,
+      accessibility: accessibility,
+      dog_friendly: dogFriendly,
+      horseback_riding: horseRiding,
+      mountain_biking: mountainBiking,
+      free_parking: freeParking
     };
 
-    fetch("http://localhost:3001/hike/" + this.state._id + "/review", {
+    fetch("http://localhost:3001/review/" + this.state._id, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,10 +51,6 @@ class Review extends React.Component {
     }).then(() => {
       this.state.reviews.push(review);
     });
-
-    setTimeout(function () {
-      alert("Hello");
-    }, 50000000);
   };
 
   render() {
@@ -99,21 +108,21 @@ class Review extends React.Component {
             <p id="input" style={{ marginLeft: "45px" }}>
               Activities permitted:
             </p>
-            <label>
+            <label >
               <span style={{ marginLeft: "45px" }}>dog-friendly</span>
-              <input type="checkbox" value="1" />
+              <input id="dog-friendly" type="checkbox" value="1" />
             </label>
-            <label>
+            <label >
               <span>horse-friendly</span>
-              <input type="checkbox" value="1" />
+              <input id="horse-friendly" type="checkbox" value="1" />
             </label>
-            <label>
+            <label >
               <span>bike-friendly</span>
-              <input type="checkbox" value="1" />
+              <input id="bike-friendly" type="checkbox" value="1" />
             </label>
-            <label>
+            <label >
               <span>free-parking</span>
-              <input type="checkbox" value="1" />
+              <input id="free-parking" type="checkbox" />
             </label>
           </div>
 
