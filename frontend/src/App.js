@@ -22,8 +22,8 @@ import ProfilePage from "./ProfilePage";
 function App() {
   const [appState, setAppState] = useState({
     baseHikeData: [],
-    userType: "",
-    isLoggedIn: false,
+    userType: localStorage.getItem("user_type"),
+    isLoggedIn: localStorage.getItem("isLoggedIn"),
   });
 
   async function fetchAll () {
@@ -47,10 +47,13 @@ function App() {
           userType: appState.userType,
         });
     });
-
+    console.log(localStorage.getItem("user_type"))
     setAppState({
+      filteredDataIndexes: appState.filteredDataIndexes,
+      filters: appState.filters,
       baseHikeData: appState.baseHikeData,
       userType: localStorage.getItem("user_type"),
+      isLoggedIn: localStorage.getItem("isLoggedIn"),
     });
     console.log(appState);
   }, []);
@@ -66,6 +69,7 @@ function App() {
       isLoggedIn: true,
     });
     appState.userType = type;
+    appState.isLoggedIn = true;
     console.log(appState);
   }
 

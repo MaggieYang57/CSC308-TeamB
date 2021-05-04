@@ -99,7 +99,7 @@ class Login extends Component {
       });
   };
 
-  storeUser = (user) => {
+  storeUser(user){
     localStorage.setItem("email", user.email);
     localStorage.setItem("user_type", user.user_type);
     localStorage.setItem("isLoggedIn", true);
