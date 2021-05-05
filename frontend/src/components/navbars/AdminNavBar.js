@@ -36,7 +36,7 @@ class AdminNavBar extends Component {
           >
             <button
               className="btn btn-outline-light my-2 my-sm-0 m-3 border border-white"
-              onClick={logout()}
+              onClick={logout}
             >
               Logout
             </button>

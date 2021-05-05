@@ -100,9 +100,9 @@ class Login extends Component {
   };
 
   storeUser(user){
-    localStorage.setItem("email", user.email);
-    localStorage.setItem("user_type", user.user_type);
-    localStorage.setItem("isLoggedIn", true);
+    localStorage.setItem("email", user.user_email);
+    localStorage.setItem("user_type", JSON.stringify(user.user_type));
+    localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("_id", user._id);
     this.props.onUserChange(user.user_type);
   };
