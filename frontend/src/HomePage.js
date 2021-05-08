@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import PropTypes from 'prop-types'; 
 import { Link } from "react-router-dom";
 import { Card, Row, Col } from "react-bootstrap";
 import "./css/HomePage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { PropTypes } from 'prop-types';
 
 function HomePage(props) {
   return (
@@ -164,8 +164,7 @@ function HomePage(props) {
     </div>
   );
 }
-
 HomePage.propTypes = {
-  hikeList: PropTypes.object,  
-};
+  hikeList: PropTypes.node,
+}
 export default HomePage;

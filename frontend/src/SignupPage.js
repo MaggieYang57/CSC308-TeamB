@@ -69,7 +69,7 @@ class Signup extends Component {
       user_type: "admin",
     };
 
-    this.mongo_signup(newAdmin);
+    this.mongoSignup(newAdmin);
   };
 
   addUser = (personalData) => {

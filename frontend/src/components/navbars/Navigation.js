@@ -1,16 +1,16 @@
 import React from "react";
-import PropTypes from 'prop-types'; 
+import PropTypes from "prop-types";
 import AdminNavBar from "./AdminNavBar";
 import UserNavBar from "./UserNavBar";
 
-function Navigation(props){
+function Navigation(props) {
   let navbar;
   if (props.userType === "admin") {
     navbar = <AdminNavBar />;
   } else if (props.userType === "user") {
     navbar = <UserNavBar />;
   } else {
-    navbar = 
+    navbar = (
       <div>
         <nav
           className="navbar navbar-dark "
@@ -30,11 +30,7 @@ function Navigation(props){
               </a>
             </form>
           </a>
-          <form
-            className="form-inline"
-            style={{ marginRight: "2vw" }}
-            href="/"
-          >
+          <form className="form-inline" style={{ marginRight: "2vw" }} href="/">
             <a
               className="btn btn-outline-light my-2 my-sm-0 m-3 border border-white"
               href="/login"
@@ -50,12 +46,13 @@ function Navigation(props){
           </form>
         </nav>
       </div>
+    );
   }
 
-    return <div>{navbar}</div>
+  return <div>{navbar}</div>;
 }
 
 Navigation.propTypes = {
-  userType: PropTypes.object  
+  userType: PropTypes.object,
 };
 export default Navigation;

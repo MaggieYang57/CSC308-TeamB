@@ -2,9 +2,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "../css/filterBar.css";
+import { PropTypes } from 'prop-types';
 
 function SortDrop(props) {
-  const [difficulty, setDifficulty] = useState(0);
+  const [ , setDifficulty] = useState(0);
 
   function handleFilterChange(e) {
     console.log(e.target.value);
@@ -24,6 +25,10 @@ function SortDrop(props) {
       </form>
     </div>
   );
+}
+
+SortDrop.propTypes = {
+  onChange: PropTypes.node,
 }
 
 export default SortDrop;

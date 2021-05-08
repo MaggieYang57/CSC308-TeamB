@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable eqeqeq */
 import React from "react";
 import { Image } from "react-bootstrap";
+import { PropTypes } from 'prop-types';
 
 function getStar(rating, star) {
-  if (rating <= star || rating == 0) {
+  if (rating <= star || rating === 0) {
     return "/images/stars/empty.png";
   } else if (rating >= star + 1) {
     return "/images/stars/full.png";
@@ -77,4 +76,7 @@ export function Ratings({ rating }) {
       </form>
     </div>
   );
+}
+Ratings.propTypes = {
+  rating: PropTypes.node,
 }

@@ -2,7 +2,6 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { Card, Badge, Button, NavBar, Form } from "react-bootstrap";
 
 export function Footer({}) {
   return (
@@ -20,7 +19,7 @@ export function Footer({}) {
               SLO HIKES
             </b>
             <b
-              class="text text-center "
+              className="text text-center "
               style={{
                 fontSize: ".7vw",
                 color: "#828282",
@@ -35,5 +34,6 @@ export function Footer({}) {
         </a>
       </nav>
     </div>
-  );
+  )
 }
+
