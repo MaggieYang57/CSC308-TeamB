@@ -4,8 +4,9 @@ import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
-import WeatherWidget from "./components/WeatherWidget";
+import WeatherWidget from "./components/singlepage/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";
+import SaveButton from "./components/singlepage/SaveButton"
 
 const averageRatings = (ratings) => {
   let sum = 0;
@@ -61,6 +62,7 @@ class SinglePage extends React.Component {
           <a href={"/review/" + this.state._id}>
             <button id="review-button">Write a Review</button>
           </a>
+          <SaveButton />
         </div>
 
         <img src={this.state.imagesrc} height="300" width="400" />
