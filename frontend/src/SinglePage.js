@@ -1,6 +1,5 @@
 import React from "react";
 import "./css/SinglePage.css";
-// import moment from "moment";
 import { withRouter } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
@@ -62,7 +61,7 @@ class SinglePage extends React.Component {
           <a href={"/review/" + this.state._id}>
             <button id="review-button">Write a Review</button>
           </a>
-          <SaveButton />
+          <SaveButton hike={this.state._id}/>
         </div>
 
         <img src={this.state.imagesrc} height="300" width="400" />
