@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 const trailSchema = require("../models/trails-schema");
-const userSchema = require("../models/users-schema");
 const Trail = mongoose.model("Trail", trailSchema, "hike_data");
-const User = mongoose.model("User", userSchema, "Users");
 // HIKES
 
 router.get("/:id/reviews", (req, res) => {
@@ -171,31 +169,6 @@ router.post("/:id/rating", async (req, res) => {
     res.json({ message: err });
   }
 });
-
-/* ******************SAVE HIKE FOR ACCOUNT******************** */
-
-// add hike to account
-router.post("/:id/save", async (req, res) => {
-  const hike = req.body.id;
-  const user = req.body.user;
-  const account = await User.findByIdAndUpdate(
-    {
-      _id: user,
-    },
-    {
-      $push: {
-        saved_trails: hike,
-      },
-    }
-  );
-  account.save();
-  console.log(account);
-});
-
-
-// remove hike from saved hikes
-
-// check if already saved
 
 
 module.exports = router;

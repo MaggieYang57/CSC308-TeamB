@@ -18,9 +18,31 @@ class SaveButton extends Component {
             id: hike,
             user: user
         };
-        console.log(data)
-        fetch("http://localhost:3001/hike/" + this.props.hike + "/save", {
+        fetch("http://localhost:3001/save/" + this.props.hike, {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        })
+        .then((res) => {
+              return res.json();
+          })
+        .catch((err) => {
+            console.log("Error");
+        });
+    }
+
+    unsaveHike = () => {
+        const hikeID = this.props.hike
+        const hike = hikeID
+        const user = localStorage.getItem("_id")
+        const data = {
+            id: hike,
+            user: user
+        };
+        fetch("http://localhost:3001/save/" + this.props.hike, {
+        method: "DELETE",
         headers: {
             "Content-Type": "application/json",
         },
@@ -44,8 +66,8 @@ class SaveButton extends Component {
         this.setState({saved: currentSave})
         if (this.state.saved === false) // just switch to "saved!"
             this.saveHike()
-        // else
-        //    unsaveHike()
+        else
+           this.unsaveHike()
         }
     }
   
