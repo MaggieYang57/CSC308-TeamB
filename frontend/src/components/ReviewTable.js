@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import { PropTypes } from 'prop-types';
 
 function ReviewBody(props) {
   const rows = props.reviewList.map((row, index) => {
@@ -54,4 +54,10 @@ function ReviewTable(props) {
   );
 }
 
+ReviewTable.propTypes = {
+  reviewList: PropTypes.object,
+};
+ReviewBody.propTypes = {
+  reviewList: PropTypes.object,
+};
 export default ReviewTable;

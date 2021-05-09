@@ -6,8 +6,6 @@ import UserNavBar from "./UserNavBar";
 function Navigation(props) {
   let navbar;
   const userType = localStorage.getItem("user_type")
-  // eslint-disable-next-line no-unused-vars
-  const temp = props.userType
   console.log(userType)
   if (userType === JSON.stringify("admin")) {
     navbar = <AdminNavBar />;

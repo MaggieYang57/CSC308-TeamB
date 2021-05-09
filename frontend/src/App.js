@@ -58,8 +58,7 @@ function App() {
     })
   }
   
-  // eslint-disable-next-line prefer-const
-  let userType = localStorage.getItem("user_type")
+  const userType = localStorage.getItem("user_type")
   console.log(userType)
 
   return (

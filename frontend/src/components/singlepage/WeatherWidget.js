@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { Component } from "react";
+import React from "react";
 import moment from "moment";
+import { PropTypes } from 'prop-types';
 
 function WeatherWidget(props) {
   if (props.city) {
@@ -71,5 +70,9 @@ function WeatherWidget(props) {
     </div>
   );
 }
+
+WeatherWidget.propTypes = {
+  city: PropTypes.object,
+};
 
 export default WeatherWidget;
