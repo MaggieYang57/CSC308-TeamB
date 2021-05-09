@@ -10,12 +10,42 @@ class SaveButton extends Component {
       this.state = {saved: false};
     }
 
+    /* checkSaved = () => {
+        if (localStorage.getItem("isLoggedIn") === "true")
+        {
+            const hikeID = this.props.hike
+            const hike = hikeID
+            const user = localStorage.getItem("_id")
+            const data = {
+                id: hike,
+                user: user
+            };
+            fetch("http://localhost:3001/save/" + this.props.hike + "/check", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            })
+            .then((res) => {
+                if (res.status === 404)
+                    this.setState({saved: false})
+                else if (res.status === 404)
+                    this.setState({saved: true})
+            })
+            .catch((err) => {
+                console.log("Error");
+            });
+        }
+    }
+    */
+
     saveHike = () => {
         const hikeID = this.props.hike
         const hike = hikeID
         const user = localStorage.getItem("_id")
         const data = {
-            id: hike,
+            hike: hike,
             user: user
         };
         fetch("http://localhost:3001/save/" + this.props.hike, {
@@ -38,7 +68,7 @@ class SaveButton extends Component {
         const hike = hikeID
         const user = localStorage.getItem("_id")
         const data = {
-            id: hike,
+            hike: hike,
             user: user
         };
         fetch("http://localhost:3001/save/" + this.props.hike, {
@@ -98,6 +128,7 @@ class SaveButton extends Component {
   SaveButton.propTypes = {
     history: PropTypes.object,
     hike: PropTypes.object,
+    saved: PropTypes.object,
   };
 export default withRouter(SaveButton);
   
