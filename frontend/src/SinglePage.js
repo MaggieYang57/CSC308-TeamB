@@ -98,7 +98,7 @@ class SinglePage extends React.Component {
             Reviews
             <hr />
           </h2>
-          <ReviewTable reviewList={this.state.reviews} />
+          <ReviewTable reviewList={this.state._id} />
         </div>
       </div>
     );
