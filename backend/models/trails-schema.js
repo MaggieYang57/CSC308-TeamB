@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const trailSchema = mongoose.Schema({
   title: { type: String, required: true },
@@ -15,16 +15,16 @@ const trailSchema = mongoose.Schema({
       user_id: { type: String, required: false },
       reviewBody: { type: String, required: false },
       deleted: { type: Boolean, default: false, required: false },
-      date: { type: Date, default: Date.now, required: false },
-    },
+      date: { type: Date, default: Date.now, required: false }
+    }
   ],
   dog_friendly: { type: Boolean, required: true },
   horseback_riding: { type: Boolean, required: true },
   biking: { type: Boolean, required: true },
   bird_watching: { type: Boolean, required: true },
   family_friendly: { type: Boolean, required: true },
-  imagesrc: { type: String, required: true },
-});
+  imagesrc: { type: String, required: true }
+})
 
 // module.exports = mongoose.model('hike_data', trailSchema);
-module.exports = trailSchema;
+module.exports = trailSchema

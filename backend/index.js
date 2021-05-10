@@ -1,43 +1,43 @@
-const env = require("dotenv");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const express = require("express");
-const app = express();
-app.use(cors());
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
+const env = require('dotenv')
+const mongoose = require('mongoose')
+const cors = require('cors')
+const express = require('express')
+const app = express()
+app.use(cors())
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: true
   })
-);
-env.config();
+)
+env.config()
 
-const hikeRoute = require("./routes/hike");
-const signup = require("./routes/signup");
-const login = require("./routes/login");
-app.use("/hike", hikeRoute);
-app.use("/signup", signup);
-app.use("/login", login);
+const hikeRoute = require('./routes/hike')
+const signup = require('./routes/signup')
+const login = require('./routes/login')
+app.use('/hike', hikeRoute)
+app.use('/signup', signup)
+app.use('/login', login)
 
-const uri = process.env.DB_LINK;
+const uri = process.env.DB_LINK
 if (!uri) {
-  console.log("No DB_LINK environment variable found, please provide one.");
+  console.log('No DB_LINK environment variable found, please provide one.')
 }
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: false
   })
   .then(() => {
-    console.log("Atlas Connected..");
+    console.log('Atlas Connected..')
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
 
-app.get("/", (req, res) => {
-  res.send("Hello world!");
-});
+app.get('/', (req, res) => {
+  res.send('Hello world!')
+})
 
-app.listen(3001);
+app.listen(3001)
