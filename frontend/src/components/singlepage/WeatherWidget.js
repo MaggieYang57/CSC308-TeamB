@@ -72,7 +72,7 @@ function WeatherWidget(props) {
 }
 
 WeatherWidget.propTypes = {
-  city: PropTypes.object,
+  city: PropTypes.string,
 };
 
 export default WeatherWidget;

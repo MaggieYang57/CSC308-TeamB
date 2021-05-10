@@ -45,21 +45,29 @@ router.delete("/:id", async (req, res) => {
     }
   });
   
-router.post("/:id/check", async (req, res) => {
+router.post("/check", async (req, res) => {
     const hike = req.body.hike;
     const user = req.body.user;
-    await User.findOne({ _id: user})
+    let status = 1;
+    User.findOne({ _id: user})
     .then(function (err, result) {
         if (err) {
         console.log(err)
         }
         else
         {
+            const curr = result
             for (let i = 0; i < result.saved_trails.length; i++) { 
-                if (result.saved_trails[i] === hike)
+                if (curr.saved_trails[i] === hike)
+                {
                     res.status(200).send("already saved")
+                    status = 200
+                }
                 else
+                {
                     res.status(404).send("not saved")
+                    status = 404
+                }
             }
         }
     })
@@ -67,6 +75,7 @@ router.post("/:id/check", async (req, res) => {
       console.log(err);
       res.send(500).send();
     }) 
+    console.log(status)
 });  
 
   module.exports = router;

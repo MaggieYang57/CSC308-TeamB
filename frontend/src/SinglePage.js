@@ -52,37 +52,7 @@ class SinglePage extends React.Component {
     });
   };
 
-  /* checkSaved = () => {
-    if (localStorage.getItem("isLoggedIn") === "true")
-    {
-        const hikeID = this.state._id
-        const hike = hikeID
-        const user = localStorage.getItem("_id")
-        const data = {
-            id: hike,
-            user: user
-        };
-        fetch("http://localhost:3001/save/" + this.state._id + "/check", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        })
-        .then((res) => {
-            if (res.status === 404)
-                return false;
-            else if (res.status === 200)
-                return true;
-        })
-    }
-    else 
-      return false;
-  }
- */
-
   render() {
-    // const save = this.checkSaved()
     return (
       <div className="hike">
         <div className="header">

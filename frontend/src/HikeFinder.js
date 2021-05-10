@@ -211,10 +211,10 @@ function HikeFinder(props) {
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.node,
+  hikeList: PropTypes.array,
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.object,
+  hikeList: PropTypes.array,
 };
 export default HikeFinder;

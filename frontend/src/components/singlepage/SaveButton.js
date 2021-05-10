@@ -10,17 +10,17 @@ class SaveButton extends Component {
       this.state = {saved: false};
     }
 
-    /* checkSaved = () => {
+    checkSaved = () => {
         if (localStorage.getItem("isLoggedIn") === "true")
         {
             const hikeID = this.props.hike
             const hike = hikeID
             const user = localStorage.getItem("_id")
             const data = {
-                id: hike,
+                hike: hike,
                 user: user
             };
-            fetch("http://localhost:3001/save/" + this.props.hike + "/check", {
+            fetch("http://localhost:3001/save/check", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,16 +29,16 @@ class SaveButton extends Component {
             })
             .then((res) => {
                 if (res.status === 404)
-                    this.setState({saved: false})
-                else if (res.status === 404)
-                    this.setState({saved: true})
+                    localStorage.setItem("saved", "false")
+                else if (res.status === 200)
+                    localStorage.setItem("saved", "true")
             })
             .catch((err) => {
                 console.log("Error");
             });
         }
     }
-    */
+    
 
     saveHike = () => {
         const hikeID = this.props.hike
