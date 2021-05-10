@@ -17,10 +17,12 @@ const hikeRoute = require("./routes/hike");
 const signup = require("./routes/signup");
 const login = require("./routes/login");
 const save = require("./routes/save");
+const review = require('./routes/review')
 app.use("/hike", hikeRoute);
 app.use("/signup", signup);
 app.use("/login", login);
 app.use("/save", save);
+app.use('/review', review)
 
 const uri = process.env.DB_LINK;
 if (!uri) {
