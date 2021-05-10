@@ -1,14 +1,14 @@
-const mongoose = require("mongoose");
-const express = require("express");
-const router = express.Router();
+const mongoose = require('mongoose')
+const express = require('express')
+const router = express.Router()
 
-const userSchema = require("../models/users-schema");
-const User = mongoose.model("User", userSchema, "Users");
+const userSchema = require('../models/users-schema')
+const User = mongoose.model('User', userSchema, 'Users')
 
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt')
 
-router.post("/", async (req, res) => {
-  const passHash = bcrypt.hashSync(req.body.password, 9);
+router.post('/', async (req, res) => {
+  const passHash = bcrypt.hashSync(req.body.password, 9)
 
   const user = new User({
     user_email: req.body.user_email,
@@ -17,30 +17,30 @@ router.post("/", async (req, res) => {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     saved_trails: [],
-    reviews: [],
-  });
+    reviews: []
+  })
 
-  console.log(user);
+  console.log(user)
   User.findOne({ user_email: req.body.user_email })
     .then(function (result) {
       if (result) {
-        console.log("email already in use");
-        res.status(404).send();
+        console.log('email already in use')
+        res.status(404).send()
       } else {
         user
           .save()
           .then((data) => {
-            res.json(data);
+            res.json(data)
           })
           .catch((err) => {
-            res.json({ message: err });
-          });
+            res.json({ message: err })
+          })
       }
     })
     .catch((err) => {
-      console.log(err);
-      res.send(500).send();
-    });
-});
+      console.log(err)
+      res.send(500).send()
+    })
+})
 
-module.exports = router;
+module.exports = router

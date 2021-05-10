@@ -8,7 +8,7 @@ import { PropTypes } from 'prop-types';
 function FilterBar(props) {
   return (
     <div id="filterBar">
-      <SearchBar keyword={props.keyword} setKeyword={props.setKeyword} />
+      <SearchBar updateBySearch={props.updateBySearch}/>
       <SortDrop onChange={props.onDiff} />
 
       <div id="filter-buttons">
@@ -42,6 +42,7 @@ FilterBar.propTypes = {
   onDiff: PropTypes.node,
   keyword: PropTypes.node,
   setKeyword: PropTypes.node,
+  updateBySearch: PropTypes.node
 }
 
 export default FilterBar;
