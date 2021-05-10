@@ -68,7 +68,7 @@ function ReviewTable(props) {
     const [state, setState] = useState([]);
     useEffect(() => {
       // TODO: Update the local api to live site when we fix everything
-      fetch("http://localhost:3001/review/" + props.reviewList)
+      fetch("http://localhost:3001/review/hike/" + props.reviewList)
         .then((resp) => resp.json())
         .then(data => setState(data))
     }, []);

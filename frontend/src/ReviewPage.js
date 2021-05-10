@@ -41,7 +41,7 @@ class Review extends React.Component {
       free_parking: freeParking
     };
 
-    fetch("http://localhost:3001/review/" + this.state._id, {
+    fetch("http://localhost:3001/review/hike/" + this.state._id, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 })
 
 // GET All the reviews of an individual hike
-router.get('/:id', async (req, res) => {
+router.get('/hike/:id', async (req, res) => {
   try {
     const hikeReviews = await Review.find({ hike_id: req.params.id, deleted: false })
     res.json(hikeReviews)
@@ -25,8 +25,18 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+// GET All the reviews for an individual user by email
+router.get('/user/:id', async (req, res) => {
+  try {
+    const hikeReviews = await Review.find({ user_email: req.params.id, deleted: false })
+    res.json(hikeReviews)
+  } catch (err) {
+    res.json({ message: err })
+  }
+})
+
 // POST method to add a review on the individual hike page by hikeid
-router.post('/:id', async (req, res) => {
+router.post('/hike/:id', async (req, res) => {
   const reviewPost = new Review({
     deleted: req.body.deleted,
     hike_id: req.params.id,
