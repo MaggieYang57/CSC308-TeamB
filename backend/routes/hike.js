@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const trailSchema = require("../models/trails-schema");
 const Trail = mongoose.model("Trail", trailSchema, "hike_data");
-
 // HIKES
 
 
@@ -156,5 +155,6 @@ router.post("/:id/rating", async (req, res) => {
     res.json({ message: err });
   }
 });
+
 
 module.exports = router;

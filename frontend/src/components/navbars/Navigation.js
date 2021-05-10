@@ -5,9 +5,11 @@ import UserNavBar from "./UserNavBar";
 
 function Navigation(props) {
   let navbar;
-  if (props.userType === "admin") {
+  const userType = localStorage.getItem("user_type")
+  console.log(userType)
+  if (userType === JSON.stringify("admin")) {
     navbar = <AdminNavBar />;
-  } else if (props.userType === "user") {
+  } else if (userType === JSON.stringify("user")) {
     navbar = <UserNavBar />;
   } else {
     navbar = (

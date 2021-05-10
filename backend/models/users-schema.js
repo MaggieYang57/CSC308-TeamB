@@ -6,11 +6,7 @@ const UserSchema = mongoose.Schema({
   password: { type: String, required: true },
   first_name: { type: String, required: true },
   last_name: { type: String, required: true },
-  saved_trails: [
-    {
-      hike_id: { type: String, required: true },
-    },
-  ],
+  saved_trails: { type: [String], required: true },
   reviews: [
     {
       hike_id: { type: String, required: true },

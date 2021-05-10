@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url */
 import React from "react";
 import PropTypes from "prop-types";
 import "./css/Review.css";

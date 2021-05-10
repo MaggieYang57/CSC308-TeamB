@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
+import { PropTypes } from 'prop-types';
 
 export function SortBy({ hike }) {
   const ListStyling = {
@@ -25,3 +25,7 @@ export function SortBy({ hike }) {
     </DropdownButton>
   );
 }
+
+SortBy.propTypes = {
+  hike: PropTypes.object,
+};

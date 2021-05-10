@@ -1,11 +1,11 @@
 import React from "react";
 import "./css/SinglePage.css";
-// import moment from "moment";
 import { withRouter } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
-import WeatherWidget from "./components/WeatherWidget";
+import WeatherWidget from "./components/singlepage/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";
+import SaveButton from "./components/singlepage/SaveButton"
 
 const averageRatings = (ratings) => {
   let sum = 0;
@@ -52,7 +52,37 @@ class SinglePage extends React.Component {
     });
   };
 
+  /* checkSaved = () => {
+    if (localStorage.getItem("isLoggedIn") === "true")
+    {
+        const hikeID = this.state._id
+        const hike = hikeID
+        const user = localStorage.getItem("_id")
+        const data = {
+            id: hike,
+            user: user
+        };
+        fetch("http://localhost:3001/save/" + this.state._id + "/check", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        })
+        .then((res) => {
+            if (res.status === 404)
+                return false;
+            else if (res.status === 200)
+                return true;
+        })
+    }
+    else 
+      return false;
+  }
+ */
+
   render() {
+    // const save = this.checkSaved()
     return (
       <div className="hike">
         <div className="header">
@@ -61,6 +91,7 @@ class SinglePage extends React.Component {
           <a href={"/review/" + this.state._id}>
             <button id="review-button">Write a Review</button>
           </a>
+          <SaveButton hike={this.state.title}/>
         </div>
 
         <img src={this.state.imagesrc} height="300" width="400" />
