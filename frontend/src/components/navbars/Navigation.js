@@ -55,6 +55,6 @@ function Navigation(props) {
 }
 
 Navigation.propTypes = {
-  userType: PropTypes.object,
+  userType: PropTypes.string,
 };
 export default Navigation;

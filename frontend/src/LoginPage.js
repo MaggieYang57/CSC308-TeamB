@@ -91,7 +91,7 @@ class Login extends Component {
       })
       .then((data) => {
         _this.storeUser(data);
-        this.props.history.push("/profile/" + data._id);
+        this.props.history.push("/profile");
       })
       .catch((err) => {
         console.log("Error");

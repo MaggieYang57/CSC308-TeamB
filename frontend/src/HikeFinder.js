@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { PropTypes } from 'prop-types';
-// import moment from "moment";
-// import SearchBar from "./components/SearchBar";
-
 import { Container, Row, Col } from "react-bootstrap";
 import { HikeCardList } from "./components/HikeCardList";
 import FilterBar from './components/FilterBar'
-// import { SortBy } from "./components/SortBy";
 
 // const averageRatings = (ratings) => {
 //   let sum = 0;
@@ -211,10 +207,10 @@ function HikeFinder(props) {
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.node,
+  hikeList: PropTypes.array,
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.object,
+  hikeList: PropTypes.array,
 };
 export default HikeFinder;
