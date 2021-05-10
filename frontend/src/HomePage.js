@@ -165,6 +165,6 @@ function HomePage(props) {
   );
 }
 HomePage.propTypes = {
-  hikeList: PropTypes.node,
+  hikeList: PropTypes.array,
 }
 export default HomePage;

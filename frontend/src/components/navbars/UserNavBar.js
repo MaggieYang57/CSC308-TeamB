@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { logout } from "./LogoutFunc";
 
 class UserNavBar extends Component {
@@ -33,7 +31,7 @@ class UserNavBar extends Component {
           >
             <button
               className="btn btn-outline-light my-2 my-sm-0 m-3 border border-white"
-              onClick={logout()}
+              onClick={logout}
             >
               Logout
             </button>

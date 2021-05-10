@@ -29,7 +29,9 @@ class ProfilePage extends React.Component {
             Saved Trails
             <hr />
           </h2>
-          <h3>{this.state.saved_trails}</h3>
+          <h3>{(this.state.saved_trails || []).map(item => (
+            <li key={item} style={{marginBottom:"10px"}}>{item}</li>
+          ))}</h3>
         </div>
       </div>
     );
