@@ -61,7 +61,7 @@ class SinglePage extends React.Component {
           <a href={"/review/" + this.state._id}>
             <button id="review-button">Write a Review</button>
           </a>
-          <SaveButton hike={this.state.title}/>
+          <SaveButton hike={this.state.title} />
         </div>
 
         <img src={this.state.imagesrc} height="300" width="400" />
@@ -99,7 +99,7 @@ class SinglePage extends React.Component {
             Reviews
             <hr />
           </h2>
-          <ReviewTable reviewList={this.state._id} />
+          <ReviewTable reviewList={this.state._id} route={"hike"} />
         </div>
       </div>
     );

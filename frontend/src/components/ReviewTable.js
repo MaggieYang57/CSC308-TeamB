@@ -29,7 +29,6 @@ function ReviewBody(props) {
 }
 
 function getActivities(row) {
-  console.log(row);
   var list = [];
   if (row.dog_friendly === true)
     list.push("dog friendly")
@@ -68,7 +67,7 @@ function ReviewTable(props) {
     const [state, setState] = useState([]);
     useEffect(() => {
       // TODO: Update the local api to live site when we fix everything
-      fetch("http://localhost:3001/review/" + props.reviewList)
+      fetch("http://localhost:3001/review/" + props.route + "/" + props.reviewList)
         .then((resp) => resp.json())
         .then(data => setState(data))
     }, []);
