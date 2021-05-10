@@ -55,8 +55,8 @@ router.post("/:id/check", async (req, res) => {
         }
         else
         {
-            for (let i = 0; i < result.saved_trails.length; i++) { // look through each meal object
-                if (result.saved_trails[i] === hike) // if ordered food for that day --> add mealNumber
+            for (let i = 0; i < result.saved_trails.length; i++) { 
+                if (result.saved_trails[i] === hike)
                     res.status(200).send("already saved")
                 else
                     res.status(404).send("not saved")
