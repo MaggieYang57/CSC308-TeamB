@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/App.css";
@@ -95,11 +95,7 @@ function App() {
             <SignupSuccess />
           </Route>
 
-          <Route exact path="/profile">
-            <Redirect to="/profile/:id" />
-          </Route>
-
-          <Route exact path="/profile/:id" component={ProfilePage} />
+          <Route exact path="/profile" component={ProfilePage} />
 
           <Route exact path="/logout">
             <LogoutSuccess />
