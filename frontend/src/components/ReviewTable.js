@@ -29,7 +29,6 @@ function ReviewBody(props) {
 }
 
 function getActivities(row) {
-  console.log(row);
   var list = [];
   if (row.dog_friendly === true)
     list.push("dog friendly")

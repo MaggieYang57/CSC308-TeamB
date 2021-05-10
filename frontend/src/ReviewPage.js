@@ -14,7 +14,6 @@ class Review extends React.Component {
     fetch("http://localhost:3001/hike/" + this.props.match.params.id)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
         this.setState({ ...data[0] });
       });
   }
@@ -67,7 +66,7 @@ class Review extends React.Component {
         <p> - {this.state.location}</p>
         <form onSubmit={this.submitReview}>
           <p id="input" style={{ marginLeft: "45px" }}>
-            Enter your name:
+            Enter your email:
           </p>
           <input
             type="text"
