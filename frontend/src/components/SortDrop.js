@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "../css/filterBar.css";
 import { PropTypes } from 'prop-types';

@@ -1,4 +1,5 @@
 import React from "react";
+import ReviewTable from "./components/ReviewTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/ProfilePage.css";
 
@@ -29,7 +30,17 @@ class ProfilePage extends React.Component {
             Saved Trails
             <hr />
           </h2>
-          <h3>{this.state.saved_trails}</h3>
+          <h3>{(this.state.saved_trails || []).map(item => (
+            <li key={item} style={{ marginBottom: "10px" }}>{item}</li>
+          ))}</h3>
+        </div>
+        <div className="reviews">
+          <h2 className="reviews-title">
+            <hr />
+            Reviews
+            <hr />
+          </h2>
+          <ReviewTable reviewList={this.state.user_email} route={"user"} />
         </div>
       </div>
     );

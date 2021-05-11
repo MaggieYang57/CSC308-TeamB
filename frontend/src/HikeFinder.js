@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { PropTypes } from 'prop-types';
-// import moment from "moment";
-// import SearchBar from "./components/SearchBar";
-
 import { Container, Row, Col } from "react-bootstrap";
 import { HikeCardList } from "./components/HikeCardList";
 import FilterBar from './components/FilterBar'
-// import { SortBy } from "./components/SortBy";
 
 // const averageRatings = (ratings) => {
 //   let sum = 0;
@@ -15,26 +11,13 @@ import FilterBar from './components/FilterBar'
 //   return (sum / ratings.length).toFixed(1);
 // };
 
-const debounce = (func, wait) => {
-  let timeout;
-
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
 
 function HikeFinder(props) {
   const [finderState, setFinderState] = useState({
     filteredDataIndexes: new Set([...Array(props.hikeList.length).keys()]),
+    beforeSearchIndices: new Set([...Array(props.hikeList.length).keys()]),
+    recentlySearched: false, 
     filters: new Set(),
-    searchInput: null,
-    inputDebouncer: debounce(updateInput, 1000),
   })
 
   useEffect(() => {
@@ -46,12 +29,17 @@ function HikeFinder(props) {
 
 
   function addFilter(filter) {
-    const hikeData = props.hikeList;
+    let hikeData = props.hikeList;
     const filters = new Set([...finderState.filters])
     filters.add(filter)
     let indices = new Set([...finderState.filteredDataIndexes])
-    if (filters.size === 1) {
+    if (filters.size === 1 && !finderState.recentlySearched) {
       indices = new Set()
+    }
+    else if (finderState.recentlySearched) {
+      hikeData = props.hikeList.filter((_, i) =>
+        finderState.filteredDataIndexes.has(i)
+      )
     }
     for (let i = 0; i < hikeData.length; i++) {
       if (hikeData[i][filter] === true) {
@@ -61,9 +49,9 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
+      beforeSearchIndices: indices,
+      recentlySearched: finderState.recentlySearched, 
       filters,
-      searchInput: finderState.searchInput,
-      inputDebouncer: finderState.inputDebouncer,
     })
 
   }
@@ -87,9 +75,9 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
+      beforeSearchIndices: indices,
+      recentlySearched: finderState.recentlySearched, 
       filters: filters,
-      searchInput: finderState.searchInput,
-      inputDebouncer: finderState.inputDebouncer,
     })
   }
 
@@ -121,9 +109,9 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
+      beforeSearchIndices: indices,
+      recentlySearched: finderState.recentlySearched, 
       filters: finderState.filters,
-      searchInput: finderState.searchInput,
-      inputDebouncer: finderState.inputDebouncer,
     })
   }
 
@@ -135,30 +123,39 @@ function HikeFinder(props) {
     }
   }
 
-  function updateInput(input) {
+  function updateBySearch(input) {
     console.log('here')
     const hikeData = props.hikeList.filter((_, i) =>
       finderState.filteredDataIndexes.has(i)
     )
-    let indices = new Set()
+    let indices = new Set([...finderState.filteredDataIndexes])
+    const beforeSearch = new Set([...finderState.filteredDataIndexes])
+    let searched = true;
     if (hikeData.length > 0) {
       for (let i = 0; i < hikeData.length; i++) {
-        if (hikeData[i].description.includes(input)) {
-          indices.add(i)
+        if (!(hikeData[i].description.includes(input))) {
+          indices.delete(i)
         }
       }
     }
 
-    if (indices.size === 0) {
-      console.log("Nothing matched your search results, please try something else!")
-      indices = new Set([...finderState.filteredDataIndexes])
+    console.log(hikeData)
+
+    if (input.length === 0 && finderState.recentlySearched) {
+      indices = new Set([...finderState.beforeSearchIndices])
+      searched = false;
     }
 
+    else if (indices.size === 0) {
+      console.log("Nothing matched your search results, please try something else!")
+    }
+
+
     setFinderState({
+      recentlySearched: searched, 
       filteredDataIndexes: indices,
+      beforeSearchIndices: beforeSearch,
       filters: finderState.filters,
-      searchInput: input,
-      inputDebouncer: finderState.inputDebouncer,
     })
 
   }
@@ -177,8 +174,7 @@ function HikeFinder(props) {
       <FilterBar
         onChange={handleFilterChange}
         onDiff={handleDifficultyChange}
-        keyword={finderState.searchInput}
-        setKeyword={finderState.inputDebouncer}
+        updateBySearch={updateBySearch}
       />
       <Container style={{ marginTop: "5vw" }}>
         <b className="text text-center " style={{ fontSize: 50, color: "#2C6674" }}>
@@ -211,10 +207,10 @@ function HikeFinder(props) {
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.node,
+  hikeList: PropTypes.array,
 }
 
 HikeFinder.propTypes = {
-  hikeList: PropTypes.object,
+  hikeList: PropTypes.array,
 };
 export default HikeFinder;

@@ -46,4 +46,7 @@ function Table(props) {
 Table.propTypes = {
   hikeList: PropTypes.node,
 }
+TableBody.propTypes = {
+  hikeList: PropTypes.node,
+}
 export default Table;
