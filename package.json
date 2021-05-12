@@ -16,7 +16,7 @@
   "scripts": {
     "heroku-prebuild": "cd frontend && npm install",
     "test": "echo \"Error: n&&&77o test specified\" && exit 1",
-    "start": "cd frontend && npm install && npm start"
+    "start": "cd frontend && npm start"
   },
   "repository": {
     "type": "git",
