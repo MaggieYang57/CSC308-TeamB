@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./css/Signup.css";
 import { Link, withRouter } from "react-router-dom";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -85,7 +88,7 @@ class Signup extends Component {
 
   mongoSignup = (user) => {
     const _this = this;
-    fetch("http://localhost:3001/signup", {
+    fetch(`${backendHostURL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

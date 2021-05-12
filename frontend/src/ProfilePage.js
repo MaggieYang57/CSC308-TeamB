@@ -3,6 +3,9 @@ import ReviewTable from "./components/ReviewTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/ProfilePage.css";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +13,7 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/login/" + localStorage.getItem("_id"))
+    fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("data", data);

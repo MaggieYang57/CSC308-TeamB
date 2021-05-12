@@ -9,9 +9,9 @@ function WeatherWidget(props) {
 
   function getWeather(city) {
     fetch(
-      "http://api.openweathermap.org/data/2.5/weather?q=" +
-        city +
-        "&units=imperial&appid=9bb2aad28619e8c45992b312cb325c36"
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+      city +
+      "&units=imperial&appid=9bb2aad28619e8c45992b312cb325c36"
     )
       .then((res) => res.json())
       .then((data) => {

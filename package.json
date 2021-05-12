@@ -1,0 +1,30 @@
+{
+  "name": "csc308-teamb",
+  "version": "1.0.0",
+  "description": "CSC 308 Project Group - Bat Battur, Mike Eirinberg, Skylar Kurth, Sarah Rietkerk, Maggie Yang",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "brew": "^0.0.8",
+    "dotenv": "^8.2.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "react-bootstrap": "^1.5.1",
+    "react-dotenv": "^0.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: n&&&77o test specified\" && exit 1",
+    "start": "cd frontend && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaggieYang57/CSC308-TeamB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaggieYang57/CSC308-TeamB/issues"
+  },
+  "homepage": "https://github.com/MaggieYang57/CSC308-TeamB#readme"
+}

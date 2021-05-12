@@ -19,17 +19,20 @@ import SignupSuccess from "./components/SignupSuccess";
 import LogoutSuccess from "./components/LogoutSuccess";
 import ProfilePage from "./ProfilePage";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 function App() {
   const [appState, setAppState] = useState({
     baseHikeData: [],
   });
   const [userState, setUserState] = useState({
     user: localStorage.getItem("user_type")
-  }); 
+  });
 
-  async function fetchAll () {
+  async function fetchAll() {
     try {
-      const response = await axios.get('http://localhost:3001/hike')
+      const response = await axios.get(`${backendHostURL}/hike`)
       return response.data
     } catch (error) {
       // We're not handling errors. Just logging into the console.
@@ -38,7 +41,7 @@ function App() {
     }
   }
 
-    useEffect(() => {
+  useEffect(() => {
     fetchAll().then((result) => {
       if (result)
         setAppState({
@@ -46,9 +49,9 @@ function App() {
           filters: appState.filters,
           baseHikeData: result,
         });
-    
+
     });
-    
+
   }, []);
 
   // added to ensure nav reloads immediately after successful login
@@ -57,7 +60,7 @@ function App() {
       user: user
     })
   }
-  
+
   const userType = localStorage.getItem("user_type")
   console.log(userType)
 
@@ -65,7 +68,7 @@ function App() {
     <BrowserRouter>
       <title>SLO Hikes</title>
       <div className="App" style={{ margin: "auto" }}>
-        <Navigation userType={userState.user}/>
+        <Navigation userType={userState.user} />
         <Switch>
           <Route exact path="/">
             <HomePage hikeList={appState.baseHikeData} />
@@ -86,7 +89,7 @@ function App() {
           </Route>
           <Route exact path="/review/:id" component={ReviewPage} />
           <Route exact path="/login">
-            <Login onUserChange={handleUserChange}/>
+            <Login onUserChange={handleUserChange} />
           </Route>
           <Route exact path="/signup">
             <Signup />

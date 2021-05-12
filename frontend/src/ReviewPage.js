@@ -4,6 +4,9 @@ import "./css/Review.css";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +14,7 @@ class Review extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/hike/" + this.props.match.params.id)
+    fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({ ...data[0] });
@@ -40,7 +43,7 @@ class Review extends React.Component {
       free_parking: freeParking
     };
 
-    fetch("http://localhost:3001/review/hike/" + this.state._id, {
+    fetch(`${backendHostURL}/review/hike/${this.state._id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

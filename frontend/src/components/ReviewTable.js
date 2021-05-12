@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { PropTypes } from 'prop-types';
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 function ReviewBody(props) {
   const rows = props.reviewList.map((row, index) => {
     return (
@@ -66,8 +69,7 @@ function ReviewTable(props) {
   else if (props) {
     const [state, setState] = useState([]);
     useEffect(() => {
-      // TODO: Update the local api to live site when we fix everything
-      fetch("http://localhost:3001/review/" + props.route + "/" + props.reviewList)
+      fetch(`${backendHostURL}/review/${props.route}/${props.reviewList}`)
         .then((resp) => resp.json())
         .then(data => setState(data))
     }, []);
