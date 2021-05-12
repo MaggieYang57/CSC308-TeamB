@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Row, Col } from "react-bootstrap";

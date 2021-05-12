@@ -1,4 +1,3 @@
-/* eslint-disable node/handle-callback-err */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";

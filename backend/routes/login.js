@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable camelcase */
 const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()

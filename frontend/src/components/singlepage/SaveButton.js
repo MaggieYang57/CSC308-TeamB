@@ -1,4 +1,3 @@
-/* eslint-disable node/handle-callback-err */
 import React, { Component } from "react";
 import "../../css/SinglePage.css";
 import { withRouter } from "react-router-dom";
