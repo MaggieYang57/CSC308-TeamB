@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import "./css/LoginPage.css";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -75,7 +78,7 @@ class Login extends Component {
 
   mongoLogin = (user) => {
     const _this = this;
-    fetch("http://localhost:3001/login", {
+    fetch(`${backendHostURL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +102,7 @@ class Login extends Component {
       });
   };
 
-  storeUser(user){
+  storeUser(user) {
     localStorage.setItem("email", user.user_email);
     localStorage.setItem("user_type", JSON.stringify(user.user_type));
     localStorage.setItem("isLoggedIn", "true");

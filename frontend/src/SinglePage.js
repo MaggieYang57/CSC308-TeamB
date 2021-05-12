@@ -7,6 +7,9 @@ import WeatherWidget from "./components/singlepage/WeatherWidget";
 import ReviewTable from "./components/ReviewTable";
 import SaveButton from "./components/singlepage/SaveButton"
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+
 const averageRatings = (ratings) => {
   let sum = 0;
   for (const i in ratings) sum += +ratings[i];
@@ -20,7 +23,7 @@ class SinglePage extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/hike/" + this.props.match.params.id)
+    fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("data", data);
@@ -38,7 +41,7 @@ class SinglePage extends React.Component {
       rating: rate,
     };
 
-    fetch("http://localhost:3001/hike/" + this.state._id + "/rating", {
+    fetch(`${backendHostURL}/hike/${this.state._id}/rating`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
