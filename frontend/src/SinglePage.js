@@ -28,8 +28,8 @@ class SinglePage extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    await fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
+  componentDidMount() {
+     fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("data", data);
@@ -44,27 +44,30 @@ class SinglePage extends React.Component {
   }
 
   async checkSaved() {
-    await fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ user: this.state.user.concat(data[0]) });
-        console.log("user", this.state.user)
-        if(this.state.user.length > 0)
-        {          
-          const hike = this.state.data._id
-          const length = this.state.user[0].saved_trails.length
-          for(let i = 0; i < length; i++)
-          {
-              const curr = this.state.user[0].saved_trails[i]
-              console.log(curr)
-              if (curr === hike)
-              {
-                this.setState({saved: true})
-                console.log(this.state.saved)
-              }
+    if (localStorage.getItem("isLoggedIn") === "true")
+    {
+      await fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.setState({ user: this.state.user.concat(data[0]) });
+          console.log("user", this.state.user)
+          if(this.state.user.length > 0)
+          {          
+            const hike = this.state.data._id
+            const length = this.state.user[0].saved_trails.length
+            for(let i = 0; i < length; i++)
+            {
+                const curr = this.state.user[0].saved_trails[i]
+                console.log(curr)
+                if (curr === hike)
+                {
+                  this.setState({saved: true})
+                  console.log(this.state.saved)
+                }
+            }
           }
-        }
-    });
+      });
+    }
   }
 
   postRating = () => {
