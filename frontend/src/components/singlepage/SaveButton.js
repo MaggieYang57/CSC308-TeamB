@@ -10,39 +10,22 @@ const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
 class SaveButton extends Component {
     constructor(props) {
         super(props);
-        this.state = { saved: false };
+        this.state = { };
     }
 
-    checkSaved = () => {
-        if (localStorage.getItem("isLoggedIn") === "true") {
-            const hikeID = this.props.hike
-            const hike = hikeID
-            const user = localStorage.getItem("_id")
-            const data = {
-                hike: hike,
-                user: user
-            };
-            fetch(`${backendHostURL}/save/check`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            })
-                .then((res) => {
-                    if (res.status === 404)
-                        localStorage.setItem("saved", "false")
-                    else if (res.status === 200)
-                        localStorage.setItem("saved", "true")
-                })
-                .catch((err) => {
-                    console.log("Error");
-                });
-        }
+    async componentDidMount() {
+        await fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("data", data);
+            this.setState({ ...data[0] });
+          });
+        this.setState({saved: this.props.saved})
+        console.log(this.state)
     }
-
 
     saveHike = () => {
+        console.log(this.props.hike)
         const hikeID = this.props.hike
         const hike = hikeID
         const user = localStorage.getItem("_id")
@@ -103,6 +86,7 @@ class SaveButton extends Component {
     }
 
     render() {
+        console.log(this.state.saved)
         if (this.state.saved === false) {
             return (
                 <div>

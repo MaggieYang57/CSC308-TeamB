@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 import React from "react";
 import "./css/SinglePage.css";
 import { withRouter } from "react-router-dom";
@@ -19,19 +20,51 @@ const averageRatings = (ratings) => {
 class SinglePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [],
+      user: [],
+      saved: false,
+      checkedSave: false
+    };
   }
 
-  componentDidMount() {
-    fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
+  async componentDidMount() {
+    await fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("data", data);
-        this.setState({ ...data[0] });
+        this.setState({ data: data[0] });
         document.getElementById("rating-num").innerText = averageRatings(
-          this.state.rating
+          this.state.data.rating
         );
       });
+    this.checkSaved()
+    this.state.checkedSave = true
+    console.log("checked save")
+  }
+
+  async checkSaved() {
+    await fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ user: this.state.user.concat(data[0]) });
+        console.log("user", this.state.user)
+        if(this.state.user.length > 0)
+        {          
+          const hike = this.state.data._id
+          const length = this.state.user[0].saved_trails.length
+          for(let i = 0; i < length; i++)
+          {
+              const curr = this.state.user[0].saved_trails[i]
+              console.log(curr)
+              if (curr === hike)
+              {
+                this.setState({saved: true})
+                console.log(this.state.saved)
+              }
+          }
+        }
+    });
   }
 
   postRating = () => {
@@ -50,36 +83,39 @@ class SinglePage extends React.Component {
     }).then(() => {
       this.state.rating.push(rate);
       document.getElementById("rating-num").innerText = averageRatings(
-        this.state.rating
+        this.state.data.rating
       );
     });
   };
 
   render() {
+    console.log(this.state.saved)
     return (
       <div className="hike">
         <div className="header">
-          <h1>{this.state.title}</h1>
-          <h2>- {this.state.location}</h2>
-          <a href={"/review/" + this.state._id}>
+          <h1>{this.state.data.title}</h1>
+          <h2>- {this.state.data.location}</h2>
+          <a href={"/review/" + this.state.data._id}>
             <button id="review-button">Write a Review</button>
           </a>
-          <SaveButton hike={this.state.title} />
+          {this.state.checkedSave === true ? <SaveButton hike={this.state.data._id} saved = {this.state.saved} /> :
+              <h3>Loading</h3>
+              }
         </div>
 
-        <img src={this.state.imagesrc} height="300" width="400" />
+        <img src={this.state.data.imagesrc} height="300" width="400" />
         <div className="single-info">
           <div className="stats">
-            <h2 className="difficulty">Difficulty: {this.state.difficulty}</h2>
+            <h2 className="difficulty">Difficulty: {this.state.data.difficulty}</h2>
             <h2 id="rating">
               ★<h2 id="rating-num" />
             </h2>
           </div>
-          <p id="desc">{this.state.description}</p>
+          <p id="desc">{this.state.data.description}</p>
           <br></br>
-          <WeatherWidget city={this.state.location} />
+          <WeatherWidget city={this.state.data.location} />
           <br></br>
-          <p>{this.state.tags}</p>
+          <p>{this.state.data.tags}</p>
         </div>
         <div className="rate-me">
           <label id="rating-label" htmlFor="select-rating">
@@ -102,7 +138,7 @@ class SinglePage extends React.Component {
             Reviews
             <hr />
           </h2>
-          <ReviewTable reviewList={this.state._id} route={"hike"} />
+          <ReviewTable reviewList={this.state.data._id} route={"hike"} />
         </div>
       </div>
     );
