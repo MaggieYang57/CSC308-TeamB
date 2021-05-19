@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable camelcase */
 const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()
@@ -10,8 +8,8 @@ const User = mongoose.model('User', userSchema, 'Users')
 const bcrypt = require('bcrypt')
 
 router.post('/', async (req, res) => {
-  const { email, password, user_type } = req.body
-  if (user_type == null) {
+  const { email, password, userType } = req.body
+  if (userType == null) {
     res.status(404).send('Invalid user type')
   }
 
@@ -20,7 +18,7 @@ router.post('/', async (req, res) => {
       console.log('Invalid email')
       res.status(404).send('Invalid email')
     } else {
-      let userPassword = result.password
+      const userPassword = result.password
       const valid = bcrypt.compareSync(password, userPassword)
       if (valid) {
         console.log('login successful')

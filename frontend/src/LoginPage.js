@@ -13,7 +13,7 @@ class Login extends Component {
     this.state = {
       isLoggedIn: false,
       RedirectLoggedUser: false,
-      user_type: "",
+      userType: "",
       emptyUser: false,
       email: "",
       password: "",
@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   changeUserType = (event) => {
-    this.setState({ user_type: event.target.value, emptyUser: false });
+    this.setState({ userType: event.target.value, emptyUser: false });
   };
 
   componentDidMount() {
@@ -51,10 +51,10 @@ class Login extends Component {
     if (path.length === 3) {
       if (path[2] === "admin") {
         document.getElementById("admin").checked = true;
-        this.setState({ user_type: path[2] });
+        this.setState({ userType: path[2] });
       } else if (path[2] === "user") {
         document.getElementById("user").checked = true;
-        this.setState({ user_type: path[2] });
+        this.setState({ userType: path[2] });
       }
     }
   }
@@ -62,7 +62,7 @@ class Login extends Component {
   login = (e) => {
     e.preventDefault();
 
-    if (this.state.user_type === "") {
+    if (this.state.userType === "") {
       this.setState({ emptyUser: true });
       return;
     }
@@ -70,7 +70,7 @@ class Login extends Component {
     const user = {
       email: this.state.email,
       password: this.state.password,
-      user_type: this.state.user_type,
+      userType: this.state.userType,
     };
 
     this.mongoLogin(user);
@@ -104,10 +104,10 @@ class Login extends Component {
 
   storeUser(user) {
     localStorage.setItem("email", user.user_email);
-    localStorage.setItem("user_type", JSON.stringify(user.user_type));
+    localStorage.setItem("userType", JSON.stringify(user.userType));
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("_id", user._id);
-    this.props.onUserChange(user.user_type);
+    this.props.onUserChange(user.userType);
   };
 
   render() {
