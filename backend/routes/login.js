@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()
@@ -8,8 +9,8 @@ const User = mongoose.model('User', userSchema, 'Users')
 const bcrypt = require('bcrypt')
 
 router.post('/', async (req, res) => {
-  const { email, password, userType } = req.body
-  if (userType == null) {
+  const { email, password, user_type } = req.body
+  if (user_type == null) {
     res.status(404).send('Invalid user type')
   }
 
