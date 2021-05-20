@@ -61,7 +61,6 @@ class SinglePage extends React.Component {
                 if (curr === hike)
                 {
                   this.setState({saved: true})
-                  console.log(this.state.saved)
                 }
             }
           }
