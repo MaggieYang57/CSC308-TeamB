@@ -20,7 +20,6 @@ class SaveButton extends Component {
             this.setState({ ...data[0] });
           });
         this.setState({saved: this.props.saved})
-        console.log(this.state)
     }
 
     saveHike = () => {
