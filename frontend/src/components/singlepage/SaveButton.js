@@ -23,7 +23,6 @@ class SaveButton extends Component {
     }
 
     saveHike = () => {
-        console.log(this.props.hike)
         const hikeID = this.props.hike
         const hike = hikeID
         const user = localStorage.getItem("_id")
