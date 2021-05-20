@@ -83,7 +83,6 @@ class SaveButton extends Component {
     }
 
     render() {
-        console.log(this.state.saved)
         if (this.state.saved === false) {
             return (
                 <div>
