@@ -111,10 +111,10 @@ function AdminUserReviewTable(props) {
 }
 
 AdminUserReviewTable.propTypes = {
-  reviewList: PropTypes.object,
-  route: PropTypes.object
+  reviewList: PropTypes.string,
+  route: PropTypes.string
 };
 ReviewBody.propTypes = {
-  reviewList: PropTypes.object,
+  reviewList: PropTypes.array,
 };
 export default AdminUserReviewTable;
