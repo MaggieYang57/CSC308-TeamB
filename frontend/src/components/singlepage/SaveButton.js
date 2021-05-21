@@ -17,15 +17,12 @@ class SaveButton extends Component {
         await fetch(`${backendHostURL}/login/${localStorage.getItem("_id")}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log("data", data);
             this.setState({ ...data[0] });
           });
         this.setState({saved: this.props.saved})
-        console.log(this.state)
     }
 
     saveHike = () => {
-        console.log(this.props.hike)
         const hikeID = this.props.hike
         const hike = hikeID
         const user = localStorage.getItem("_id")
@@ -86,7 +83,6 @@ class SaveButton extends Component {
     }
 
     render() {
-        console.log(this.state.saved)
         if (this.state.saved === false) {
             return (
                 <div>

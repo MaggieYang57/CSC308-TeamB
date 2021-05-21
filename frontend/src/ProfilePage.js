@@ -23,7 +23,6 @@ class ProfilePage extends React.Component {
       .then((data) => {
         this.setState({ data: data[0] });
         this.getHikeCards()
-        console.log(this.state.hikeCard)
       });
   }
 

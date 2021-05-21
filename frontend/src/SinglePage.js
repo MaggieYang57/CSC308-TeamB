@@ -58,11 +58,9 @@ class SinglePage extends React.Component {
             for(let i = 0; i < length; i++)
             {
                 const curr = this.state.user[0].saved_trails[i]
-                console.log(curr)
                 if (curr === hike)
                 {
                   this.setState({saved: true})
-                  console.log(this.state.saved)
                 }
             }
           }
