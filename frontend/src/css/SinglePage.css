@@ -207,3 +207,31 @@ img {
   color: white;
   text-decoration: none;
 }
+
+/*************Delete Comment*******************/
+
+#delete-button {
+  -webkit-appearance: none;
+  padding: 0.75rem;
+  width: 100px;
+  height: 50px;
+  vertical-align: middle;
+  font-weight: 600;
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  border-color: rgb(255, 73, 73);
+  border-width: thin;
+  border-radius: 30px;
+  color: rgb(255, 73, 73);
+  cursor: pointer;
+  line-height: 1;
+}
+
+#delete-button:hover {
+  background-color: rgb(255, 73, 73);
+  color: white;
+  text-decoration: none;
+}

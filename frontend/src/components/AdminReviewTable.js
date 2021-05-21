@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PropTypes } from 'prop-types';
+import "../css/ProfilePage.css";
 
 require('dotenv').config()
 const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
@@ -25,14 +26,28 @@ function ReviewBody(props) {
           Comment: <br></br>
           {row.body}
         </td>
+        <td>
+          <button id="delete-button" onClick={() => deleteReview(row)}>Delete</button>
+        </td>
       </tr>
     );
   });
   return <tbody>{rows}</tbody>;
 }
 
+function deleteReview(row) {
+  fetch(`${backendHostURL}/review/${row._id}/delete`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(() => {
+    window.location.reload()
+  });
+}
+
 function getActivities(row) {
-  var list = [];
+  const list = [];
   if (row.dog_friendly === true)
     list.push("dog friendly")
   if (row.free_parking === true)

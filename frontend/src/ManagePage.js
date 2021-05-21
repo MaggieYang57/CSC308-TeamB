@@ -25,12 +25,12 @@ class ManagePage extends React.Component {
     return (
       <div>
         <h1 className="header">
-          Hello Admin!
+          Hello, Admin!
         </h1>
-        <div className="reviews">
+        <div className="reviews" style={{marginTop: '-50px'}}>
           <h2 className="reviews-title">
             <hr />
-            List of all reviews
+            List of All Reviews
             <hr />
           </h2>
           <AdminReviewTable reviewList={this.state.user_email} route={""} />
