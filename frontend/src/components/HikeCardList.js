@@ -32,7 +32,7 @@ export function HikeCardList({ hike }) {
         </Col>
         <Col>
           <Card.Body style={{ marginLeft: "4rem", marginTop: "1rem" }}>
-            <Ratings rating={round(hike.rating, 1)} />
+            <Ratings rating={round(parseFloat(hike.rating), 1)} />
             <Card.Title style={{ marginTop: "1vw" }}>
               <Link to={"/hike/" + hike._id}>
                 <p className=" h5 card-text text-left text-primary font-weight-bold">
