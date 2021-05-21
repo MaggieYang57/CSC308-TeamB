@@ -75,14 +75,14 @@ class SinglePage extends React.Component {
       rating: rate,
     };
 
-    fetch(`${backendHostURL}/hike/${this.state._id}/rating`, {
+    fetch(`${backendHostURL}/hike/${this.state.data._id}/rating`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     }).then(() => {
-      this.state.rating.push(rate);
+      this.state.data.rating.push(rate);
       document.getElementById("rating-num").innerText = averageRatings(
         this.state.data.rating
       );
