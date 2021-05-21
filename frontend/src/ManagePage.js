@@ -1,5 +1,5 @@
 import React from "react";
-import AdminReviewTable from "./components/AdminReviewTable";
+import AdminUserReviewTable from "./components/AdminUserReviewTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/ProfilePage.css";
 
@@ -33,7 +33,7 @@ class ManagePage extends React.Component {
             List of All Reviews
             <hr />
           </h2>
-          <AdminReviewTable reviewList={this.state.user_email} route={""} />
+          <AdminUserReviewTable />
         </div>
       </div>
     );

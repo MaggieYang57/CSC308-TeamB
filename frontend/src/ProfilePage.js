@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewTable from "./components/ReviewTable";
+import AdminUserReviewTable from "./components/AdminUserReviewTable";
 import { Container, Row, Col } from "react-bootstrap";
 import { HikeCardList } from "./components/HikeCardList";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -71,7 +71,7 @@ class ProfilePage extends React.Component {
             Reviews
             <hr />
           </h2>
-          <ReviewTable reviewList={this.state.data.user_email} route={"user"} />
+          <AdminUserReviewTable reviewList={this.state.data.user_email} route={"user"} />
         </div>
       </div>
     );

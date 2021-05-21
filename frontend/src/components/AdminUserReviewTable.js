@@ -66,7 +66,7 @@ function EmptyReviews() {
   return <h3>No reviews yet.</h3>;
 }
 
-function AdminReviewTable(props) {
+function AdminUserReviewTable(props) {
   // TODO: Fix this manual review CSS
   const divStyle = {
     // Top , right , bottom , left
@@ -77,40 +77,44 @@ function AdminReviewTable(props) {
 
   let reviewTable;
   let noReviews = null;
+  const [state, setState] = useState([]);
 
   if (typeof props.reviewList === "undefined") {
-    return null;
-  }
-  else if (props) {
-    const [state, setState] = useState([]);
     useEffect(() => {
       fetch(`${backendHostURL}/review`)
         .then((resp) => resp.json())
         .then(data => setState(data))
     }, []);
+  }
+  else{
+    useEffect(() => {
+      fetch(`${backendHostURL}/review/${props.route}/${props.reviewList}`)
+        .then((resp) => resp.json())
+        .then(data => setState(data))
+    }) }
 
 
-    if (state) {
+  if (state) {
       reviewTable = <ReviewBody reviewList={state} />;
       // Display message if there are currently no reviews
       if (Object.keys(state).length === 0) {
         noReviews = <EmptyReviews />;
       }
-    }
-
+  }
     return (
       <div className="table">
         <table style={divStyle}>{reviewTable}</table>
         {noReviews}
       </div>
     );
-  }
+  
 }
 
-AdminReviewTable.propTypes = {
+AdminUserReviewTable.propTypes = {
   reviewList: PropTypes.object,
+  route: PropTypes.object
 };
 ReviewBody.propTypes = {
   reviewList: PropTypes.object,
 };
-export default AdminReviewTable;
+export default AdminUserReviewTable;
