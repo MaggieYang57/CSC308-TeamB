@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from "axios";
@@ -18,6 +19,7 @@ import Signup from "./SignupPage";
 import SignupSuccess from "./components/SignupSuccess";
 import LogoutSuccess from "./components/LogoutSuccess";
 import ProfilePage from "./ProfilePage";
+import ManagePage from "./ManagePage";
 
 require('dotenv').config()
 const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
@@ -99,7 +101,7 @@ function App() {
           </Route>
 
           <Route exact path="/manage">
-
+            <ManagePage />
           </Route>
 
           <Route exact path="/profile" component={ProfilePage} />
