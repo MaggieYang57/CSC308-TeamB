@@ -90,14 +90,6 @@ input[type="checkbox"] {
   margin: 5px;
 }
 
-#review-button {
-  overflow: hidden;
-  padding: 12px 17px;
-  border: none;
-  font-weight: 600;
-  font-size: 16px;
-  align-self: flex-end;
-}
 #signup-button:hover {
   background-color: #2098d1;
   color: white;

@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  justify-content: left;
   margin-top: 100px;
 }
 .header h1 {
@@ -151,22 +150,20 @@ img {
 
 #review-button {
   -webkit-appearance: none;
-  display: flex-end;
-  justify-content: right;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem;
   width: 150px;
   height: 60px;
   margin-left: 30%;
   vertical-align: middle;
   font-weight: 600;
   font-family: "Mulish", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   text-transform: none;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #6ce2e3;
+  border: none;
   border-radius: 10px;
-  background: #6ce2e3;
+  background: #0366ee;
   color: #ffffff;
   cursor: pointer;
   line-height: 1;
@@ -174,7 +171,7 @@ img {
 }
 
 #review-button:hover {
-  background-color: #5ac0c2;
+  background-color: #0250bc;
   color: white;
   text-decoration: none;
 }
