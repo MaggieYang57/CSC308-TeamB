@@ -98,6 +98,10 @@ function App() {
             <SignupSuccess />
           </Route>
 
+          <Route exact path="/manage">
+
+          </Route>
+
           <Route exact path="/profile" component={ProfilePage} />
 
           <Route exact path="/logout">
