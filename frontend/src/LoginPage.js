@@ -196,7 +196,7 @@ class Login extends Component {
 
 Login.propTypes = {
   history: PropTypes.object,
-  userType: PropTypes.object,
+  user_type: PropTypes.object,
   onUserChange: PropTypes.func,
 };
 export default withRouter(Login);
