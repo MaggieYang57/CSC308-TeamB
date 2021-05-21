@@ -63,9 +63,6 @@ function App() {
     })
   }
 
-  const userType = localStorage.getItem("user_type")
-  console.log(userType)
-
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>

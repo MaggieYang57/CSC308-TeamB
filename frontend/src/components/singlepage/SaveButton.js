@@ -106,7 +106,7 @@ class SaveButton extends Component {
 
 SaveButton.propTypes = {
     history: PropTypes.object,
-    hike: PropTypes.object,
-    saved: PropTypes.object,
+    hike: PropTypes.string,
+    saved: PropTypes.bool,
 };
 export default withRouter(SaveButton);
