@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import axios from "axios";
@@ -18,6 +17,7 @@ import Login from "./LoginPage";
 import Signup from "./SignupPage";
 import SignupSuccess from "./components/SignupSuccess";
 import LogoutSuccess from "./components/LogoutSuccess";
+import ReviewSuccess from "./components/ReviewSuccess";
 import ProfilePage from "./ProfilePage";
 import ManagePage from "./ManagePage";
 
@@ -105,6 +105,9 @@ function App() {
 
           <Route exact path="/logout">
             <LogoutSuccess />
+          </Route>
+          <Route exact path="/reviewSuccess">
+            <ReviewSuccess />
           </Route>
         </Switch>
         <Container style={{ marginTop: "7vw" }}></Container>
