@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PropTypes } from 'prop-types';
+import { Link } from "react-router-dom";
 import "../css/ProfilePage.css";
 
 require('dotenv').config()
@@ -24,7 +25,7 @@ function ReviewBody(props) {
         </td>
         <td>
           Comment: <br></br>
-          {row.body}
+          <Link to={"/hike/" + row.hike_id}> {row.body} </Link>
         </td>
         <td>
           <button id="delete-button" onClick={() => deleteReview(row)}>Delete</button>
