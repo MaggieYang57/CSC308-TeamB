@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./css/Review.css";
 import "./css/SinglePage.css";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 require('dotenv').config()
 const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
@@ -146,7 +146,7 @@ class Review extends React.Component {
             value="SUBMIT A REVIEW"
             style={{ marginLeft: "45px" }}
           />
-          <a href="javascript:history.back()">Go Back to the Hike Page</a>
+          <Link to={"/hike/" + this.state._id}> Go Back to the Hike Page </Link>
         </form>
       </div>
     );
