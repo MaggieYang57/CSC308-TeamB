@@ -12,7 +12,7 @@ class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hikeCard: [],
+      hikeCards: [],
       data:[]
     };
   }
@@ -35,8 +35,8 @@ class ProfilePage extends React.Component {
       fetch(`${backendHostURL}/hike/${savedTrail}`, {
       }).then((res) => res.json())
       .then((data) => {
-        const added = this.state.hikeCard.concat(data[0])
-        this.setState({hikeCard: added})
+        const added = this.state.hikeCards.concat(data[0])
+        this.setState({hikeCards: added})
       });
     }
   }
@@ -56,7 +56,7 @@ class ProfilePage extends React.Component {
           <React.Fragment>
             <Container>
               <Col>
-              {(this.state.hikeCard || []).map((hike) => (
+              {(this.state.hikeCards || []).map((hike) => (
                   <Row className="mb-5" key={hike._id} style={{ marginTop: "3.2vw" }}>
                     <HikeCardList hike={hike} />
                   </Row>
