@@ -55,6 +55,7 @@ class Review extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="signup-form">
         <div className="title">
@@ -69,15 +70,17 @@ class Review extends React.Component {
         <p> - {this.state.location}</p>
         <form onSubmit={this.submitReview} action="/reviewSuccess">
           <p id="input" style={{ marginLeft: "45px" }}>
-            Enter your email:
+            Your email:
           </p>
+          
           <input
             type="text"
+            value={localStorage.getItem("email")}
             className="account-info"
             id="email"
             size="50"
             style={{ width: "500px" }}
-            required
+            disabled
           />
 
           <div className="rating">
