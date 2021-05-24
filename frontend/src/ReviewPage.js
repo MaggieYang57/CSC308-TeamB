@@ -55,7 +55,6 @@ class Review extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="signup-form">
         <div className="title">
