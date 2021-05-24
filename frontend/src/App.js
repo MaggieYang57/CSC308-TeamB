@@ -17,7 +17,9 @@ import Login from "./LoginPage";
 import Signup from "./SignupPage";
 import SignupSuccess from "./components/SignupSuccess";
 import LogoutSuccess from "./components/LogoutSuccess";
+import ReviewSuccess from "./components/ReviewSuccess";
 import ProfilePage from "./ProfilePage";
+import ManagePage from "./ManagePage";
 
 require('dotenv').config()
 const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
@@ -61,9 +63,6 @@ function App() {
     })
   }
 
-  const userType = localStorage.getItem("user_type")
-  console.log(userType)
-
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
@@ -98,10 +97,17 @@ function App() {
             <SignupSuccess />
           </Route>
 
+          <Route exact path="/manage">
+            <ManagePage />
+          </Route>
+
           <Route exact path="/profile" component={ProfilePage} />
 
           <Route exact path="/logout">
             <LogoutSuccess />
+          </Route>
+          <Route exact path="/reviewSuccess">
+            <ReviewSuccess />
           </Route>
         </Switch>
         <Container style={{ marginTop: "7vw" }}></Container>

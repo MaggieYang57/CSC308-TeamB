@@ -32,7 +32,6 @@ class SinglePage extends React.Component {
      fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
         this.setState({ data: data[0] });
         document.getElementById("rating-num").innerText = averageRatings(
           this.state.data.rating
@@ -50,7 +49,6 @@ class SinglePage extends React.Component {
         .then((res) => res.json())
         .then((data) => {
           this.setState({ user: this.state.user.concat(data[0]) });
-          console.log("user", this.state.user)
           if(this.state.user.length > 0)
           {          
             const hike = this.state.data._id
@@ -88,15 +86,14 @@ class SinglePage extends React.Component {
       );
     });
   };
-
+  
   render() {
-    console.log(this.state.saved)
     return (
       <div className="hike">
         <div className="header">
           <h1>{this.state.data.title}</h1>
           <h2>- {this.state.data.location}</h2>
-          <a href={"/review/" + this.state.data._id}>
+          <a href={this.state.user.length !== 0 ? "/review/" + this.state.data._id : "/login"}>
             <button id="review-button">Write a Review</button>
           </a>
           {this.state.checkedSave === true ? <SaveButton hike={this.state.data._id} saved = {this.state.saved} /> :

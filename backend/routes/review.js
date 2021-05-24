@@ -70,9 +70,7 @@ router.post('/:id/delete', async (req, res) => {
         _id: req.params.id
       },
       {
-        $push: {
-          deleted: true
-        }
+        deleted: true
       }
     )
     res.json({ Response: 'Review is marked as deleted' })
