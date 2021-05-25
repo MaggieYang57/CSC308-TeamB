@@ -86,7 +86,7 @@ function App() {
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
-          <Route exact path="/review/:id" component={ReviewPage} />
+          <Route exact path="/review/:id" component={localStorage.getItem("isLoggedIn") === "true" ? ReviewPage : Login } />
           <Route exact path="/login">
             <Login onUserChange={handleUserChange} />
           </Route>
