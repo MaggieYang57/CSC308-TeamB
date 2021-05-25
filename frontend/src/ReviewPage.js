@@ -67,7 +67,7 @@ class Review extends React.Component {
         </div>
         <p id="hike-title">{this.state.title}</p>
         <p> - {this.state.location}</p>
-        <form onSubmit={this.submitReview} action="/reviewSuccess">
+        <form onSubmit={this.submitReview} action={"/reviewSuccess/" + this.props.match.params.id}>
           <p id="input" style={{ marginLeft: "45px" }}>
             Your email:
           </p>

@@ -15,10 +15,10 @@ function ReviewSuccess(props) {
         </b>
       </div>
       <p style={{ marginTop: 20 }}>
-        Back to <Link to="/">home page</Link>
+        Back to <Link to={`/hike/${window.location.pathname.split('/')[2]}`}> hike page</Link>
       </p>
     </div>
-  );
+  )
 }
 
 export default ReviewSuccess;

@@ -106,8 +106,8 @@ function App() {
           <Route exact path="/logout">
             <LogoutSuccess />
           </Route>
-          <Route exact path="/reviewSuccess">
-            <ReviewSuccess />
+          <Route exact path="/reviewSuccess/:id">
+            <ReviewSuccess hikeid={window.location.pathname.split('/')[2]} />
           </Route>
         </Switch>
         <Container style={{ marginTop: "7vw" }}></Container>
