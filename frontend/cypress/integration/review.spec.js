@@ -10,22 +10,12 @@
 /// <reference types="cypress" />
 
 describe('Logged-out user attempts to submit a review', () => {
-    it('Given I am a logged-out user', () => {
-      if (localStorage.getItem('isLoggedIn').eq(true) )
-      {
-        cy.get('form-inline').within(() => {
-          cy.get('.btn btn-outline-light my-2 my-sm-0 m-3 border border-white').click();  
-        });
-        cy.wait(1000);
-      }
-    });
-  
-    it('And on the Single Hike page', () => {
+    it('Given I am a logged-out user and on the Single Hike page', () => {
       cy.visit('http://localhost:3000/hike/604e7e539ef30407604e7a7b'); 
     });
   
     it('When I click Write a Review', () => {
-      cy.get('header').within(() => {
+      cy.get('.header').within(() => {
         cy.get('#review-button').click();  
       });     
     });
@@ -42,8 +32,8 @@ describe('Logged-out user attempts to submit a review', () => {
 //     AND I’m on the Review page 
 //     WHEN I fill in the Review body
 //     AND click "Submit A Review"
-//     THEN the system successfully adds the review to the database
-//     AND shows the Review Success page
+//     THEN the system shows the Review Success page
+//     AND successfully adds the review to the database
 
 describe('Signed-in user submits a review on a hike page', () => {
     it('Given I am a logged-in user', () => {
@@ -58,33 +48,26 @@ describe('Signed-in user submits a review on a hike page', () => {
             cy.get('#login-button').click();  
         });
         cy.wait(1000);
-    });
-  
-    it('And I am on the review page', () => {
+
+        // And on the review page
         cy.visit('http://localhost:3000/review/604e7e539ef30407604e7a7b');  
-    });
-  
-    it('When I fill in the Review body', () => {
-        
         cy.wait(1000);
-        
-    });
 
-    it('And click "Submit A Review"', () => {
-        
+        // When I fill in the Review body
+        cy.get('textarea').type('cypress test');
+
+        // And click "Submit A Review"
+        cy.get('#signup-button').click();  
         cy.wait(1000);
-        
-    });
-  
-    it('Then the system successfully adds the review to the database', () => {   
-      cy.location().should((location) => {
-        expect(location.href).to.eq('http://localhost:3000/profile')
-      })
-    });
 
-    it('And shows the Review Success page', () => {   
+        // Then the system shows the Review Success page
         cy.location().should((location) => {
-          expect(location.href).to.eq('http://localhost:3000/profile')
+          expect(location.href).to.contain('reviewSuccess')
         })
-      });
+
+        // And the system successfully adds the review to the database
+        cy.visit('http://localhost:3000/profile'); 
+        cy.wait(1000);
+        cy.contains('cypress test');
+    });
   });
