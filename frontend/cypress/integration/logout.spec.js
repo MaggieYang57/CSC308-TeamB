@@ -10,25 +10,22 @@
 
 describe('Signed-in user logs out', () => {
     it('I’m a signed-in user', () => {
-        if (localStorage.getItem('isLoggedIn').eq(false) )
-        {
-            cy.visit('http://localhost:3000/login'); 
-            cy.get('form').within(() => {
-                cy.get('#admin [type="radio"]').not('[disabled]')
-                .check().should('be.checked')
-                cy.get('input[id="email"]').type('test@gmail.com');
-                cy.get('input[id="password"]').type('Password123');
-              });
-              cy.get('form').within(() => {
-                cy.get('#login-button').click();  
-            });
-            cy.wait(1000);
-        }  
+      cy.visit('http://localhost:3000/login'); 
+      cy.get('form').within(() => {
+          cy.get('#admin [type="radio"]').not('[disabled]')
+          .check().should('be.checked')
+          cy.get('input[id="email"]').type('test@gmail.com');
+          cy.get('input[id="password"]').type('Password123');
+        });
+        cy.get('form').within(() => {
+          cy.get('#login-button').click();  
+      });
+      cy.wait(1000);
     });
   
     it('When I click “Logout” on the navigation bar', () => {
-        cy.get('form-inline').within(() => {
-            cy.get('.btn btn-outline-light my-2 my-sm-0 m-3 border border-white').click();  
+        cy.get('.form-inline').within(() => {
+            cy.get('button').click();  
           });
           cy.wait(1000);
     });
