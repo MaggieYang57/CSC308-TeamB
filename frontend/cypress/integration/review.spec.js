@@ -1,4 +1,7 @@
 // Feature: Reviews
+// Users can read reviews submitted for specific hikes, as well as post new ones if they are logged-in.
+// We test redirection when a user is not logged in, and how the review is also visible 
+// from the profile when it is properly submitted.
 
 //   Scenario 1: Logged-out user attempts to submit a review
 //     GIVEN I’m a logged-out user 

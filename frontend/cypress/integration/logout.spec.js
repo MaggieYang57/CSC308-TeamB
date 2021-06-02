@@ -1,5 +1,7 @@
 // Feature: Logout
- 
+// Users can log out of their acocunts when logged in, removing their info from localStorage.
+// We test logging out for when a user is logged in and how it should display the Logout Success page afterwards.
+
 //   Scenario 1: Logged-in user logs out
 //     GIVEN I’m a logged-in user 
 //     WHEN I click “Logout” on the navigation bar

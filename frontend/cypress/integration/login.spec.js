@@ -1,4 +1,6 @@
 // Feature: Login
+// Users can log in to an existing account for this site in order to be able to save hikes and post reviews.
+// We test logging in to an existing account, as well logging in with invalid credentials to display an error message. 
  
 //   Scenario 1: User logs in with valid credentials
 //     GIVEN I’m a logged-out user 

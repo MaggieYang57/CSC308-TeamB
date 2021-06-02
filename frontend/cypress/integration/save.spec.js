@@ -1,4 +1,6 @@
 // Feature: Save Hikes
+// Users can save hikes if they are logged in, and can access saved hikes through their profile.
+// We test redirection for when a user is not logged-in, and the save-unsave functionality for logged-in users.
 /// <reference types="cypress" />
 
  //   Scenario 1: Logged-out user attempts to save a hike
