@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Signup.css";
 
+require('dotenv').config()
+const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
+let hikeIdPath;
+
+if (backendHostURL === "http://localhost:3001")
+  hikeIdPath = window.location.pathname.split('/')[2]
+else if (backendHostURL === "https://slo-hikes-backend.herokuapp.com")
+  hikeIdPath = window.location.href.split('/')[4]
+
 function ReviewSuccess(props) {
   return (
     <div className="signup-form">
@@ -15,7 +24,7 @@ function ReviewSuccess(props) {
         </b>
       </div>
       <p style={{ marginTop: 20 }}>
-        Back to <Link to={`/hike/${window.location.pathname.split('/')[2]}`}> hike page</Link>
+        Back to <Link to={`/hike/${hikeIdPath}`}> hike page</Link>
       </p>
     </div>
   )
