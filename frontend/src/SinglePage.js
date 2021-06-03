@@ -102,7 +102,7 @@ class SinglePage extends React.Component {
         <div className="header">
           <h1>{this.state.data.title}</h1>
           <h2>- {this.state.data.location}</h2>
-          <a href={this.state.user.length !== 0 ? "/review/" + this.state.data._id : "/login"}>
+          <a href={localStorage.getItem("isLoggedIn") === "true" ? "/review/" + this.state.data._id : "/login"}>
             <button id="review-button">Write a Review</button>
           </a>
           {this.state.checkedSave === true ? <SaveButton hike={this.state.data._id} saved = {this.state.saved} /> :
