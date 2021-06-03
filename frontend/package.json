@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "cypress-localstorage-commands": "^1.4.5",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^16.0.2",

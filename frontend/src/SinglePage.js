@@ -17,6 +17,12 @@ const averageRatings = (ratings) => {
   return (sum / ratings.length).toFixed(1);
 };
 
+const averageDifficulty = (difficulty) => {
+  let sum = 0;
+  for (const i in difficulty) sum += +difficulty[i];
+  return (sum / difficulty.length).toFixed(1);
+};
+
 class SinglePage extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +41,9 @@ class SinglePage extends React.Component {
         this.setState({ data: data[0] });
         document.getElementById("rating-num").innerText = averageRatings(
           this.state.data.rating
+        );
+        document.getElementById("diff-num").innerText = averageDifficulty(
+          this.state.data.difficulty
         );
       });
     this.checkSaved()
@@ -104,7 +113,10 @@ class SinglePage extends React.Component {
         <img src={this.state.data.imagesrc} height="300" width="400" />
         <div className="single-info">
           <div className="stats">
-            <h2 className="difficulty">Difficulty: {this.state.data.difficulty}</h2>
+            <div className="difficulty-box">
+              <h2 id="difficulty">Difficulty:</h2>
+              <h2 id="diff-num"/>
+            </div>
             <h2 id="rating">
               ★<h2 id="rating-num" />
             </h2>
