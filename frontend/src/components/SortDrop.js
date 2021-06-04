@@ -6,7 +6,6 @@ function SortDrop(props) {
   const [ , setDifficulty] = useState(0);
 
   function handleFilterChange(e) {
-    console.log(e.target.value);
     setDifficulty(e.target.value);
     props.onChange(e.target.value);
   }
