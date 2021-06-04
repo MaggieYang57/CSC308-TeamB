@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import AdminNavBar from './AdminNavBar';
+import AdminNavBar from '../components/navbars/AdminNavBar';
 
 it('renders correctly', () => {
   const tree = renderer

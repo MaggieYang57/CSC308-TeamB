@@ -1,8 +1,6 @@
-/* eslint-disable no-undef */
-
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from 'react';
-import UserNavBar from './UserNavBar';
+import UserNavBar from '../components/navbars/UserNavBar';
 import renderer from 'react-test-renderer';
 
 test("clicking on HikeFinder takes you to the HikeFinder page", () => {

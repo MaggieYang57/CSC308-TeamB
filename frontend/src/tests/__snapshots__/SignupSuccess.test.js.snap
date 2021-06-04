@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  " ",
+  <div
+    className="signup-form"
+  >
+    <div
+      id="title-signup"
+    >
+      <b
+        className="text text-center "
+        style={
+          Object {
+            "color": "#2C6674",
+            "fontSize": 40,
+          }
+        }
+      >
+        Successfully Signed Up!
+      </b>
+    </div>
+    <p
+      style={
+        Object {
+          "marginTop": 20,
+        }
+      }
+    >
+      Please 
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+        log in 
+      </a>
+      to continue
+    </p>
+  </div>,
+  " ",
+]
+`;
