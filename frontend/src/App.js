@@ -47,8 +47,6 @@ function App() {
     fetchAll().then((result) => {
       if (result)
         setAppState({
-          filteredDataIndexes: new Set([...Array(result.length).keys()]),
-          filters: appState.filters,
           baseHikeData: result,
         });
 

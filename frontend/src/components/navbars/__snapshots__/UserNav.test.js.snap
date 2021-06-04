@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <nav
+    className="navbar navbar-dark "
+    style={
+      Object {
+        "backgroundColor": "#2c6674",
+      }
+    }
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      <form
+        className="form-inline "
+        style={
+          Object {
+            "marginLeft": "-11vw",
+          }
+        }
+      >
+        <img
+          className="nav-link"
+          src="/images/SH.png"
+          style={
+            Object {
+              "borderRadius": 0,
+              "height": 53,
+              "width": 200,
+            }
+          }
+        />
+        <a
+          className="nav-link text-light"
+          href="/profile"
+        >
+          Profile
+        </a>
+        <a
+          className="nav-link text-light"
+          href="/hikeFinder"
+        >
+          HikeFinder
+        </a>
+      </form>
+    </a>
+    <form
+      action="/logout"
+      className="form-inline"
+      style={
+        Object {
+          "marginRight": "2vw",
+        }
+      }
+    >
+      <button
+        className="btn btn-outline-light my-2 my-sm-0 m-3 border border-white"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </form>
+  </nav>
+</div>
+`;
