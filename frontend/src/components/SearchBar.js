@@ -50,6 +50,6 @@ function SearchBar(props) {
 }
 
 SearchBar.propTypes = {
-  updateBySearch: PropTypes.node
+  updateBySearch: PropTypes.func
 }
 export default SearchBar
