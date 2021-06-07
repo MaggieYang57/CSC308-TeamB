@@ -28,7 +28,7 @@ describe("Save Button", () => {
   beforeEach(() => {
     [fetchSpy, jsonFn] = createFetchSpy({
         ok: true,
-      }, [{ test: 'dumb' }])
+      }, [{ test: 'hello' }])
   })
 
   afterEach(() => {
