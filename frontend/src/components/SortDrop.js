@@ -26,7 +26,7 @@ function SortDrop(props) {
 }
 
 SortDrop.propTypes = {
-  onChange: PropTypes.node,
+  onChange: PropTypes.func,
 }
 
 export default SortDrop;
