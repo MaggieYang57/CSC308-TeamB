@@ -84,24 +84,28 @@ class SinglePage extends React.Component {
   }
 
   postRating = () => {
-    const ratingSelect = document.getElementById("select-rating");
-    const rate = +ratingSelect.options[ratingSelect.selectedIndex].value;
-    const data = {
-      rating: rate,
-    };
+    if (localStorage.getItem("isLoggedIn") === "false")
+            window.location.href = "/login";
+    else{
+      const ratingSelect = document.getElementById("select-rating");
+      const rate = +ratingSelect.options[ratingSelect.selectedIndex].value;
+      const data = {
+        rating: rate,
+      };
 
-    fetch(`${backendHostURL}/hike/${this.state.data._id}/rating`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then(() => {
-      this.state.data.rating.push(rate);
-      document.getElementById("rating-num").innerText = averageRatings(
-        this.state.data.rating
-      );
-    });
+      fetch(`${backendHostURL}/hike/${this.state.data._id}/rating`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then(() => {
+        this.state.data.rating.push(rate);
+        document.getElementById("rating-num").innerText = averageRatings(
+          this.state.data.rating
+        );
+      });
+    }
   };
   
   render() {
