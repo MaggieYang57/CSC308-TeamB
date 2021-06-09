@@ -32,7 +32,7 @@ To automatically apply Prettier rules for all files, run npx prettier --write .
 
 ### Testing
 
-Our team uses Cypress and Jest for automatic acceptance testing as well as integration tests. To run the Cypress tests, navigate to the frontend folder and run `npx cypress run` to open the Cypress UI. From there you can access the integration tests for the different scenarios.
+Our team uses Cypress and Jest for automatic acceptance testing as well as integration tests. To run the Cypress tests, you **must have the code running locally**. Then open a new terminal window, navigate to the frontend folder and run `npx cypress open` to open the Cypress UI. From there you can access the integration tests for the different scenarios.
 
 Acceptance Test Specs: https://docs.google.com/document/d/1eiWV-aC5wrnwk2UfMe8jmwRoW73j-rG6PCcg7EF9nvs/edit?usp=sharing
 
