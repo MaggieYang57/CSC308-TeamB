@@ -22,7 +22,7 @@ const averageDifficulty = (difficulty) => {
   return (sum / difficulty.length).toFixed(1);
 };
 
-function HikeCardList({ hike }) {
+export function HikeCardList({ hike }) {
   return (
     <Card
       style={{
@@ -79,5 +79,3 @@ function HikeCardList({ hike }) {
 HikeCardList.propTypes = {
   hike: PropTypes.object,
 };
-
-export default HikeCardList;
