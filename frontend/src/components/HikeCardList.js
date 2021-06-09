@@ -10,6 +10,12 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
+const averageRatings = (ratings) => {
+  let sum = 0;
+  for (const i in ratings) sum += +ratings[i];
+  return (sum / ratings.length).toFixed(1);
+};
+
 export function HikeCardList({ hike }) {
   return (
     <Card
@@ -32,7 +38,7 @@ export function HikeCardList({ hike }) {
         </Col>
         <Col>
           <Card.Body style={{ marginLeft: "4rem", marginTop: "1rem" }}>
-            <Ratings rating={round(parseFloat(hike.rating), 1)} />
+            <Ratings rating={round(averageRatings(hike.rating), 1)} />
             <Card.Title style={{ marginTop: "1vw" }}>
               <Link to={"/hike/" + hike._id}>
                 <p className=" h5 card-text text-left text-primary font-weight-bold">
