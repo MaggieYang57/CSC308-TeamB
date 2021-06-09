@@ -69,7 +69,6 @@ function App() {
   else if (backendHostURL === "https://slo-hikes-backend.herokuapp.com")
     hikeIdPath = window.location.href.split('/')[4]
 
-  console.log(process.env.NODE_ENV);
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
