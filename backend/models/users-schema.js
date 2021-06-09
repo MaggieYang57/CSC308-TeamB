@@ -7,14 +7,6 @@ const UserSchema = mongoose.Schema({
   first_name: { type: String, required: true },
   last_name: { type: String, required: true },
   saved_trails: { type: [String], required: true },
-  reviews: [
-    {
-      hike_id: { type: String, required: true },
-      reviewBody: { type: String, required: false },
-      deleted: { type: Boolean, default: false, required: false },
-      date: { type: Date, default: Date.now, required: false }
-    }
-  ]
 })
 
 module.exports = UserSchema

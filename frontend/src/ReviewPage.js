@@ -10,15 +10,21 @@ const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {error: false};
   }
 
   componentDidMount() {
     fetch(`${backendHostURL}/hike/${this.props.match.params.id}`)
-      .then((res) => res.json())
-      .then((data) => {
+      .then((res) => {
+      if(res.status === 404)
+        this.setState({error: true})
+      else
+      {
+        res.json().then((data) => {
         this.setState({ ...data[0] });
-      });
+        })
+      }
+    });
   }
 
   submitReview = () => {
@@ -55,101 +61,115 @@ class Review extends React.Component {
   };
 
   render() {
-    return (
-      <div className="signup-form">
-        <div className="title">
-          <b
-            className="text text-center "
-            style={{ fontSize: 50, color: "#2C6674" }}
-          >
-            Review for:
-          </b>
+    const error = this.state.error
+    if (error === true)
+    {
+      return(
+        <div>
+          <h1 className="text-center" style={{margin:'0', marginTop:'50px'}}>404 Hike Not Found</h1>
+          <p style={{marginTop:'20px',fontSize:'25px'}}>Return to <Link to="/">Homepage</Link></p>
         </div>
-        <p id="hike-title">{this.state.title}</p>
-        <p> - {this.state.location}</p>
-        <form onSubmit={this.submitReview} action="/reviewSuccess">
-          <p id="input" style={{ marginLeft: "45px" }}>
-            Enter your email:
-          </p>
-          <input
-            type="text"
-            className="account-info"
-            id="email"
-            size="50"
-            style={{ width: "500px" }}
-            required
-          />
-
-          <div className="rating">
-            <label htmlFor="difficulty-rating">
-              <p id="input" style={{ marginLeft: "-10px" }}>
-                Difficulty:{" "}
-              </p>
-            </label>
-            <select id="difficulty-rating">
-              <option value="5">5 ★</option>
-              <option value="4">4 ★</option>
-              <option value="3">3 ★</option>
-              <option value="2">2 ★</option>
-              <option value="1">1 ★</option>
-            </select>
-            <label htmlFor="accessibility-rating">
-              <p id="input">Accessibility: </p>
-            </label>
-            <select id="accessibility-rating" length="20">
-              <option value="5">5 ★</option>
-              <option value="4">4 ★</option>
-              <option value="3">3 ★</option>
-              <option value="2">2 ★</option>
-              <option value="1">1 ★</option>
-            </select>
+      )
+    }
+    else{
+      return (
+        <div className="signup-form">
+          <div className="title">
+            <b
+              className="text text-center "
+              style={{ fontSize: 50, color: "#2C6674" }}
+            >
+              Review for:
+            </b>
           </div>
-
-          <div>
+          <p id="hike-title">{this.state.title}</p>
+          <p> - {this.state.location}</p>
+          <form onSubmit={this.submitReview} action={"/reviewSuccess/" + this.props.match.params.id}>
             <p id="input" style={{ marginLeft: "45px" }}>
-              Activities permitted:
+              Your email:
             </p>
-            <label >
-              <span style={{ marginLeft: "45px" }}>dog-friendly</span>
-              <input id="dog-friendly" type="checkbox" value="1" />
-            </label>
-            <label >
-              <span>horse-friendly</span>
-              <input id="horse-friendly" type="checkbox" value="1" />
-            </label>
-            <label >
-              <span>bike-friendly</span>
-              <input id="bike-friendly" type="checkbox" value="1" />
-            </label>
-            <label >
-              <span>free-parking</span>
-              <input id="free-parking" type="checkbox" />
-            </label>
-          </div>
+            
+            <input
+              type="text"
+              value={localStorage.getItem("email")}
+              className="account-info"
+              id="email"
+              size="50"
+              style={{ width: "500px" }}
+              disabled
+            />
 
-          <p id="input" style={{ marginLeft: "45px" }}>
-            Review:
-          </p>
-          <textarea
-            placeholder="Enter your review here..."
-            name="review-body"
-            id="review-body"
-            className="review-body"
-            wrap="hard"
-            style={{ width: "500px", height: "200px" }}
-            required
-          ></textarea>
+            <div className="rating">
+              <label htmlFor="difficulty-rating">
+                <p id="input" style={{ marginLeft: "-10px" }}>
+                  Difficulty:{" "}
+                </p>
+              </label>
+              <select id="difficulty-rating">
+                <option value="5">5 ★</option>
+                <option value="4">4 ★</option>
+                <option value="3">3 ★</option>
+                <option value="2">2 ★</option>
+                <option value="1">1 ★</option>
+              </select>
+              <label htmlFor="accessibility-rating">
+                <p id="input">Accessibility: </p>
+              </label>
+              <select id="accessibility-rating" length="20">
+                <option value="5">5 ★</option>
+                <option value="4">4 ★</option>
+                <option value="3">3 ★</option>
+                <option value="2">2 ★</option>
+                <option value="1">1 ★</option>
+              </select>
+            </div>
 
-          <input
-            id="signup-button"
-            type="submit"
-            value="SUBMIT A REVIEW"
-            style={{ marginLeft: "45px" }}
-          />
-          <Link to={"/hike/" + this.state._id}> Go Back to the Hike Page </Link>
-        </form>
-      </div>
-    );
+            <div>
+              <p id="input" style={{ marginLeft: "45px" }}>
+                Activities permitted:
+              </p>
+              <label >
+                <span style={{ marginLeft: "45px" }}>dog-friendly</span>
+                <input id="dog-friendly" type="checkbox" value="1" />
+              </label>
+              <label >
+                <span>horse-friendly</span>
+                <input id="horse-friendly" type="checkbox" value="1" />
+              </label>
+              <label >
+                <span>bike-friendly</span>
+                <input id="bike-friendly" type="checkbox" value="1" />
+              </label>
+              <label >
+                <span>free-parking</span>
+                <input id="free-parking" type="checkbox" />
+              </label>
+            </div>
+
+            <p id="input" style={{ marginLeft: "45px" }}>
+              Review:
+            </p>
+            <textarea
+              placeholder="Enter your review here..."
+              name="review-body"
+              id="review-body"
+              className="review-body"
+              wrap="hard"
+              style={{ width: "500px", height: "200px" }}
+              required
+            ></textarea>
+
+            <input
+              id="signup-button"
+              type="submit"
+              value="SUBMIT A REVIEW"
+              style={{ marginLeft: "45px" }}
+            />
+            <Link to={"/hike/" + this.state._id}> Go Back to the Hike Page </Link>
+          </form>
+        </div>
+      );
+    }
   }
 }
 

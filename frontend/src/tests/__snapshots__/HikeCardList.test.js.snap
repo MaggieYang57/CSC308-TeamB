@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HikeCardList renders correctly 1`] = `
+Array [
+  " ",
+  <div
+    className="card"
+    style={
+      Object {
+        "border": "none",
+        "height": "13rem",
+        "margin": "auto",
+        "width": "45rem",
+      }
+    }
+  >
+    <div
+      className="no-gutters row"
+    >
+      <div
+        className="col-lg-3 col-md-5"
+      >
+        <img
+          className="card-img-top"
+          fluid={true}
+          src="test"
+          style={
+            Object {
+              "height": "10rem",
+              "marginTop": "1rem",
+              "width": "15rem",
+            }
+          }
+        />
+      </div>
+      <div
+        className="col"
+      >
+        <div
+          className="card-body"
+          style={
+            Object {
+              "marginLeft": "4rem",
+              "marginTop": "1rem",
+            }
+          }
+        >
+          <div>
+            <form
+              className="form-inline "
+              style={
+                Object {
+                  "marginLeft": "0vw",
+                }
+              }
+            >
+              <a>
+                 
+                <img
+                  className="img-fluid"
+                  src="/images/stars/full.png"
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                      "height": "2rem",
+                      "width": "2.1rem",
+                    }
+                  }
+                />
+                 
+              </a>
+              <a
+                style={
+                  Object {
+                    "marginLeft": ".3vw",
+                  }
+                }
+              >
+                 
+                <img
+                  className="img-fluid"
+                  src="/images/stars/full.png"
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                      "height": "2rem",
+                      "width": "2.1rem",
+                    }
+                  }
+                />
+                 
+              </a>
+              <a
+                style={
+                  Object {
+                    "marginLeft": ".3vw",
+                  }
+                }
+              >
+                 
+                <img
+                  className="img-fluid"
+                  src="/images/stars/full.png"
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                      "height": "2rem",
+                      "width": "2.1rem",
+                    }
+                  }
+                />
+                 
+              </a>
+              <a
+                style={
+                  Object {
+                    "marginLeft": ".3vw",
+                  }
+                }
+              >
+                 
+                <img
+                  className="img-fluid"
+                  src="/images/stars/full.png"
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                      "height": "2rem",
+                      "width": "2.1rem",
+                    }
+                  }
+                />
+                 
+              </a>
+              <a
+                style={
+                  Object {
+                    "marginLeft": ".3vw",
+                  }
+                }
+              >
+                 
+                <img
+                  className="img-fluid"
+                  src="/images/stars/empty.png"
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                      "height": "2rem",
+                      "width": "2.1rem",
+                    }
+                  }
+                />
+                 
+              </a>
+              <a
+                style={
+                  Object {
+                    "fontSize": 15,
+                    "marginLeft": ".5vw",
+                  }
+                }
+              >
+                 
+                4
+                 
+              </a>
+            </form>
+          </div>
+          <div
+            className="card-title h5"
+            style={
+              Object {
+                "marginTop": "1vw",
+              }
+            }
+          >
+            <a
+              href="/hike/1"
+              onClick={[Function]}
+            >
+              <p
+                className=" h5 card-text text-left text-primary font-weight-bold"
+              >
+                Hike
+                 
+              </p>
+            </a>
+          </div>
+          <p
+            className="card-text"
+          >
+            <div
+              style={
+                Object {
+                  "display": "flex",
+                }
+              }
+            >
+              <p
+                className="card-text text-left"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                SLO
+              </p>
+              <div
+                className="difficulty-box"
+                style={
+                  Object {
+                    "borderWidth": "2px",
+                    "marginLeft": "30px",
+                    "padding": "3px",
+                  }
+                }
+              >
+                <p
+                  id="difficulty"
+                  style={
+                    Object {
+                      "fontSize": "18px",
+                      "marginLeft": "10px",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Difficulty: 
+                  3.0
+                </p>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <p
+        className="card-text"
+        style={
+          Object {
+            "marginLeft": "1rem",
+            "marginTop": ".7rem",
+          }
+        }
+      >
+        <p
+          className="card-text text-left"
+        >
+          great hike...
+        </p>
+      </p>
+    </div>
+  </div>,
+  " ",
+]
+`;

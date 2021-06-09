@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hike Finder renders correctly 1`] = `
+Array [
+  " ",
+  <FilterBar
+    onChange={[Function]}
+    onDiff={[Function]}
+    updateBySearch={[Function]}
+  />,
+  <div
+    className="container"
+    style={
+      Object {
+        "marginTop": "5vw",
+      }
+    }
+  >
+    <b
+      className="text text-center "
+      style={
+        Object {
+          "color": "#2C6674",
+          "fontSize": 50,
+        }
+      }
+    >
+      Hike Finder
+    </b>
+    <p
+      className="text text-center "
+      style={
+        Object {
+          "color": "#59BCA6",
+          "fontSize": 30,
+        }
+      }
+    >
+      Find one that is just right for you!
+    </p>
+  </div>,
+  <div
+    className="container"
+    style={
+      Object {
+        "marginTop": "2vw",
+      }
+    }
+  >
+    <hr
+      style={
+        Object {
+          "color": "#BDBDBDBD",
+          "height": 3,
+        }
+      }
+    />
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="col"
+    />
+  </div>,
+  " ",
+]
+`;

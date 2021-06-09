@@ -9,13 +9,15 @@ class UserNavBar extends Component {
           className="navbar navbar-dark "
           style={{ backgroundColor: "#2c6674" }}
         >
-          <a className="navbar-brand" href="/">
+          <div className="navbar-brand">
             <form className="form-inline " style={{ marginLeft: "-11vw" }}>
-              <img
-                className="nav-link"
-                src="/images/SH.png"
-                style={{ width: 200, height: 53, borderRadius: 0 }}
-              />
+              <a href="/">
+                <img
+                  className="nav-link"
+                  src="/images/SH.png"
+                  style={{ width: 200, height: 53, borderRadius: 0 }}
+                />
+              </a>
               <a className="nav-link text-light" href="/profile">
                 Profile
               </a>
@@ -23,7 +25,7 @@ class UserNavBar extends Component {
                 HikeFinder
               </a>
             </form>
-          </a>
+          </div>
           <form
             className="form-inline"
             style={{ marginRight: "2vw" }}
