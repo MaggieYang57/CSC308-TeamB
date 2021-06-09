@@ -6,7 +6,6 @@ function SortDrop(props) {
   const [ , setDifficulty] = useState(0);
 
   function handleFilterChange(e) {
-    console.log(e.target.value);
     setDifficulty(e.target.value);
     props.onChange(e.target.value);
   }
@@ -15,7 +14,7 @@ function SortDrop(props) {
     <div id="sort-drop">
       <form>
         <label htmlFor="difficulty">Sort Hikes by:</label>
-        <select name="difficulty" id="difficulty" onChange={handleFilterChange}>
+        <select name="difficulty" onChange={handleFilterChange}>
           <option value="0">None</option>
           <option value="2">Difficulty: Low to High</option>
           <option value="1">Difficulty: High to Low</option>
@@ -26,7 +25,7 @@ function SortDrop(props) {
 }
 
 SortDrop.propTypes = {
-  onChange: PropTypes.node,
+  onChange: PropTypes.func,
 }
 
 export default SortDrop;

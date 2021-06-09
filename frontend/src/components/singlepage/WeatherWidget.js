@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { PropTypes } from 'prop-types';
+import "../../css/WeatherWidget.css";
 
 function WeatherWidget(props) {
   if (props.city) {
@@ -21,33 +22,31 @@ function WeatherWidget(props) {
           icon = icon.replace('"', "");
 
           document.getElementById("weatherTempLabel").innerHTML =
-            "Current Temperature: " +
+            "<b>Current Temperature: </b>" +
             data.main.temp +
-            "&#176; F <br> Feels like: " +
+            " &#176;F <br><b> Feels like: </b>" +
             data.main.feels_like +
-            "&#176; F" +
-            "<br> Day Low: " +
+            " &#176;F" +
+            "<br><b> Day Low: </b>" +
             data.main.temp_min +
-            "&#176; F <br> Day High: " +
+            " &#176;F <br><b> Day High: </b>" +
             data.main.temp_max +
-            "&#176; F" +
-            "<br>Pressure: " +
+            " &#176;F" +
+            "<br><b>Pressure: </b>" +
             data.main.pressure +
-            " hPa <br> Humidity: " +
+            " hPa <br><b> Humidity: </b>" +
             data.main.humidity +
             "%";
           document.getElementById("weatherDescription").innerHTML =
             data.weather[0].main + ": " + data.weather[0].description;
           document.getElementById("windDescription").innerHTML =
-            "Wind: Speed: " +
+            "<b>Wind speed: </b>" +
             data.wind.speed +
-            " mph Direction: " +
-            data.wind.deg +
-            "&#176;";
+            " mph"
           document.getElementById("sunriseSunsetDescription").innerHTML =
-            "Sunrise: " +
+            "<b>Sunrise: </b>" +
             moment.unix(data.sys.sunrise).format("LT") +
-            " Sunset: " +
+            "<br><b>Sunset: </b>" +
             moment.unix(data.sys.sunset).format("LT");
           document.getElementById("weatherIcon").src =
             "http://openweathermap.org/img/wn/" + icon + "@2x.png";
@@ -62,10 +61,13 @@ function WeatherWidget(props) {
       <div className="boxed">
         <h3>Current Weather Conditions</h3>
         <img id="weatherIcon" height="100" />
-        <p id="weatherTempLabel"></p>
-        <p id="weatherDescription"></p>
-        <p id="windDescription"></p>
-        <p id="sunriseSunsetDescription"></p>
+        <div id="weatherDescription" style={{textAlign:'center'}}/>
+        <br/>
+        <div id="weather-info">
+          <div id="weatherTempLabel"/>
+          <div id="windDescription"/>
+          <div id="sunriseSunsetDescription"/>
+        </div>
       </div>
     </div>
   );

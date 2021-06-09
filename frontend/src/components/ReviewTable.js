@@ -32,7 +32,7 @@ function ReviewBody(props) {
 }
 
 function getActivities(row) {
-  var list = [];
+  const list = [];
   if (row.dog_friendly === true)
     list.push("dog friendly")
   if (row.free_parking === true)
@@ -93,9 +93,9 @@ function ReviewTable(props) {
 }
 
 ReviewTable.propTypes = {
-  reviewList: PropTypes.object,
+  reviewList: PropTypes.string,
 };
 ReviewBody.propTypes = {
-  reviewList: PropTypes.object,
+  reviewList: PropTypes.array,
 };
 export default ReviewTable;

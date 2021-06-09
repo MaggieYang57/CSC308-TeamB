@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HikeCardSmall renders correctly 1`] = `
+Array [
+  " ",
+  <div
+    className="card"
+    style={
+      Object {
+        "border": "none",
+        "height": "13rem",
+        "margin": "auto",
+        "width": "50rem",
+      }
+    }
+  >
+    <div
+      className="no-gutters row"
+    >
+      <div
+        className="col-lg-3 col-md-5"
+      >
+        <img
+          className="card-img-top"
+          fluid={true}
+          src="/images/default.png"
+          style={
+            Object {
+              "height": "10rem",
+              "marginTop": "1rem",
+              "width": "15rem",
+            }
+          }
+        />
+      </div>
+      <div
+        className="col"
+      >
+        <div
+          className="card-body"
+          style={
+            Object {
+              "marginLeft": "4rem",
+            }
+          }
+        >
+          <div
+            className="card-title h5"
+          >
+            <a
+              href="/hike/1"
+              onClick={[Function]}
+            >
+              <p
+                className=" h5 card-text text-left text-primary font-weight-bold"
+              >
+                Hike
+              </p>
+            </a>
+          </div>
+          <p
+            className="card-text"
+          >
+            <p
+              className="card-text text-left"
+              style={
+                Object {
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              SLO
+            </p>
+          </p>
+          <p
+            className="card-text"
+          >
+            <p
+              className="card-text text-left"
+            >
+              great hike...
+            </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  " ",
+]
+`;

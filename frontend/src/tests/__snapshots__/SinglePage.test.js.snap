@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Single Page renders correctly 1`] = `
+Array [
+  " ",
+  <div
+    className="hike"
+  >
+    <div
+      className="header"
+    >
+      <h1 />
+      <h2>
+        - 
+      </h2>
+      <a
+        href="/review/undefined"
+      >
+        <button
+          id="review-button"
+        >
+          Write a Review
+        </button>
+      </a>
+      <h3>
+        Loading
+      </h3>
+    </div>
+    <img
+      height="300"
+      width="400"
+    />
+    <div
+      className="single-info"
+    >
+      <div
+        className="stats"
+      >
+        <div
+          className="difficulty-box"
+        >
+          <h2
+            id="difficulty"
+          >
+            Difficulty:
+          </h2>
+          <h2
+            id="diff-num"
+          />
+        </div>
+        <h2
+          id="rating"
+        >
+          ★
+          <h2
+            id="rating-num"
+          />
+        </h2>
+      </div>
+      <p
+        id="desc"
+      />
+      <br />
+      <div
+        className="weatherwidget"
+      >
+        <div
+          className="boxed"
+        >
+          <h3>
+            Current Weather Conditions
+          </h3>
+          <img
+            height="100"
+            id="weatherIcon"
+          />
+          <div
+            id="weatherDescription"
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
+          />
+          <br />
+          <div
+            id="weather-info"
+          >
+            <div
+              id="weatherTempLabel"
+            />
+            <div
+              id="windDescription"
+            />
+            <div
+              id="sunriseSunsetDescription"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <p />
+    </div>
+    <div
+      className="rate-me"
+    >
+      <label
+        htmlFor="select-rating"
+        id="rating-label"
+      >
+        <h3>
+          Rate Me!
+        </h3>
+      </label>
+      <select
+        id="select-rating"
+        length="20"
+      >
+        <option
+          value="5"
+        >
+          5 ★
+        </option>
+        <option
+          value="4"
+        >
+          4 ★
+        </option>
+        <option
+          value="3"
+        >
+          3 ★
+        </option>
+        <option
+          value="2"
+        >
+          2 ★
+        </option>
+        <option
+          value="1"
+        >
+          1 ★
+        </option>
+      </select>
+      <button
+        id="post-rating"
+        onClick={[Function]}
+      >
+        Post Rating
+      </button>
+    </div>
+    <div
+      className="reviews"
+    >
+      <h2
+        className="reviews-title"
+      >
+        <hr />
+        Reviews
+        <hr />
+      </h2>
+    </div>
+  </div>,
+  " ",
+]
+`;

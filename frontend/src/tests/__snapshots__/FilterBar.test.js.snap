@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBar renders correctly 1`] = `
+<div
+  id="filterBar"
+>
+  <input
+    onChange={[Function]}
+    placeholder="Search Hikes"
+    style={
+      Object {
+        "background": "#F2F1F9",
+        "border": "none",
+        "marginTop": "4vw",
+        "padding": "0.5rem",
+        "width": "20rem",
+      }
+    }
+    value=""
+  />
+  <div
+    id="sort-drop"
+  >
+    <form>
+      <label
+        htmlFor="difficulty"
+      >
+        Sort Hikes by:
+      </label>
+      <select
+        name="difficulty"
+        onChange={[Function]}
+      >
+        <option
+          value="0"
+        >
+          None
+        </option>
+        <option
+          value="2"
+        >
+          Difficulty: Low to High
+        </option>
+        <option
+          value="1"
+        >
+          Difficulty: High to Low
+        </option>
+      </select>
+    </form>
+  </div>
+  <div
+    id="filter-buttons"
+  >
+    <div
+      className="filterButton"
+    >
+      <label>
+        <input
+          onClick={[Function]}
+          type="checkbox"
+          value="1"
+        />
+        <span>
+          Dog Friendly
+        </span>
+      </label>
+    </div>
+    <div
+      className="filterButton"
+    >
+      <label>
+        <input
+          onClick={[Function]}
+          type="checkbox"
+          value="1"
+        />
+        <span>
+          Family Friendly
+        </span>
+      </label>
+    </div>
+    <div
+      className="filterButton"
+    >
+      <label>
+        <input
+          onClick={[Function]}
+          type="checkbox"
+          value="1"
+        />
+        <span>
+          Horseback Riding
+        </span>
+      </label>
+    </div>
+    <div
+      className="filterButton"
+    >
+      <label>
+        <input
+          onClick={[Function]}
+          type="checkbox"
+          value="1"
+        />
+        <span>
+          Bike Riding
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;

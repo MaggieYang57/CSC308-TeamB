@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()
 const ReviewSchema = require('../models/reviews-schema')
+const trailSchema = require("../models/trails-schema");
 const Review = mongoose.model('Review', ReviewSchema, 'review')
+const Trail = mongoose.model("Trail", trailSchema, "hike_data");
 
 // REVIEWS
 // GET All the reviews in reviews db
@@ -60,6 +62,18 @@ router.post('/hike/:id', async (req, res) => {
     .catch((err) => {
       res.json({ message: err })
     })
+  
+  const hike = await Trail.findByIdAndUpdate(
+    {
+      _id: req.params.id
+    },
+    {
+      $push: {
+        difficulty: req.body.difficulty
+      }
+    }
+  )
+  hike.save()
 })
 
 // Soft DELETE individual review by id
@@ -70,9 +84,7 @@ router.post('/:id/delete', async (req, res) => {
         _id: req.params.id
       },
       {
-        $push: {
-          deleted: true
-        }
+        deleted: true
       }
     )
     res.json({ Response: 'Review is marked as deleted' })
