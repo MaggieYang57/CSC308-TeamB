@@ -16,7 +16,7 @@ const averageRatings = (ratings) => {
   return (sum / ratings.length).toFixed(1);
 };
 
-export function HikeCardList({ hike }) {
+function HikeCardList({ hike }) {
   return (
     <Card
       style={{
@@ -68,3 +68,5 @@ export function HikeCardList({ hike }) {
 HikeCardList.propTypes = {
   hike: PropTypes.object,
 };
+
+export default HikeCardList;
