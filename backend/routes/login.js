@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
       console.log('Invalid email')
       res.status(404).send('Invalid email')
     } else {
-      let userPassword = result.password
+      const userPassword = result.password
       const valid = bcrypt.compareSync(password, userPassword)
       if (valid) {
         console.log('login successful')
