@@ -1,9 +1,15 @@
 language: node_js
 node_js:
   - 15
-before_install: cd frontend
-install:
+before_install:
+  - cd backend
   - npm install
-script:
+  - cd frontend
+  - npm install
   - npm run coverage
   - npm run build
+# install:
+#   - npm install
+# script:
+#   - npm run coverage
+#   - npm run build
