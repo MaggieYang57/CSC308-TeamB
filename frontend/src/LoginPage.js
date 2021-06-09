@@ -157,9 +157,6 @@ class Login extends Component {
         />
         <br />
         <p className="input-password">Password</p>
-        <div className="link">
-          <Link to="/reset-password">Forgot Password?</Link>
-        </div>
         <input
           type="password"
           id="password"
@@ -196,7 +193,7 @@ class Login extends Component {
 
 Login.propTypes = {
   history: PropTypes.object,
-  userType: PropTypes.object,
+  user_type: PropTypes.object,
   onUserChange: PropTypes.func,
 };
 export default withRouter(Login);

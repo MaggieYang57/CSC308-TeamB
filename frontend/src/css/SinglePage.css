@@ -1,10 +1,11 @@
 .header {
   display: flex;
-  justify-content: left;
   margin-top: 100px;
+  margin-right: 10vw;
 }
 .header h1 {
   margin-left: 10vw;
+  overflow: hidden;
   font-family: "Mulish", sans-serif;
   font-size: 30px;
   font-weight: 800;
@@ -13,6 +14,7 @@
 .header h2 {
   margin-left: 40px;
   margin-top: 0.5vw;
+  white-space: nowrap;
   font-size: 25px;
   color: #265b5f;
 }
@@ -28,9 +30,9 @@ h3 {
 .boxed {
   box-sizing: content-box;
   width: 100%;
-  border: solid black 1px;
   padding: 15px;
   border-radius: 25px;
+  border: solid black 1px;
 }
 
 img {
@@ -44,16 +46,15 @@ img {
 .single-info {
   text-align: left;
   justify-content: left;
-  margin-top: -300px;
+  margin-top: -320px;
   margin-left: 630px;
   margin-right: 200px;
   font-family: "Quicksand", sans-serif;
 }
 
 #desc {
-  margin: 0;
-  font-weight: 500;
   font-family: "Quicksand", sans-serif;
+  font-weight: 500;
   font-size: 15px;
 }
 
@@ -62,16 +63,32 @@ img {
   align-items: center;
   justify-content: space-evenly;
 }
-.difficulty {
-  font-size: 25px;
-  box-sizing: border-box;
-  padding: 2px 10px;
+.difficulty-box {
+  display: inline-block;
+  padding: 5px 10px;
+  box-sizing: content-box;
   border: solid;
   border-width: 3px;
   border-radius: 10px;
   border-color: #10a5f5;
-  font-family: sans-serif;
-  font-weight: 500;
+  color: #10a5f5;
+}
+#difficulty {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px 9px 0px 0px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  color: #10a5f5;
+}
+#diff-num {
+  display: inline-block;
+  margin: 0px;
+  white-space: nowrap;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
   color: #10a5f5;
 }
 #rating {
@@ -80,6 +97,7 @@ img {
 }
 #rating-num {
   display: flex;
+  margin-left: 5px;
   color: #ff8b3d;
 }
 
@@ -151,22 +169,20 @@ img {
 
 #review-button {
   -webkit-appearance: none;
-  display: flex-end;
-  justify-content: right;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem;
   width: 150px;
   height: 60px;
   margin-left: 30%;
   vertical-align: middle;
   font-weight: 600;
   font-family: "Mulish", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   text-transform: none;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #6ce2e3;
+  border: none;
   border-radius: 10px;
-  background: #6ce2e3;
+  background: #0366ee;
   color: #ffffff;
   cursor: pointer;
   line-height: 1;
@@ -174,7 +190,7 @@ img {
 }
 
 #review-button:hover {
-  background-color: #5ac0c2;
+  background-color: #0250bc;
   color: white;
   text-decoration: none;
 }
@@ -207,6 +223,34 @@ img {
 }
 #save-hike:hover {
   background-color: #148bcf;
+  color: white;
+  text-decoration: none;
+}
+
+/*************Delete Comment*******************/
+
+#delete-button {
+  -webkit-appearance: none;
+  padding: 0.75rem;
+  width: 100px;
+  height: 50px;
+  vertical-align: middle;
+  font-weight: 600;
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  text-transform: none;
+  text-align: center;
+  text-decoration: none;
+  border-color: rgb(255, 73, 73);
+  border-width: thin;
+  border-radius: 30px;
+  color: rgb(255, 73, 73);
+  cursor: pointer;
+  line-height: 1;
+}
+
+#delete-button:hover {
+  background-color: rgb(255, 73, 73);
   color: white;
   text-decoration: none;
 }

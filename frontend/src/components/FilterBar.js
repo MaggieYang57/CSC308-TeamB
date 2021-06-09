@@ -38,11 +38,11 @@ function FilterBar(props) {
 }
 
 FilterBar.propTypes = {
-  onChange: PropTypes.node,
-  onDiff: PropTypes.node,
+  onChange: PropTypes.func,
+  onDiff: PropTypes.func,
   keyword: PropTypes.node,
   setKeyword: PropTypes.node,
-  updateBySearch: PropTypes.node
+  updateBySearch: PropTypes.func
 }
 
 export default FilterBar;

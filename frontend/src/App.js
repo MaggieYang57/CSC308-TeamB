@@ -17,7 +17,9 @@ import Login from "./LoginPage";
 import Signup from "./SignupPage";
 import SignupSuccess from "./components/SignupSuccess";
 import LogoutSuccess from "./components/LogoutSuccess";
+import ReviewSuccess from "./components/ReviewSuccess";
 import ProfilePage from "./ProfilePage";
+import ManagePage from "./ManagePage";
 
 require('dotenv').config()
 const backendHostURL = process.env.REACT_APP_BACKEND_HOST_URL
@@ -45,8 +47,6 @@ function App() {
     fetchAll().then((result) => {
       if (result)
         setAppState({
-          filteredDataIndexes: new Set([...Array(result.length).keys()]),
-          filters: appState.filters,
           baseHikeData: result,
         });
 
@@ -61,8 +61,11 @@ function App() {
     })
   }
 
-  const userType = localStorage.getItem("user_type")
-  console.log(userType)
+  let hikeIdPath;
+  if (backendHostURL === "http://localhost:3001")
+    hikeIdPath = window.location.pathname.split('/')[2]
+  else if (backendHostURL === "https://slo-hikes-backend.herokuapp.com")
+    hikeIdPath = window.location.href.split('/')[4]
 
   return (
     <BrowserRouter>
@@ -87,7 +90,7 @@ function App() {
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
-          <Route exact path="/review/:id" component={ReviewPage} />
+          <Route exact path="/review/:id" component={localStorage.getItem("isLoggedIn") === "true" ? ReviewPage : Login } />
           <Route exact path="/login">
             <Login onUserChange={handleUserChange} />
           </Route>
@@ -98,10 +101,18 @@ function App() {
             <SignupSuccess />
           </Route>
 
+          <Route exact path="/manage">
+            <ManagePage />
+          </Route>
+
           <Route exact path="/profile" component={ProfilePage} />
 
           <Route exact path="/logout">
             <LogoutSuccess />
+          </Route>
+          {/* <Route exact path="/hike/:id" component={SinglePage} /> */}
+          <Route exact path="/reviewSuccess/:id">
+            <ReviewSuccess hikeid={hikeIdPath} />
           </Route>
         </Switch>
         <Container style={{ marginTop: "7vw" }}></Container>
@@ -110,5 +121,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <nav
+    className="navbar navbar-dark navbar-fixed-bottom"
+    style={
+      Object {
+        "backgroundColor": "#d7e0e2",
+      }
+    }
+  >
+    <a
+      className="navbar-brand"
+    >
+      <form
+        className="form-inline "
+        style={
+          Object {
+            "marginLeft": "3vw",
+          }
+        }
+      >
+        <b
+          className="text text-center "
+          style={
+            Object {
+              "color": "#2C6674",
+              "fontSize": "1.2vw",
+            }
+          }
+        >
+          SLO HIKES
+        </b>
+        <b
+          className="text text-center "
+          style={
+            Object {
+              "color": "#828282",
+              "fontSize": ".7vw",
+              "padding": "1vw",
+              "textAlign": "center",
+            }
+          }
+        >
+          @ SLOHikes by Sarah Rietkerk, Maggie Yang, Mike Erinberg, Bat Battur, and Skylar Kurth.
+        </b>
+      </form>
+    </a>
+  </nav>
+</div>
+`;

@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  " ",
+  <div
+    className="home"
+  >
+    <div
+      className="top-banner"
+    >
+      <div
+        className="banner-info"
+      >
+        <img
+          height="270"
+          src="https://www.margarita-adventures.com/wp-content/uploads/2017/02/Cerro_San_Luis.jpg"
+        />
+        <div>
+          <b
+            className="text text-center "
+            style={
+              Object {
+                "color": "#2C6674",
+                "fontSize": 35,
+                "marginLeft": "2vw",
+              }
+            }
+          >
+            Want to get out and explore?
+          </b>
+          <p
+            style={
+              Object {
+                "marginTop": "1vw",
+              }
+            }
+          >
+            There are so many great hikes to go on in SLO county and the city of San Luis Obispo itself. With SLO HIKES, the perfect hike for you is only a few clicks away. Here you will find relevant reviews and useful filtering functionality to make your experience a breeze. Help us improve the hiking community in SLO County and make some more memories in the beautiful outdoors!
+          </p>
+          <a
+            href="/hikeFinder"
+            onClick={[Function]}
+          >
+            <button
+              href="hikefinder"
+            >
+              FIND A HIKE NOW
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="featured-hikes"
+    >
+      <div
+        id="featured-title"
+      >
+        <b
+          className="text text-left"
+          style={
+            Object {
+              "color": "#2C6674",
+              "fontSize": 35,
+              "marginLeft": "7vw",
+            }
+          }
+        >
+          Most Popular Hikes
+          <hr />
+        </b>
+      </div>
+      <div
+        className="card-deck"
+        style={
+          Object {
+            "marginLeft": "1.5vw",
+            "marginRight": "1.5vw",
+          }
+        }
+      >
+        <div
+          className="col"
+        >
+          <div
+            className="mb-5 row"
+            style={
+              Object {
+                "margin": 20,
+              }
+            }
+          >
+            <div
+              className="col"
+            >
+              <div
+                className="card-body"
+              >
+                <div
+                  className="card-title h5"
+                >
+                  <img
+                    className="card-img-top"
+                    fluid="true"
+                    src="test"
+                  />
+                  <a
+                    href="/hike/1"
+                    onClick={[Function]}
+                  >
+                    <p
+                      className=" h5 card-text text-left text-primary font-weight-bold"
+                      style={
+                        Object {
+                          "marginTop": "2vw",
+                        }
+                      }
+                    >
+                      Hike 1
+                    </p>
+                  </a>
+                </div>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                    style={
+                      Object {
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    SLO
+                  </p>
+                </p>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                  >
+                    great hike...
+                  </p>
+                </p>
+              </div>
+            </div>
+            <div
+              className="col"
+            >
+              <div
+                className="card-body"
+              >
+                <div
+                  className="card-title h5"
+                >
+                  <img
+                    className="card-img-top"
+                    fluid="true"
+                    src="hills"
+                  />
+                  <a
+                    href="/hike/2"
+                    onClick={[Function]}
+                  >
+                    <p
+                      className=" h5 card-text text-left text-primary font-weight-bold"
+                      style={
+                        Object {
+                          "marginTop": "2vw",
+                        }
+                      }
+                    >
+                      Hike 2
+                    </p>
+                  </a>
+                </div>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                    style={
+                      Object {
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    BILL
+                  </p>
+                </p>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                  >
+                    Amazing getaway to the green beyond....
+                  </p>
+                </p>
+              </div>
+            </div>
+            <div
+              className="col"
+            >
+              <div
+                className="card-body"
+              >
+                <div
+                  className="card-title h5"
+                >
+                  <img
+                    className="card-img-top"
+                    fluid="true"
+                    src="Tall hike"
+                  />
+                  <a
+                    href="/hike/3"
+                    onClick={[Function]}
+                  >
+                    <p
+                      className=" h5 card-text text-left text-primary font-weight-bold"
+                      style={
+                        Object {
+                          "marginTop": "2vw",
+                        }
+                      }
+                    >
+                      Hike 3
+                    </p>
+                  </a>
+                </div>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                    style={
+                      Object {
+                        "fontWeight": "bold",
+                      }
+                    }
+                  >
+                    Avila
+                  </p>
+                </p>
+                <p
+                  className="card-text"
+                >
+                  <p
+                    className="card-text text-left"
+                  >
+                    Great hike for destressing...
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  " ",
+]
+`;

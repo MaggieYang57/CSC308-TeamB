@@ -5,17 +5,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import { HikeCardList } from "./components/HikeCardList";
 import FilterBar from './components/FilterBar'
 
-// const averageRatings = (ratings) => {
-//   let sum = 0;
-//   for (const i in ratings) sum += +ratings[i];
-//   return (sum / ratings.length).toFixed(1);
-// };
-
 
 function HikeFinder(props) {
   const [finderState, setFinderState] = useState({
     filteredDataIndexes: new Set([...Array(props.hikeList.length).keys()]),
-    beforeSearchIndices: new Set([...Array(props.hikeList.length).keys()]),
+    searchIndices: new Set([...Array(props.hikeList.length).keys()]),
     recentlySearched: false, 
     filters: new Set(),
   })
@@ -24,6 +18,7 @@ function HikeFinder(props) {
     setFinderState({
       ...finderState,
       filteredDataIndexes: new Set([...Array(props.hikeList.length).keys()]),
+      searchIndices: new Set([...Array(props.hikeList.length).keys()]),
     });
   }, [props.hikeList]);
 
@@ -49,7 +44,7 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
-      beforeSearchIndices: indices,
+      searchIndices: indices,
       recentlySearched: finderState.recentlySearched, 
       filters,
     })
@@ -75,7 +70,7 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
-      beforeSearchIndices: indices,
+      searchIndices: indices,
       recentlySearched: finderState.recentlySearched, 
       filters: filters,
     })
@@ -109,7 +104,7 @@ function HikeFinder(props) {
 
     setFinderState({
       filteredDataIndexes: indices,
-      beforeSearchIndices: indices,
+      searchIndices: indices,
       recentlySearched: finderState.recentlySearched, 
       filters: finderState.filters,
     })
@@ -129,39 +124,40 @@ function HikeFinder(props) {
       finderState.filteredDataIndexes.has(i)
     )
     let indices = new Set([...finderState.filteredDataIndexes])
-    const beforeSearch = new Set([...finderState.filteredDataIndexes])
     let searched = true;
     if (hikeData.length > 0) {
       for (let i = 0; i < hikeData.length; i++) {
-        if (!(hikeData[i].description.includes(input))) {
+        const loweredDesc = (hikeData[i].description).toLowerCase()
+        if (!(loweredDesc.includes(input.toLowerCase()))) {
           indices.delete(i)
+          console.log('in for');
         }
       }
     }
 
-    console.log(hikeData)
-
-    if (input.length === 0 && finderState.recentlySearched) {
-      indices = new Set([...finderState.beforeSearchIndices])
+    if (input.length === 0) {
+      indices = new Set([...finderState.filteredDataIndexes])
       searched = false;
+      console.log('empty')
+
     }
 
     else if (indices.size === 0) {
       console.log("Nothing matched your search results, please try something else!")
     }
 
-
-    setFinderState({
-      recentlySearched: searched, 
-      filteredDataIndexes: indices,
-      beforeSearchIndices: beforeSearch,
-      filters: finderState.filters,
-    })
-
+    setFinderState( { ...finderState, recentlySearched: searched, searchIndices: indices})
   }
 
   function chooseHikes() {
-    const renderHikes = [...finderState.filteredDataIndexes].map((i) => props.hikeList[i])
+    console.log('search', finderState.searchIndices)
+    console.log('filtered', finderState.filteredDataIndexes)
+    let renderHikes = [...finderState.filteredDataIndexes].map((i) => props.hikeList[i])
+    let searchResults;
+    if (finderState.recentlySearched) {
+      searchResults = [...finderState.searchIndices].map((i) => props.hikeList[i])
+      renderHikes = searchResults;
+    }
     if (renderHikes.length === 0) {
       return props.hikeList
     }
