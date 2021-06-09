@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .filterButton {
-  margin: 4px;
   color: #265b5f;
   background-color: white;
   border-radius: 10vw;
@@ -13,7 +12,6 @@
 .filterButton label {
   float: left;
   width: 10em;
-  height: -5vh;
   padding: 5px;
 }
 

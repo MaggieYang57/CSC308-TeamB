@@ -18,10 +18,10 @@ describe('User logs in with valid credentials', () => {
 
   it('When I fill in the User type, Email and Password fields with my credentials', () => {
       cy.get('form').within(() => {
-          cy.get('#admin [type="radio"]').not('[disabled]')
+          cy.get('#user [type="radio"]').not('[disabled]')
           .check().should('be.checked')
-          cy.get('input[id="email"]').type('test@gmail.com');
-          cy.get('input[id="password"]').type('Password123');
+          cy.get('input[id="email"]').type('cypresstest@gmail.com');
+          cy.get('input[id="password"]').type('Cypress123');
         });
       
   });
@@ -34,7 +34,15 @@ describe('User logs in with valid credentials', () => {
       
   });
 
-  it('Then the system successfully redirects me to my profile page', () => {   
+  it('Then the system successfully finds the saved credentials within the database', () => {   
+    cy.request('POST', 'http://localhost:3001/login', { email: 'cypresstest@gmail.com' , password: 'Cypress123', user_type: 'user'}).then(
+        (response) => {
+            expect(response.status).to.be.equal(200);
+        }
+    )
+  });
+
+  it('And redirects me to my profile page', () => {   
     cy.location().should((location) => {
       expect(location.href).to.eq('http://localhost:3000/profile')
     })
@@ -71,6 +79,19 @@ describe('User logs in with invalid credentials', () => {
       });
       cy.wait(1000);
       
+  });
+
+  it('Then the system unsuccessfully finds the saved credentials within the database', () => {   
+    cy.request({
+        failOnStatusCode: false,
+        method: 'POST',
+        url:'http://localhost:3001/login',
+        body: { email: 'notwork@gmail.com' , password: 'Password123', user_type: 'admin'}
+    }).then(
+        (response) => {
+            expect(response.status).to.be.equal(404);
+        }
+    )
   });
 
   it('"Invalid email or password" message pops up', () => {   

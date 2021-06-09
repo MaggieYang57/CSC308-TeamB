@@ -14,31 +14,32 @@ describe('Signed-in user logs out', () => {
     it('I’m a signed-in user', () => {
       cy.visit('http://localhost:3000/login'); 
       cy.get('form').within(() => {
-          cy.get('#admin [type="radio"]').not('[disabled]')
+          cy.get('#user [type="radio"]').not('[disabled]')
           .check().should('be.checked')
-          cy.get('input[id="email"]').type('test@gmail.com');
-          cy.get('input[id="password"]').type('Password123');
+          cy.get('input[id="email"]').type('cypresstest@gmail.com');
+          cy.get('input[id="password"]').type('Cypress123');
         });
         cy.get('form').within(() => {
           cy.get('#login-button').click();  
       });
       cy.wait(1000);
-    });
-  
-    it('When I click “Logout” on the navigation bar', () => {
-        cy.get('.form-inline').within(() => {
-            cy.get('button').click();  
-          });
-          cy.wait(1000);
-    });
-  
-    it('Then the system will show me the logout success page', () => {   
+
+      // When I click “Logout” on the navigation bar
+      cy.get('.form-inline').within(() => {
+        cy.get('button').click();  
+      });
+      cy.wait(1000);
+
+      // Then the system will show me the logout success page
       cy.location().should((location) => {
         expect(location.href).to.eq('http://localhost:3000/logout?')
       })
-    });
 
-    it('And the system removes the user’s info from localStorage', () => {   
-        cy.getLocalStorage("user_type").should("equal", null);
+      // And the system removes the user’s info from localStorage
+      cy.getLocalStorage("isLoggedIn").should("equal", 'false');
+      cy.getLocalStorage("user_type").should("equal", null);
+      cy.getLocalStorage("email").should("equal", null);
+      cy.getLocalStorage("_id").should("equal", null);
+
     });
 });

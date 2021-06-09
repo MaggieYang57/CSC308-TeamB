@@ -18,8 +18,8 @@ function FilterButton(props) {
 }
 
 FilterButton.propTypes = {
-  name: PropTypes.object,
-  filterType: PropTypes.object,
-  onChange: PropTypes.object,
+  name: PropTypes.string,
+  filterType: PropTypes.string,
+  onChange: PropTypes.func,
 };
 export default FilterButton;
