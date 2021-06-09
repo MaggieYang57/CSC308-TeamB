@@ -44,38 +44,5 @@ router.delete("/:id", async (req, res) => {
       res.json({ message: err });
     }
   });
-  
-router.post("/check", async (req, res) => {
-    const hike = req.body.hike;
-    const user = req.body.user;
-    let status = 1;
-    User.findOne({ _id: user})
-    .then(function (err, result) {
-        if (err) {
-        console.log(err)
-        }
-        else
-        {
-            const curr = result
-            for (let i = 0; i < result.saved_trails.length; i++) { 
-                if (curr.saved_trails[i] === hike)
-                {
-                    res.status(200).send("already saved")
-                    status = 200
-                }
-                else
-                {
-                    res.status(404).send("not saved")
-                    status = 404
-                }
-            }
-        }
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send(500).send();
-    }) 
-    console.log(status)
-});  
 
   module.exports = router;

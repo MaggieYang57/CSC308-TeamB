@@ -36,16 +36,17 @@ describe('Logged-out user attempts to submit a review', () => {
 //     WHEN I fill in the Review body
 //     AND click "Submit A Review"
 //     THEN the system shows the Review Success page
+//     AND adds it to the profile page
 //     AND successfully adds the review to the database
 
 describe('Signed-in user submits a review on a hike page', () => {
     it('Given I am a logged-in user', () => {
         cy.visit('http://localhost:3000/login');  
         cy.get('form').within(() => {
-            cy.get('#admin [type="radio"]').not('[disabled]')
+            cy.get('#user [type="radio"]').not('[disabled]')
             .check().should('be.checked')
-            cy.get('input[id="email"]').type('test@gmail.com');
-            cy.get('input[id="password"]').type('Password123');
+            cy.get('input[id="email"]').type('cypresstest@gmail.com');
+            cy.get('input[id="password"]').type('Cypress123');
           });
         cy.get('form').within(() => {
             cy.get('#login-button').click();  
@@ -68,9 +69,16 @@ describe('Signed-in user submits a review on a hike page', () => {
           expect(location.href).to.contain('reviewSuccess')
         })
 
-        // And the system successfully adds the review to the database
+        // And adds it to the profile page
         cy.visit('http://localhost:3000/profile'); 
         cy.wait(1000);
         cy.contains('cypress test');
+        // And the system successfully adds the review to the database
+        
+        cy.request('GET', 'http://localhost:3001/review/user/cypresstest@gmail.com').then(
+            (response) => {
+                expect(response.status).to.be.equal(200);
+                expect(response.body[0]).to.have.any.keys('body');
+        })
     });
   });

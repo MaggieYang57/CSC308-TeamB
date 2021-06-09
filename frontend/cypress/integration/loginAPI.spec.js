@@ -21,7 +21,7 @@ describe('Backend running - User test', () => {
 describe('Adding / Getting User', () => {
 
     it('Sending a user object for verification', () => {
-        cy.request('POST', 'http://localhost:3001/login', { email: 'test@gmail.com' , password: 'Password123', user_type: 'admin'}).then(
+        cy.request('POST', 'http://localhost:3001/login', { email: 'cypresstest@gmail.com' , password: 'Cypress123', user_type: 'user'}).then(
             (response) => {
              expect(response.status).to.be.equal(200);
             }
