@@ -1,4 +1,6 @@
-## SLO Hikes
+## SLO Hikes     
+
+[![Build Status](https://travis-ci.com/MaggieYang57/CSC308-TeamB.svg?branch=master)](https://travis-ci.com/MaggieYang57/CSC308-TeamB)
 
 CSC 308 Project Group - Bat Battur, Mike Eirinberg, Skylar Kurth, Sarah Rietkerk, Maggie Yang
 
