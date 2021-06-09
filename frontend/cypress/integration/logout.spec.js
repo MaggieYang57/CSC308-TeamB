@@ -42,18 +42,4 @@ describe('Signed-in user logs out', () => {
       cy.getLocalStorage("_id").should("equal", null);
 
     });
-  
-    // it('', () => {
-        
-    // });
-  
-    // it('Then the system will show me the logout success page', () => {   
-    //   cy.location().should((location) => {
-    //     expect(location.href).to.eq('http://localhost:3000/logout?')
-    //   })
-    // });
-
-    // it('And the system removes the user’s info from localStorage', () => {   
-    //     cy.getLocalStorage("user_type").should("equal", null);
-    // });
 });
