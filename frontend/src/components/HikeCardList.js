@@ -14,6 +14,8 @@ const averageRatings = (ratings) => {
   let sum = 0;
   for (const i in ratings) sum += +ratings[i];
   return (sum / ratings.length).toFixed(1);
+}
+
 const averageDifficulty = (difficulty) => {
   let sum = 0;
   for (const i in difficulty) sum += +difficulty[i];
