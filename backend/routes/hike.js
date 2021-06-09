@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     const hikes = await Trail.find({ _id: req.params.id })
     res.json(hikes)
   } catch (err) {
-    res.status(404).send('Invalid hike id')
+    res.sendStatus(404)
   }
 })
 
