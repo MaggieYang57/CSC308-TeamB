@@ -10,6 +10,12 @@ function round(value, precision) {
   return Math.round(value * multiplier) / multiplier;
 }
 
+const averageDifficulty = (difficulty) => {
+  let sum = 0;
+  for (const i in difficulty) sum += +difficulty[i];
+  return (sum / difficulty.length).toFixed(1);
+};
+
 export function HikeCardList({ hike }) {
   return (
     <Card
@@ -41,9 +47,14 @@ export function HikeCardList({ hike }) {
               </Link>
             </Card.Title>
             <Card.Text>
-              <p className="card-text text-left" style={{ fontWeight: "bold" }}>
-                {hike.location}
-              </p>
+              <div style ={{display:'flex'}}>
+                <p className="card-text text-left" style={{ fontWeight: "bold" }}>
+                  {hike.location}
+                </p>
+                <div className="difficulty-box" style={{ marginLeft:'30px', borderWidth: '2px', padding: '3px' }}>
+                  <p id="difficulty" style={{ marginLeft:'10px', fontSize: "18px", textAlign:'center' }}>Difficulty: {averageDifficulty(hike.difficulty)}</p>
+                </div>
+              </div>
             </Card.Text>
           </Card.Body>
         </Col>

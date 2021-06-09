@@ -24,7 +24,8 @@ describe('Single Page', () => {
     createFetchSpy({}, [
       {
         saved_trails: ["nope"],
-        rating: [2.0]
+        rating: [2.0],
+        difficulty: [5],
       }
     ]);
 
@@ -36,6 +37,10 @@ describe('Single Page', () => {
     const p = document.createElement('p');
     p.id = 'rating-num';
     document.body.appendChild(p);
+
+    const p2 = document.createElement('p');
+    p2.id = 'diff-num';
+    document.body.appendChild(p2);
   })
 
   it('renders correctly', () => {

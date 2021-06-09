@@ -84,16 +84,6 @@ Array [
     >
       Password
     </p>
-    <div
-      className="link"
-    >
-      <a
-        href="/reset-password"
-        onClick={[Function]}
-      >
-        Forgot Password?
-      </a>
-    </div>
     <input
       id="password"
       onChange={[Function]}

@@ -28,7 +28,6 @@ exports[`FilterBar renders correctly 1`] = `
         Sort Hikes by:
       </label>
       <select
-        id="difficulty"
         name="difficulty"
         onChange={[Function]}
       >

@@ -14,7 +14,7 @@ Array [
         - 
       </h2>
       <a
-        href="/login"
+        href="/review/undefined"
       >
         <button
           id="review-button"
@@ -36,11 +36,18 @@ Array [
       <div
         className="stats"
       >
-        <h2
-          className="difficulty"
+        <div
+          className="difficulty-box"
         >
-          Difficulty: 
-        </h2>
+          <h2
+            id="difficulty"
+          >
+            Difficulty:
+          </h2>
+          <h2
+            id="diff-num"
+          />
+        </div>
         <h2
           id="rating"
         >
@@ -67,18 +74,28 @@ Array [
             height="100"
             id="weatherIcon"
           />
-          <p
-            id="weatherTempLabel"
-          />
-          <p
+          <div
             id="weatherDescription"
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
           />
-          <p
-            id="windDescription"
-          />
-          <p
-            id="sunriseSunsetDescription"
-          />
+          <br />
+          <div
+            id="weather-info"
+          >
+            <div
+              id="weatherTempLabel"
+            />
+            <div
+              id="windDescription"
+            />
+            <div
+              id="sunriseSunsetDescription"
+            />
+          </div>
         </div>
       </div>
       <br />

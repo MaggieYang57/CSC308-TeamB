@@ -61,6 +61,12 @@ function App() {
     })
   }
 
+  let hikeIdPath;
+  if (backendHostURL === "http://localhost:3001")
+    hikeIdPath = window.location.pathname.split('/')[2]
+  else if (backendHostURL === "https://slo-hikes-backend.herokuapp.com")
+    hikeIdPath = window.location.href.split('/')[4]
+
   return (
     <BrowserRouter>
       <title>SLO Hikes</title>
@@ -84,7 +90,7 @@ function App() {
           <Route exact path="/singlepage">
             <SinglePage />
           </Route>
-          <Route exact path="/review/:id" component={ReviewPage} />
+          <Route exact path="/review/:id" component={localStorage.getItem("isLoggedIn") === "true" ? ReviewPage : Login } />
           <Route exact path="/login">
             <Login onUserChange={handleUserChange} />
           </Route>
@@ -104,8 +110,9 @@ function App() {
           <Route exact path="/logout">
             <LogoutSuccess />
           </Route>
-          <Route exact path="/reviewSuccess">
-            <ReviewSuccess />
+          {/* <Route exact path="/hike/:id" component={SinglePage} /> */}
+          <Route exact path="/reviewSuccess/:id">
+            <ReviewSuccess hikeid={hikeIdPath} />
           </Route>
         </Switch>
         <Container style={{ marginTop: "7vw" }}></Container>
@@ -114,5 +121,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App

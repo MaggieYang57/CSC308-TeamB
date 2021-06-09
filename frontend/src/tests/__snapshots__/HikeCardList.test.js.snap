@@ -190,16 +190,48 @@ Array [
           <p
             className="card-text"
           >
-            <p
-              className="card-text text-left"
+            <div
               style={
                 Object {
-                  "fontWeight": "bold",
+                  "display": "flex",
                 }
               }
             >
-              SLO
-            </p>
+              <p
+                className="card-text text-left"
+                style={
+                  Object {
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                SLO
+              </p>
+              <div
+                className="difficulty-box"
+                style={
+                  Object {
+                    "borderWidth": "2px",
+                    "marginLeft": "30px",
+                    "padding": "3px",
+                  }
+                }
+              >
+                <p
+                  id="difficulty"
+                  style={
+                    Object {
+                      "fontSize": "18px",
+                      "marginLeft": "10px",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Difficulty: 
+                  3.0
+                </p>
+              </div>
+            </div>
           </p>
         </div>
       </div>

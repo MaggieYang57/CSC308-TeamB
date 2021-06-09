@@ -30,10 +30,10 @@ Array [
     >
       Back to 
       <a
-        href="/"
+        href="/hike/undefined"
         onClick={[Function]}
       >
-        home page
+         hike page
       </a>
     </p>
   </div>,

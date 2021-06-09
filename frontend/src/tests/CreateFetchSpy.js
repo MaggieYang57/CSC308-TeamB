@@ -5,6 +5,8 @@ export default function createFetchSpy(fetchRes = {}, jsonRes = {}) {
     
     fetchSpy.mockReturnValue(new Promise((resolve, reject) => {
       resolve({
+        ok: true,
+        status: 200,
         json: jsonSpy, // this is the mock of the json property that a response of a Promise would usually return
         ...fetchRes
       });

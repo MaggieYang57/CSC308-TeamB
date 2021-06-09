@@ -12,6 +12,7 @@ describe("HikeCardList", () => {
       'title':'Hike', 
       'location': 'SLO', 
       'description': 'great hike', 
+      'difficulty': [1, 3, 5],
       'imagesrc': 'test' 
     }
 

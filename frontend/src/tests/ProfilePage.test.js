@@ -20,6 +20,7 @@ describe('Profile Page', () => {
         'location': 'SLO', 
         'description': 'great hike', 
         'imagesrc': 'test',
+        difficulty: [5],
         saved_trails: ['lololol'],
       }
     ]);

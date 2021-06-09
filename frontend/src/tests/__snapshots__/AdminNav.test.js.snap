@@ -10,9 +10,8 @@ exports[`renders correctly 1`] = `
       }
     }
   >
-    <a
+    <div
       className="navbar-brand"
-      href="/"
     >
       <form
         className="form-inline "
@@ -22,17 +21,21 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <img
-          className="nav-link"
-          src="/images/SH.png"
-          style={
-            Object {
-              "borderRadius": 0,
-              "height": 53,
-              "width": 200,
+        <a
+          href="/"
+        >
+          <img
+            className="nav-link"
+            src="/images/SH.png"
+            style={
+              Object {
+                "borderRadius": 0,
+                "height": 53,
+                "width": 200,
+              }
             }
-          }
-        />
+          />
+        </a>
         <a
           className="nav-link text-light"
           href="/profile"
@@ -52,7 +55,7 @@ exports[`renders correctly 1`] = `
           HikeFinder
         </a>
       </form>
-    </a>
+    </div>
     <form
       action="/logout"
       className="form-inline"

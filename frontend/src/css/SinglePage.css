@@ -1,9 +1,11 @@
 .header {
   display: flex;
   margin-top: 100px;
+  margin-right: 10vw;
 }
 .header h1 {
   margin-left: 10vw;
+  overflow: hidden;
   font-family: "Mulish", sans-serif;
   font-size: 30px;
   font-weight: 800;
@@ -12,6 +14,7 @@
 .header h2 {
   margin-left: 40px;
   margin-top: 0.5vw;
+  white-space: nowrap;
   font-size: 25px;
   color: #265b5f;
 }
@@ -27,9 +30,9 @@ h3 {
 .boxed {
   box-sizing: content-box;
   width: 100%;
-  border: solid black 1px;
   padding: 15px;
   border-radius: 25px;
+  border: solid black 1px;
 }
 
 img {
@@ -43,16 +46,15 @@ img {
 .single-info {
   text-align: left;
   justify-content: left;
-  margin-top: -300px;
+  margin-top: -320px;
   margin-left: 630px;
   margin-right: 200px;
   font-family: "Quicksand", sans-serif;
 }
 
 #desc {
-  margin: 0;
-  font-weight: 500;
   font-family: "Quicksand", sans-serif;
+  font-weight: 500;
   font-size: 15px;
 }
 
@@ -61,16 +63,32 @@ img {
   align-items: center;
   justify-content: space-evenly;
 }
-.difficulty {
-  font-size: 25px;
-  box-sizing: border-box;
-  padding: 2px 10px;
+.difficulty-box {
+  display: inline-block;
+  padding: 5px 10px;
+  box-sizing: content-box;
   border: solid;
   border-width: 3px;
   border-radius: 10px;
   border-color: #10a5f5;
-  font-family: sans-serif;
-  font-weight: 500;
+  color: #10a5f5;
+}
+#difficulty {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0px 9px 0px 0px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  color: #10a5f5;
+}
+#diff-num {
+  display: inline-block;
+  margin: 0px;
+  white-space: nowrap;
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
   color: #10a5f5;
 }
 #rating {
@@ -79,6 +97,7 @@ img {
 }
 #rating-num {
   display: flex;
+  margin-left: 5px;
   color: #ff8b3d;
 }
 

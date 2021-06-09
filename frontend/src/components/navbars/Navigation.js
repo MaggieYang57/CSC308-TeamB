@@ -19,18 +19,20 @@ function Navigation(props) {
         >
           {/* 
                 TODO: This throws console error in browser. We need to fix this later. */}
-          <a className="navbar-brand" href="/">
+          <div className="navbar-brand">
             <form className="form-inline " style={{ marginLeft: "-11vw" }}>
-              <img
-                className="nav-link"
-                src="/images/SH.png"
-                style={{ width: 200, height: 53, borderRadius: 0 }}
-              />
+              <a href="/">
+                <img
+                  className="nav-link"
+                  src="/images/SH.png"
+                  style={{ width: 200, height: 53, borderRadius: 0 }}
+                />
+              </a>
               <a className="nav-link text-light" href="/hikeFinder">
                 HikeFinder
               </a>
             </form>
-          </a>
+          </div>
           <form className="form-inline" style={{ marginRight: "2vw" }} href="/">
             <a
               className="btn btn-outline-light my-2 my-sm-0 m-3 border border-white"

@@ -157,9 +157,6 @@ class Login extends Component {
         />
         <br />
         <p className="input-password">Password</p>
-        <div className="link">
-          <Link to="/reset-password">Forgot Password?</Link>
-        </div>
         <input
           type="password"
           id="password"
