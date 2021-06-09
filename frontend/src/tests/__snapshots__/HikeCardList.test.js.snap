@@ -142,7 +142,7 @@ Array [
                  
                 <img
                   className="img-fluid"
-                  src="/images/stars/full.png"
+                  src="/images/stars/empty.png"
                   style={
                     Object {
                       "borderRadius": 0,
@@ -162,7 +162,7 @@ Array [
                 }
               >
                  
-                5
+                4
                  
               </a>
             </form>
