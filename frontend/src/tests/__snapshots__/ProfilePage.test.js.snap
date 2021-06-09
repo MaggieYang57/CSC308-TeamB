@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Page renders correctly 1`] = `
+Array [
+  " ",
+  <div>
+    <h1
+      className="header"
+    >
+      Hello, 
+       
+    </h1>
+    <div
+      className="saved-trails"
+    >
+      <h2
+        className="saved-title"
+      >
+        <hr />
+        Saved Trails
+        <hr />
+      </h2>
+      <div
+        className="container"
+      >
+        <div
+          className="col"
+        />
+      </div>
+    </div>
+    <div
+      className="reviews"
+    >
+      <h2
+        className="reviews-title"
+      >
+        <hr />
+        Reviews
+        <hr />
+      </h2>
+      <hi
+        route="user"
+      />
+    </div>
+  </div>,
+  " ",
+]
+`;

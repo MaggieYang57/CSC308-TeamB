@@ -1,11 +1,11 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import renderer from 'react-test-renderer';
-import LoginPage from '../LoginPage';
+import SignupPage from '../SignupPage';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter> <LoginPage /> </MemoryRouter>)
+    .create(<MemoryRouter> <SignupPage /> </MemoryRouter>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

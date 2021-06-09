@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  " ",
+  <form
+    className="auth-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="title"
+    >
+      
+      
+      <b
+        className="text text-center "
+        style={
+          Object {
+            "color": "#2C6674",
+            "fontSize": 50,
+          }
+        }
+      >
+        Log In
+      </b>
+    </div>
+    <div
+      id="cta-type"
+    >
+      <div
+        id="admin"
+      >
+        <input
+          checked={null}
+          id="admin"
+          name="cta"
+          onChange={[Function]}
+          type="radio"
+          value="admin"
+        />
+        <label
+          htmlFor="admin"
+        >
+          Admin
+        </label>
+      </div>
+      <div
+        id="user"
+      >
+        <input
+          checked={null}
+          id="user"
+          name="cta"
+          onChange={[Function]}
+          type="radio"
+          value="user"
+        />
+        <label
+          htmlFor="user"
+        >
+          User
+        </label>
+      </div>
+    </div>
+    <p
+      className="input-email"
+    >
+      Email
+    </p>
+    <input
+      id="email"
+      onChange={[Function]}
+      size="50"
+      style={
+        Object {
+          "width": "500px",
+        }
+      }
+      type="text"
+    />
+    <br />
+    <p
+      className="input-password"
+    >
+      Password
+    </p>
+    <div
+      className="link"
+    >
+      <a
+        href="/reset-password"
+        onClick={[Function]}
+      >
+        Forgot Password?
+      </a>
+    </div>
+    <input
+      id="password"
+      onChange={[Function]}
+      size="50"
+      style={
+        Object {
+          "width": "500px",
+        }
+      }
+      type="password"
+    />
+    <br />
+    <label
+      className="password-security"
+    >
+      <input
+        id="password-visibility"
+        onClick={[Function]}
+        type="checkbox"
+      />
+      Show Password
+    </label>
+    <br />
+    <button
+      id="login-button"
+      type="submit"
+    >
+      LOG IN
+    </button>
+    <p>
+      Don't have an account? 
+      <a
+        href="/signup"
+        onClick={[Function]}
+      >
+        Sign up
+      </a>
+    </p>
+  </form>,
+  " ",
+]
+`;

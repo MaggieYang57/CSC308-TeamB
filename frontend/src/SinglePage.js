@@ -36,6 +36,9 @@ class SinglePage extends React.Component {
         document.getElementById("rating-num").innerText = averageRatings(
           this.state.data.rating
         );
+      })
+      .catch(err => {
+        console.log(err);
       });
     this.checkSaved()
     this.state.checkedSave = true
@@ -62,6 +65,9 @@ class SinglePage extends React.Component {
                 }
             }
           }
+      })
+      .catch(err => {
+        console.log(err)
       });
     }
   }

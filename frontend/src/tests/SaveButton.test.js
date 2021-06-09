@@ -2,24 +2,8 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import SaveButton from "../components/singlepage/SaveButton";
+import createFetchSpy from './CreateFetchSpy';
 
-function createFetchSpy(fetchRes, jsonRes) {
-    const fetchSpy = jest.spyOn(window, 'fetch')
-    const jsonSpy = jest.fn();
-    
-    fetchSpy.mockReturnValue(new Promise((resolve, reject) => {
-      resolve({
-        json: jsonSpy,
-        ...fetchRes
-      });
-    }))
-
-    jsonSpy.mockReturnValue(new Promise((resolve, reject) => {
-      resolve(jsonRes);
-    }))
-
-    return [fetchSpy, jsonSpy];
-}
 
 describe("Save Button", () => {
   let fetchSpy;

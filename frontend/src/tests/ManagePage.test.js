@@ -2,44 +2,29 @@ import React from 'react';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ManagePage from '../ManagePage';
+import renderer from 'react-test-renderer';
+import createFetchSpy from './CreateFetchSpy';
 import AdminUserReviewTable from '../components/AdminUserReviewTable';
 
-
-
-function createFetchSpy(fetchRes, jsonRes) {
-    const fetchSpy = jest.spyOn(window, 'fetch')
-    const jsonSpy = jest.fn();
-    
-    fetchSpy.mockReturnValue(new Promise((resolve, reject) => {
-      resolve({
-        json: jsonSpy,
-        ...fetchRes
-      });
-    }))
-
-    jsonSpy.mockReturnValue(new Promise((resolve, reject) => {
-      resolve(jsonRes);
-    }))
-
-    return [fetchSpy, jsonSpy];
-}
+jest.mock('../components/AdminUserReviewTable', () => 'div');
 
 describe("Manage Page", () => {
   let fetchSpy;
   let jsonFn;
 
-  beforeAll(() => {
-    jest.mock(AdminUserReviewTable, () => () => <div id="Mock">Mocked</div>)
-  })
-
   beforeEach(() => {
-    [fetchSpy, jsonFn] = createFetchSpy({
-        ok: true,
-      }, [{ test: ['hello'] }]);
-  })
+    [fetchSpy, jsonFn] = createFetchSpy();
+  });
 
   afterEach(() => {
     cleanup();
+  });
+
+  it('snapshot test', () => {
+    const tree = renderer
+      .create(<ManagePage />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   it('renders without crashing', async () => {
