@@ -38,7 +38,7 @@ Our team uses Cypress and Jest for automatic acceptance testing as well as integ
 
 Acceptance Test Specs: https://docs.google.com/document/d/1eiWV-aC5wrnwk2UfMe8jmwRoW73j-rG6PCcg7EF9nvs/edit?usp=sharing
 
-Acceptance Test Code: (frontend > cypress > integration)
+Acceptance Test Code: (frontend > cypress > integration > acceptanceTests)
 
 ### Deployment
 
