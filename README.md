@@ -44,6 +44,9 @@ To run the unit/integration tests for the frontend components written in Jest wi
 
 Unit/Integration Test Code: (frontend > src > tests)
 
+![coverage-report](https://user-images.githubusercontent.com/49178322/121458542-685d8400-c95e-11eb-9bfc-d187a82bb96f.PNG)
+
+
 ### Deployment
 
 Our live app is automatically deployed through two separate branches managing the backend and frontend paths. To update the deployed backend, merge any updates to `heroku-backend`. To update the deployed frontend, merge any updates to `heroku-frontend-setup-with-env`. 
