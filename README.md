@@ -40,6 +40,10 @@ Acceptance Test Specs: https://docs.google.com/document/d/1eiWV-aC5wrnwk2UfMe8jm
 
 Acceptance Test Code: (frontend > cypress > integration > acceptanceTests)
 
+To run the unit/integration tests for the frontend components written in Jest with the help of the React Testing Library, you must first run an **npm install** in the **/frontend** directory to ensure that your local version has the tesing library and Jest installed. With the right packages installed, you can simply run **npm run test** to see whether or not the tests are passing. To get a coverage report, run **npm run coverage**.
+
+Unit/Integration Test Code: (frontend > src > tests)
+
 ### Deployment
 
 Our live app is automatically deployed through two separate branches managing the backend and frontend paths. To update the deployed backend, merge any updates to `heroku-backend`. To update the deployed frontend, merge any updates to `heroku-frontend-setup-with-env`. 
