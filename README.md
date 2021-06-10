@@ -44,6 +44,8 @@ To run the unit/integration tests for the frontend components written in Jest wi
 
 Unit/Integration Test Code: (frontend > src > tests)
 
+Here is the latest **Coverage Report**:
+
 ![coverage-report](https://user-images.githubusercontent.com/49178322/121458542-685d8400-c95e-11eb-9bfc-d187a82bb96f.PNG)
 
 
