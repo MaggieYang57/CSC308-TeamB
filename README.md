@@ -1,4 +1,5 @@
-## SLO Hikes     
+# SLO Hikes      ![slo-hikes-logo](https://user-images.githubusercontent.com/23184246/121458724-bbcfd200-c95e-11eb-8d7b-e30118689838.PNG)
+ 
 
 [![Build Status](https://travis-ci.com/MaggieYang57/CSC308-TeamB.svg?branch=master)](https://travis-ci.com/MaggieYang57/CSC308-TeamB)
 
@@ -39,6 +40,17 @@ Our team uses Cypress and Jest for automatic acceptance testing as well as integ
 Acceptance Test Specs: https://docs.google.com/document/d/1eiWV-aC5wrnwk2UfMe8jmwRoW73j-rG6PCcg7EF9nvs/edit?usp=sharing
 
 Acceptance Test Code: (frontend > cypress > integration > acceptanceTests)
+
+To run the unit/integration tests for the frontend components written in Jest with the help of the React Testing Library, you must first run an **npm install** in the **/frontend** directory to ensure that your local version has the tesing library and Jest installed. With the right packages installed, you can simply run **npm run test** to see whether or not the tests are passing. To get a coverage report, run **npm run coverage**.
+
+Unit/Integration Test Code: (frontend > src > tests)
+
+
+<details> <summary> Click here to see our latest Coverage Report </summary>
+
+![coverage-report](https://user-images.githubusercontent.com/49178322/121458542-685d8400-c95e-11eb-9bfc-d187a82bb96f.PNG)
+
+</details>
 
 ### Deployment
 
