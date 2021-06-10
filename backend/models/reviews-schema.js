@@ -5,7 +5,6 @@ const ReviewSchema = mongoose.Schema({
   deleted: { type: Boolean, default: false, required: false },
   hike_id: { type: types.ObjectId, required: true },
   user_email: { type: String, required: false },
-  user_name: { type: String, required: false },
   body: { type: String, required: true },
   date: { type: Date, default: Date.now, required: false },
   difficulty: { type: Number, required: false },
